@@ -9,12 +9,12 @@ const ProjectCard = ({ title, tags, type }) => {
                     <div className="tag-wrapper">
                         {
                             tags.map((tag) =>
-                                <div className="tag">
+                                <div className="card-tag">
                                     {tag}
                                 </div>
                             )}
                     </div>
-                    <span className="type">{type}</span>
+                    <span className="card-type">{type}</span>
                 </div>
             </div>
         </>
