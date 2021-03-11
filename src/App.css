@@ -1,38 +1,135 @@
-.App {
-  text-align: center;
+.projects-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.projects-title{
+    text-transform: uppercase;
+    color: #F13F3F;
+    font-size: 2.4rem;
+    font-weight: 400;
+    width: 100%;
+    margin: 2rem 5rem;
+}
+.card{
+    width: 500px;
+    height: 350px;
+    background: #999;
+    position: relative;
+    border-radius:  20px;
+    border: 1px solid #C4C4C4;
+    overflow: hidden;
+    margin: 2rem 2rem;
+}
+.overlay{
+    background: #000;
+    width: 500px;
+    position: absolute;
+    bottom: 0;
+}
+.tag{
+    text-transform: uppercase;
+    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+    display: inline-block;
+    width: 4rem;
+    text-align: center;
+    margin: 0 0.3rem;
+    font-weight: 300;
+}
+.tag-wrapper{
+    margin: 0.5rem 0 1.5rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-title{
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0.5rem 0;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+.type{
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+    font-size: 0.9rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.contact-section{
+    font-family: 'Rajdhani', 'Helvetica Neue',
+    sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.contact-title, .contact-info{
+    font-weight: 100;
+    text-align: center;
+     
 }
-
-.App-link {
-  color: #61dafb;
+.contact-title{
+    font-size: 2rem;
+    margin: 2rem ;
 }
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 600px;
+    margin: 0 auto;
+}
+.contact-info{
+    font-size: 1.4rem;
+    margin: 2rem ;
+}
+.input-wrap{
+    height: 60px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.contact-input{
+    width: 296px;
+    height: 55px;
+    border: 1px solid #c4c4c4;
+    background: #111;
+    color: #c4c4c4;
+    margin: 3px;
+    padding-left: 10px;
+    box-shadow: none;
+}
+.contact-input:focus, .contact-message:focus{
+    border: 1px solid  #F13F3F;
+}
+.contact-message{
+    border: 1px solid #c4c4c4;
+    background: #111;
+    color: #c4c4c4;
+    margin: 3px;
+    padding: 10px;
+    resize: none;
+    box-shadow: none;
+    font-family: 'Rajdhani', 'Helvetica Neue',
+    sans-serif;
+}
+.contact-button{
+    width: 100%;
+    height: 55px;
+    border: 1px solid #F13F3F;
+    color: #F13F3F;
+    font-family: 'Rajdhani', 'Helvetica Neue',
+    sans-serif;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    background: #111;
+    margin: 3px;
+}
+.contact-button:hover{
+    border: 1px solid #F13F3F;
+    background: #F13F3F;
+    color: #111;
+    cursor: pointer;
+    font-weight: 700;
 }

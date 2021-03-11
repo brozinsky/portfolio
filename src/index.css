@@ -1,13 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600&display=swap');
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'Montserrat', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #111111;
+  color: #fff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3{
+  font-family: 'Rajdhani', 'Helvetica Neue',
+  sans-serif;
+  color: #F13F3F;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+h1{
+  font-size: 3.3rem;
+}
+h2{
+  font-size: 2.4rem;
+  margin: 2rem 5rem;
+
+}
+
+section{
+  min-height: 100vh;
+}
+header{
+  min-height: 100vh;
 }
