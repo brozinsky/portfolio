@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600&display=swap');
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+
 body {
   margin: 0;
   font-family: 'Montserrat', 'Helvetica Neue',
@@ -23,22 +25,38 @@ h1, h2, h3{
   text-transform: uppercase;
   font-weight: 400;
 }
+
 h1{
   font-size: 3.5rem;
   line-height: 3.5rem;
   font-weight: 700;
 }
+
 h2{
   font-size: 2.4rem;
   line-height:  2.4rem;
   margin: 2rem 5rem;
 }
 
-
 header{
   min-height: 100vh;
 }
-a:link    { color: #969696; }
-a:visited { color: #969696; }
-a:not(.default):link    { color: #969696; }
-a:not(.default):visited { color: #969696; }
+
+a:link {
+  color: #969696;
+}
+
+a:visited {
+  color: #969696;
+}
+
+a:not(.default):link {
+  color: #969696;
+}
+
+a:not(.default):visited {
+  color: #969696;
+}
+`
+
+export default GlobalStyle;

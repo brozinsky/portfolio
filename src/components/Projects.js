@@ -1,5 +1,7 @@
-import React from 'react'
-import ProjectCard from './ProjectCard'
+import React from 'react';
+import styled from "styled-components";
+
+import ProjectCard from './ProjectCard';
 
 import project1 from "../images/project-1.png";
 import project2 from "../images/project-2.png";
@@ -7,7 +9,6 @@ import project3 from "../images/project-3.png";
 import project4 from "../images/project-4.png";
 import project5 from "../images/project-5.png";
 import project6 from "../images/project-6.png";
-
 
 const projects = [
     {
@@ -50,15 +51,30 @@ const projects = [
 
 const Projects = () => {
     return (
-        <div>
-            <section className="projects-section">
-                <h2 className="projects-title">_Projects</h2>
-                {projects.map(project =>
-                    <ProjectCard title={project.title} tags={project.tags} type={project.type} url={project.url} />
-                )}
-            </section>
-        </div>
+        <ProjectsSection>
+            <Title>_Projects</Title>
+            {projects.map(project =>
+                <ProjectCard title={project.title} tags={project.tags} type={project.type} url={project.url} />
+            )}
+        </ProjectsSection>
     )
 }
+
+const ProjectsSection = styled.section`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+`
+
+const Title = styled.h2`
+    text-transform: uppercase;
+    color: #F13F3F;
+    font-size: 2.4rem;
+    font-weight: 400;
+    width: 100%;
+    margin: 2rem 5rem;
+`
 
 export default Projects
