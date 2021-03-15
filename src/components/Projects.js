@@ -51,10 +51,12 @@ const projects = [
 
 const Projects = () => {
     return (
-        <ProjectsSection>
+        <ProjectsSection id="projects">
             <Title>_Projects</Title>
             {projects.map(project =>
-                <ProjectCard title={project.title} tags={project.tags} type={project.type} url={project.url} />
+                <ProjectCard title={project.title} tags={project.tags} type={project.type}
+                // url={project.url} 
+                />
             )}
         </ProjectsSection>
     )

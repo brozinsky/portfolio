@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Contact = () => {
     return (
-        <ContactSection>
+        <ContactSection id="contact">
             <Title>Want to contact me?</Title>
             <Text>Please, use the form below or send an email to mateusz0brzezinski@gmail.com</Text>
             <Form>
@@ -52,30 +52,34 @@ const InputWrap = styled.div`
 `
 
 const Input = styled.input`
-    width: 296px;
+    width: 284px;
     height: 55px;
-    border: 1px solid #c4c4c4;
+    border: 1px solid #666;
     background: #111;
     color: #c4c4c4;
     margin: 3px;
     padding-left: 10px;
     box-shadow: none;
+    outline:none;
+    box-sizing: content-box;
 &:focus{
-    border: 1px solid  #F13F3F;
+    border-bottom: 4px solid #F13F3F;
 }
 `
 const TextArea = styled.textarea`
-    border: 1px solid #c4c4c4;
+    border: 1px solid #666;
     background: #111;
     color: #c4c4c4;
     margin: 3px;
+    margin-top: 7px;
     padding: 10px;
     resize: none;
     box-shadow: none;
     font-family: 'Rajdhani', 'Helvetica Neue',
     sans-serif;
+    outline:none;
 &:focus{
-    border: 1px solid  #F13F3F;
+    border: 1px solid #F13F3F;
 }
 `
 
@@ -90,6 +94,7 @@ const FormButton = styled.button`
     text-transform: uppercase;
     background: #111;
     margin: 3px;
+    margin-top: 5px;
 &:hover{
     border: 1px solid #F13F3F;
     background: #F13F3F;

@@ -1,17 +1,32 @@
 import React from 'react';
 import styled from "styled-components";
+import { textFromTop } from "../animations/animation.js";
+import { motion } from 'framer-motion';
 
 const Menu = () => {
     return (
         <NavBar>
             <Logo>(logo)</Logo>
-            <ul>
-                <NavLink>Home</NavLink>
-                <NavLink>Projects</NavLink>
-                <NavLink>Skills</NavLink>
-                <NavLink>About</NavLink>
-                <NavLink>Contact</NavLink>
-            </ul>
+            <motion.ul
+                variants={textFromTop}
+                initial="hidden"
+                animate="show">
+                <NavLink>
+                    <a href="#">Home</a>
+                </NavLink>
+                <NavLink>
+                    <a href="#projects">Projects</a>
+                </NavLink>
+                <NavLink>
+                    <a href="#skills">Skills</a>
+                </NavLink>
+                <NavLink>
+                    <a href="#about">About</a>
+                </NavLink>
+                <NavLink>
+                    <a href="#contact">Contact</a>
+                </NavLink>
+            </motion.ul>
         </NavBar>
     )
 }
@@ -33,6 +48,14 @@ const NavBar = styled.nav`
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     backdrop-filter: blur( 18.0px );
     -webkit-backdrop-filter: blur( 18.0px );
+
+a{
+    color: inherit;
+    text-decoration: none;
+&:hover{
+    color: #fff;
+}
+}
 
 & ul{
     margin-right: 3rem;

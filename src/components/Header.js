@@ -1,17 +1,36 @@
 import React from 'react';
 import styled from "styled-components";
+import { motion } from 'framer-motion';
+import { appearAnim, } from "../animations/animation";
+import { TextAppear } from "../animations/textAppear";
 
 const Header = () => {
+    const titleText = 'Lorem ipsum';
+
     return (
-        <HeaderStyle className='header'>
-            <h1 className='header-title'>_Lorem ipsum</h1>
-            <h2 className='header-subtitle'>Dolor sit amet</h2>
-            <HeaderButton>Click</HeaderButton>
+        <HeaderStyle>
+            <TextAppear text={titleText} />
+            {/* <motion.h3
+            // variants={titleAnim}
+            // initial="hidden"
+            // animate="show"
+            // className='header-title'
+            >_Lorem ipsum</motion.h3> */}
+            <motion.h2
+                variants={appearAnim}
+                initial="initial"
+                animate="animate"
+                className='header-subtitle'>Dolor sit amet</motion.h2>
+            <HeaderButton
+                variants={appearAnim}
+                initial="initial"
+                animate="animate"
+            >Click</HeaderButton>
         </HeaderStyle>
     )
 }
 
-const HeaderStyle = styled.header`
+const HeaderStyle = styled(motion.header)`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,7 +47,7 @@ const HeaderStyle = styled.header`
     font-size: 3.5rem;
 }
 `
-const HeaderButton = styled.button`
+const HeaderButton = styled(motion.button)`
     margin: 0 auto;
     width: 200px;
     height: 55px;
@@ -49,6 +68,5 @@ const HeaderButton = styled.button`
     box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
     }
 `
-
 
 export default Header;
