@@ -3,14 +3,22 @@ import styled from "styled-components";
 import { motion } from 'framer-motion';
 import { appearAnim, } from "../animations/animation";
 import { TextAppear } from "../animations/textAppear";
+import TreeMid from './CircuitTree/TreeMid'
+import TreeBot from './CircuitTree/TreeBot'
+import TreeTop from './CircuitTree/TreeTop'
 
 const Header = () => {
     const titleText = 'Lorem ipsum';
 
     return (
         <HeaderStyle>
+            <TreeContainer>
+                <TreeTop />
+                <TreeMid />
+                <TreeBot />
+            </TreeContainer>
             <TextAppear text={titleText} />
-            {/* <motion.h3
+            {/* <motion.h3 ///tego nie odznaczac
             // variants={titleAnim}
             // initial="hidden"
             // animate="show"
@@ -26,9 +34,21 @@ const Header = () => {
                 initial="initial"
                 animate="animate"
             >Click</HeaderButton>
+            <HeaderFrame></HeaderFrame>
         </HeaderStyle>
     )
 }
+
+const HeaderFrame = styled(motion.div)`
+position: absolute;
+height: 85vh;
+width: 85vw;
+top: 50%;
+left:50%;
+transform: translate(-50%,-50%);
+border: 1px #666 solid;
+pointer-events: none;
+`
 
 const HeaderStyle = styled(motion.header)`
     display: flex;
@@ -46,6 +66,16 @@ const HeaderStyle = styled(motion.header)`
     margin: 3rem;
     font-size: 3.5rem;
 }
+`
+const TreeContainer = styled.div`
+position: absolute;
+left: 50%;
+top:50%;
+z-index: -1;
+transform: translate(-50%,-50%);
+display: flex;
+flex-direction: column;
+align-items: flex-end;
 `
 const HeaderButton = styled(motion.button)`
     margin: 0 auto;
