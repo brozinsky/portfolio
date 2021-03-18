@@ -10,6 +10,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #111111;
   color: #fff;
+  overflow-x: hidden;
 }
 
 *{
@@ -57,6 +58,54 @@ a:not(.default):link {
 a:not(.default):visited {
   color: #969696;
 }
+
+:root {
+  /* Change this to change the appearance of the hexaons */
+  --hex-width: 120px;
+  --hex-between: 10px;
+
+  --hex-width-big: 180px;
+  --hex-height-big: calc(var(--hex-width-big) / 1.73 /* sqrt(3) */);
+  --hex-margin-big: calc(var(--hex-width-big) / 2);
+  --hex-border-big: calc(var(--hex-margin-big) / 1.73 /* sqrt(3) */);
+
+
+  /* Other hexagon dimentions */
+  --hex-height: calc(var(--hex-width) / 1.73 /* sqrt(3) */);
+  --hex-margin: calc(var(--hex-width) / 2);
+  --hex-border: calc(var(--hex-margin) / 1.73 /* sqrt(3) */);
+  --hex-transition: all .2s ease;
+
+  /* Colors */
+  --color-hex-default: #666;
+  --color-css:         #1572B6;
+  --color-javascript:  #F7DF1E;
+  --color-html:        #E34F26;
+
+  --color-react:       #61DAFB;
+  --color-sass:        #CC6699;
+
+  --color-redux:       #764ABC;
+  --color-styled-components:#DB7093;
+  --color-gsap:       #88CE02;
+
+  --color-bootstrap:   #563D7C;
+  --color-git:         #F14E32;
+  --color-github:      #FFFFFF;
+  --color-webpack:     #8DD6F9;
+  --color-nodejs:      #339933;
+  --color-firebase:    #FFCA28;
+  --color-npm:         #CB3837;
+
+  --color-vscode:     #007ACC;
+  --color-webpack:     #8DD6F9;
+
+  --color-figma:       #F24E1E;
+  --color-photoshop:   #31A8FF;
+  --color-autocad:     #E51937;
+
+}
+
 `
 
 export default GlobalStyle;

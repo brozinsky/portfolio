@@ -40,7 +40,7 @@ const Info = styled.div`
     width: 700px;
     border: 1px solid #444;
     border-radius: 20px;
-    
+
 `
 
 const InfoText = styled.p`

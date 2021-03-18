@@ -2,11 +2,17 @@ import React from 'react';
 import styled from "styled-components";
 import { textFromTop } from "../animations/animation.js";
 import { motion } from 'framer-motion';
+import logo from "../images/logo.png";
 
 const Menu = () => {
     return (
         <NavBar>
-            <Logo>(logo)</Logo>
+            <Logo>
+                <img
+                    className="logo"
+                    src={logo}
+                    alt="logo" />
+            </Logo>
             <motion.ul
                 variants={textFromTop}
                 initial="hidden"
@@ -70,12 +76,13 @@ const NavLink = styled.li`
 &:hover{
     color: #F13F3F;
     cursor: pointer;
-    border-bottom: 4px solid #F13F3F; 
+    border-bottom: 4px solid #F13F3F;
 }
 `
 
 const Logo = styled.div`
     margin-left: 3rem;
+    scale: 0.6;
 `
 
 export default Menu;

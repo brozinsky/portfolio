@@ -9,6 +9,19 @@ export const titleAnim = {
     }
 }
 
+export const blinkAnim = {
+    initial: { opacity: 0, },
+    animate: {
+        opacity: 1,
+        transition: {
+            delay: 1,
+            duration: 0.3,
+            repeat: 4,
+            ease: 'easeOut'
+        },
+    }
+}
+
 export const appearAnim = {
     initial: {
         opacity: 0,

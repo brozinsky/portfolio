@@ -6,7 +6,6 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-
 const arrowIcon = <FontAwesomeIcon className="arrow-top"
     icon={faChevronUp} />
 const githubIcon = <FontAwesomeIcon className="footer-social-icon"
