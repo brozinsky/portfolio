@@ -32,7 +32,7 @@ const Footer = () => {
                         href="https://github.com/brozinsky">
                         brozinsky
                 </SmallLink>
-                &copy; 2020
+                &copy; 2021
                 </Small>
             </StyledFooter>
         </>
@@ -113,9 +113,9 @@ const SmallLink = styled.a`
     color: inherit;
     text-decoration: none;
 &:hover{
-    color: #fff;    
+    color: #fff;
 &:not(.default):visited{
-    color: #fff;    
+    color: #fff;
 }
 }
 `

@@ -9,41 +9,59 @@ import project3 from "../images/project-3.png";
 import project4 from "../images/project-4.png";
 import project5 from "../images/project-5.png";
 import project6 from "../images/project-6.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { faHtml5 } from '@fortawesome/free-brands-svg-icons';
+import { faCss3Alt } from '@fortawesome/free-brands-svg-icons';
+import { faSass } from '@fortawesome/free-brands-svg-icons';
+import { faJsSquare } from '@fortawesome/free-brands-svg-icons';
+import { faReact } from '@fortawesome/free-brands-svg-icons';
+
+const htmlIcon = <FontAwesomeIcon className="html-icon"
+    icon={faHtml5} />
+const cssIcon = <FontAwesomeIcon className="css-icon"
+    icon={faCss3Alt} />
+const sassIcon = <FontAwesomeIcon className="sass-icon"
+    icon={faSass} />
+const jsIcon = <FontAwesomeIcon className="js-icon"
+    icon={faJsSquare} />
+const reactIcon = <FontAwesomeIcon className="react-icon"
+    icon={faReact} />
 
 const projects = [
     {
         title: 'Clothing Store',
-        tags: ['react', 'css'],
+        tags: [reactIcon, cssIcon],
         type: 'e-commerce',
         url: project1,
     },
     {
         title: 'Movies App',
-        tags: ['react', 'css', 'api'],
+        tags: [reactIcon, cssIcon, 'api'],
         type: 'App',
         url: project2,
     },
     {
         title: 'Jacks or Better',
-        tags: ['react', 'css'],
+        tags: [reactIcon, cssIcon],
         type: 'Game',
         url: project3,
     },
     {
         title: 'Piano App',
-        tags: ['html', 'css', 'js'],
+        tags: [htmlIcon, cssIcon, jsIcon],
         type: 'App',
         url: project4,
     },
     {
         title: 'Architecture studio website',
-        tags: ['html', 'sass', 'js'],
+        tags: [htmlIcon, sassIcon, jsIcon],
         type: 'Website',
         url: project5,
     },
     {
         title: 'Delivery company website',
-        tags: ['html', 'sass', 'js'],
+        tags: [htmlIcon, sassIcon, jsIcon],
         type: 'Website',
         url: project6,
     }
@@ -55,7 +73,7 @@ const Projects = () => {
             <Title>_Projects</Title>
             {projects.map(project =>
                 <ProjectCard title={project.title} tags={project.tags} type={project.type}
-                // url={project.url} 
+                    url={project.url}
                 />
             )}
         </ProjectsSection>
