@@ -34,9 +34,16 @@ h1{
 }
 
 h2{
-  font-size: 2.4rem;
+  /* font-size: 2.4rem;
   line-height:  2.4rem;
-  margin: 2rem 5rem;
+  margin: 2rem 5rem; */
+    line-height:  2.4rem;
+    text-transform: uppercase;
+    color: #F13F3F;
+    font-size: 2.4rem;
+    font-weight: 400;
+    width: 100%;
+    margin: 4rem 5rem 2rem 5rem;
 }
 
 header{

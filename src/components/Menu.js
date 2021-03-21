@@ -18,13 +18,7 @@ const Menu = () => {
                 initial="hidden"
                 animate="show">
                 <NavLink>
-                    <a href="#">Home</a>
-                </NavLink>
-                <NavLink>
                     <a href="#projects">Projects</a>
-                </NavLink>
-                <NavLink>
-                    <a href="#skills">Skills</a>
                 </NavLink>
                 <NavLink>
                     <a href="#about">About</a>
