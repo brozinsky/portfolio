@@ -60,24 +60,11 @@ a:not(.default):visited {
 }
 
 :root {
-  /* Change this to change the appearance of the hexaons */
-  --hex-width: 120px;
-  --hex-between: 10px;
-
-  --hex-width-big: 180px;
-  --hex-height-big: calc(var(--hex-width-big) / 1.73 /* sqrt(3) */);
-  --hex-margin-big: calc(var(--hex-width-big) / 2);
-  --hex-border-big: calc(var(--hex-margin-big) / 1.73 /* sqrt(3) */);
-
-
-  /* Other hexagon dimentions */
-  --hex-height: calc(var(--hex-width) / 1.73 /* sqrt(3) */);
-  --hex-margin: calc(var(--hex-width) / 2);
-  --hex-border: calc(var(--hex-margin) / 1.73 /* sqrt(3) */);
-  --hex-transition: all .2s ease;
-
   /* Colors */
-  --color-hex-default: #666;
+  --color-default: #666;
+  --color-main: #F13F3F;
+  --color-background: #111;
+
   --color-css:         #1572B6;
   --color-javascript:  #F7DF1E;
   --color-html:        #E34F26;

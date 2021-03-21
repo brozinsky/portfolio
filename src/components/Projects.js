@@ -31,39 +31,121 @@ const reactIcon = <FontAwesomeIcon className="react-icon"
 const projects = [
     {
         title: 'Clothing Store',
-        tags: [reactIcon, cssIcon],
+        tag: [
+            {
+                name: 'react',
+                icon: reactIcon
+            },
+            {
+                name: 'css',
+                icon: cssIcon
+            },
+        ],
         type: 'e-commerce',
-        url: project1,
+        img: project1,
+        githubUrl: 'https://github.com/brozinsky/clothing-store',
+        webUrl: 'https://brozinsky.github.io/clothing-store/'
     },
     {
         title: 'Movies App',
-        tags: [reactIcon, cssIcon, 'api'],
+        tag: [
+            {
+                name: 'react',
+                icon: reactIcon
+            },
+            {
+                name: 'css',
+                icon: cssIcon
+            },
+            {
+                name: 'api',
+                icon: 'api'
+            },
+        ],
         type: 'App',
-        url: project2,
+        img: project2,
+        githubUrl: 'https://github.com/brozinsky/movies-app',
+        webUrl: 'https://brozinsky.github.io/movies-app/'
     },
     {
         title: 'Jacks or Better',
-        tags: [reactIcon, cssIcon],
+        tag: [
+            {
+                name: 'react',
+                icon: reactIcon
+            },
+            {
+                name: 'css',
+                icon: cssIcon
+            },
+        ],
         type: 'Game',
-        url: project3,
+        img: project3,
+        githubUrl: 'https://github.com/brozinsky/videopoker-jacks-or-better',
+        webUrl: 'https://brozinsky.github.io/videopoker-jacks-or-better/'
     },
     {
         title: 'Piano App',
-        tags: [htmlIcon, cssIcon, jsIcon],
+        tag: [
+            {
+                name: 'html',
+                icon: htmlIcon
+            },
+            {
+                name: 'css',
+                icon: cssIcon
+            },
+            {
+                name: 'js',
+                icon: jsIcon
+            },
+        ],
         type: 'App',
-        url: project4,
+        img: project4,
+        githubUrl: 'https://github.com/brozinsky/piano-chords-and-scales',
+        webUrl: 'https://brozinsky.github.io/piano-chords-and-scales/'
     },
     {
         title: 'Architecture studio website',
-        tags: [htmlIcon, sassIcon, jsIcon],
+        tag: [
+            {
+                name: 'html',
+                icon: htmlIcon
+            },
+            {
+                name: 'sass',
+                icon: sassIcon
+            },
+            {
+                name: 'js',
+                icon: jsIcon
+            },
+        ],
         type: 'Website',
-        url: project5,
+        img: project5,
+        githubUrl: 'https://github.com/brozinsky/architecture-studio-website',
+        webUrl: 'https://brozinsky.github.io/architecture-studio-website/'
     },
     {
         title: 'Delivery company website',
-        tags: [htmlIcon, sassIcon, jsIcon],
+        tag: [
+            {
+                name: 'html',
+                icon: htmlIcon
+            },
+            {
+                name: 'sass',
+                icon: sassIcon
+            },
+            {
+                name: 'js',
+                icon: jsIcon
+            },
+        ],
         type: 'Website',
-        url: project6,
+        img: project6,
+        githubUrl: 'https://github.com/brozinsky/logistics-website',
+        webUrl: 'https://brozinsky.github.io/logistics-website/'
     }
 ]
 
@@ -72,8 +154,8 @@ const Projects = () => {
         <ProjectsSection id="projects">
             <Title>_Projects</Title>
             {projects.map(project =>
-                <ProjectCard title={project.title} tags={project.tags} type={project.type}
-                    url={project.url}
+                <ProjectCard title={project.title} tag={project.tag} icons={project.tagIcons} type={project.type}
+                    img={project.img} githubUrl={project.githubUrl} webUrl={project.webUrl}
                 />
             )}
         </ProjectsSection>
@@ -94,7 +176,7 @@ const Title = styled.h2`
     font-size: 2.4rem;
     font-weight: 400;
     width: 100%;
-    margin: 2rem 5rem;
+    margin: 4rem 5rem 2rem 5rem;
 `
 
 export default Projects

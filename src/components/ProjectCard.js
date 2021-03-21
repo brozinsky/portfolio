@@ -10,31 +10,31 @@ const githubIcon = <FontAwesomeIcon
 const webIcon = <FontAwesomeIcon
     icon={faGlobe} />
 
-const ProjectCard = ({ title, tags, type, url }) => {
+const ProjectCard = ({ title, tag, type, img, githubUrl, webUrl }) => {
     return (
         <>
             <CardWrapper>
                 <TagWrapper>
                     {
-                        tags.map((tag) =>
-                            <CardTag className={tag === 'api' ? 'small' : ''} >
-                                {tag}
-                            </CardTag>
+                        tag.map((tag) =>
+                            <div className={tag.name + '-tag card-tag'} >
+                                <span className={tag.name === 'api' ? 'small' : ''}>{tag.icon}</span>
+                            </div>
                         )}
                 </TagWrapper>
                 <Card>
                     <WireFrame className="wire">
-                        <CardImg src={url} />
+                        <CardImg src={img} />
                     </WireFrame>
 
                     <Overlay>
 
                         <CardTitle>{title}</CardTitle>
                         <LinksWrapper>
-                            <Link>
+                            <Link href={githubUrl}>
                                 {githubIcon}
                             </Link>
-                            <Link>
+                            <Link href={webUrl}>
                                 {webIcon}
                             </Link>
                         </LinksWrapper>
@@ -84,6 +84,13 @@ height: 50px;
 const CardImg = styled.img`
     width: 100%;
     cursor: pointer;
+    opacity: 0.6;
+    transition: 0.5s;
+
+    &:hover{
+        scale: 1.05;
+        opacity: 1;
+    }
 `
 
 const Overlay = styled.div`
@@ -112,15 +119,23 @@ const LinksWrapper = styled.div`
     justify-content: center;
     flex-wrap: wrap;
 `
-const Link = styled.div`
+const Link = styled.a`
     color: #c4c4c4;
     margin: 0 2rem;
     font-size: 2rem;
-    margin-top: 0.7rem;
-    &:hover{
-        color: #fff;
-        cursor: pointer;
-    }
+    margin-top: 0.5rem;
+    border: solid 1px transparent;
+    padding: 0.1rem 1rem;
+    position:relative;
+    outline:none;
+
+&:hover{
+    color: #fff !important;
+    cursor: pointer;
+}
+&:visited{
+    outline: none;
+}
 `
 
 const TagWrapper = styled.div`
@@ -133,12 +148,41 @@ const TagWrapper = styled.div`
     justify-content: center;
     flex-wrap: wrap;
 
-    .small{
-        font-size: 1rem;
-    }
-`
+.card-tag{
+    transition: 0.15s;
+}
 
-const CardTag = styled.div`
+.card-tag:hover{
+    border: 1px solid transparent;
+    color: var(--color-background);
+}
+
+.sass-tag:hover {
+        box-shadow: 0px 0px 8px 2px var(--color-sass);
+        background: var(--color-sass);
+}
+.html-tag:hover {
+        box-shadow: 0px 0px 8px 2px var(--color-html);
+        background: var(--color-html);
+}
+.css-tag:hover {
+        box-shadow: 0px 0px 8px 2px var(--color-css);
+        background: var(--color-css);
+}
+.react-tag:hover {
+        box-shadow: 0px 0px 8px 2px var(--color-react);
+        background: var(--color-react);
+}
+.js-tag:hover {
+        box-shadow: 0px 0px 8px 2px var(--color-javascript);
+        background: var(--color-javascript);
+}
+.api-tag:hover {
+        box-shadow: 0px 0px 8px 2px #ffc400;
+        background: #ffc400;
+}
+
+.card-tag{
     text-transform: uppercase;
     border: 1px solid #C4C4C4;
     border-radius: 2px;
@@ -153,6 +197,10 @@ const CardTag = styled.div`
     line-height: 2.4rem;
     color: #C4C4C4;
     scale: 0.8;
+}
+    .small{
+        font-size: 1rem;
+    }
 `
 
 const CardType = styled.span`
