@@ -1,34 +1,132 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import ProjectDetails from './ProjectDetails';
+
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+
+import { faHtml5 } from '@fortawesome/free-brands-svg-icons';
+import { faCss3Alt } from '@fortawesome/free-brands-svg-icons';
+import { faSass } from '@fortawesome/free-brands-svg-icons';
+import { faJsSquare } from '@fortawesome/free-brands-svg-icons';
+import { faReact } from '@fortawesome/free-brands-svg-icons';
+
+const htmlIcon = <FontAwesomeIcon className="html-icon"
+    icon={faHtml5} />
+const cssIcon = <FontAwesomeIcon className="css-icon"
+    icon={faCss3Alt} />
+const sassIcon = <FontAwesomeIcon className="sass-icon"
+    icon={faSass} />
+const jsIcon = <FontAwesomeIcon className="js-icon"
+    icon={faJsSquare} />
+const reactIcon = <FontAwesomeIcon className="react-icon"
+    icon={faReact} />
 
 const githubIcon = <FontAwesomeIcon
     icon={faGithub} />
 const webIcon = <FontAwesomeIcon
     icon={faGlobe} />
 
-const ProjectCard = ({ title, tag, type, img, githubUrl, webUrl }) => {
+const DetailsImage = ({ title, tag, technologies, info, type, img, githubUrl, webUrl }) => {
+    const [details, setDetails] = useState(
+        {
+            title: null,
+            tag: [],
+            technologies: [],
+            info: '',
+            type: '',
+            img: '',
+            githubUrl: '',
+            webUrl: '',
+        },
+    );
+
+    const handleImageClick = () => {
+        console.log(technologies)
+        console.log(info)
+        setDetails(
+            {
+                title: title,
+                tag: tag,
+                technologies: technologies,
+                info: info,
+                type: type,
+                img: img,
+                githubUrl: githubUrl,
+                webUrl: webUrl,
+            },
+        )
+    }
+
+    const handleCloseClick = () => {
+        setDetails(
+            {
+                title: null,
+                tag: [],
+                technologies: [],
+                info: '',
+                type: '',
+                img: '',
+                githubUrl: '',
+                webUrl: ''
+            },
+        )
+    }
+
+    return (
+        <>
+            {details.title ?
+                <>
+                    <ProjectDetails
+                        title={details.title}
+                        tag={details.tag}
+                        img={details.img}
+                        technologies={details.technologies}
+                        info={details.info}
+                        type={details.type}
+                        githubUrl={details.githubUrl}
+                        webUrl={details.webUrl}
+                    />
+                    <Close onClick={handleCloseClick}>
+                    </Close>
+                </>
+                : null}
+            <CardImg
+                onClick={handleImageClick}
+                src={img} />
+        </>
+    )
+}
+
+const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, webUrl }) => {
     return (
         <>
             <CardWrapper>
-                <TagWrapper>
-                    {
-                        tag.map((tag) =>
-                            <div className={tag.name + '-tag card-tag'} >
-                                <span className={tag.name === 'api' ? 'small' : ''}>{tag.icon}</span>
-                            </div>
-                        )}
-                </TagWrapper>
+                <TagWrapper>{
+                    tag.map((tag) =>
+                        <div
+                            className={tag.name + '-tag card-tag'} >
+                            <span
+                                className={tag.name === 'api' ? 'small' : ''}>
+                                {tag.icon}</span>
+                        </div>
+                    )}</TagWrapper>
                 <Card>
                     <WireFrame className="wire">
-                        <CardImg src={img} />
+                        <DetailsImage
+                            title={title}
+                            tag={tag}
+                            img={img}
+                            technologies={technologies}
+                            info={info}
+                            type={type}
+                            githubUrl={githubUrl}
+                            webUrl={webUrl}
+                            src={img} />
                     </WireFrame>
-
                     <Overlay>
-
                         <CardTitle>{title}</CardTitle>
                         <LinksWrapper>
                             <Link href={githubUrl}>
@@ -209,6 +307,45 @@ const CardType = styled.span`
     right: 15px;
     font-size: 0.9rem;
     color: #888;
+`
+
+const Close = styled.div`
+    height: 2.5rem;
+    width: 2.5rem;
+    transform: translate(1rem,0);
+    background: #666;
+    position: fixed;
+    top: 10vh;
+    right: 15vw;
+    cursor: pointer;
+    line-height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    z-index: 9999;
+
+    &:before, &:after{
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 25px;
+    width: 2px;
+    background-color: var(--color-background);
+    margin-left: 0.3rem;
+    }
+
+    &:before{
+        transform: rotate(45deg);
+    }
+
+    &:after{
+        transform: rotate(-45deg);
+    }
+
+    &:hover{
+        background: #c2c3d1;
+    }
 `
 
 export default ProjectCard

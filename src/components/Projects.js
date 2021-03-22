@@ -41,6 +41,8 @@ const projects = [
                 icon: cssIcon
             },
         ],
+        technologies: ['React', 'Styled-components', 'Firebase', 'Gsap', 'Material UI'],
+        info: '',
         type: 'e-commerce',
         img: project1,
         githubUrl: 'https://github.com/brozinsky/clothing-store',
@@ -62,6 +64,8 @@ const projects = [
                 icon: 'api'
             },
         ],
+        technologies: ['React', 'Redux', 'CSS', 'MovieDB API', 'Gsap'],
+        info: '',
         type: 'App',
         img: project2,
         githubUrl: 'https://github.com/brozinsky/movies-app',
@@ -79,6 +83,8 @@ const projects = [
                 icon: cssIcon
             },
         ],
+        technologies: ['React', 'CSS'],
+        info: '',
         type: 'Game',
         img: project3,
         githubUrl: 'https://github.com/brozinsky/videopoker-jacks-or-better',
@@ -100,6 +106,8 @@ const projects = [
                 icon: jsIcon
             },
         ],
+        technologies: ['HTML', 'CSS', 'Javascript', 'ToneJS'],
+        info: "Simple app that shows a selected scale or chord on a key board based on any root note. My first web application made with Javascript. Its using a ToneJS library to play audio samples.",
         type: 'App',
         img: project4,
         githubUrl: 'https://github.com/brozinsky/piano-chords-and-scales',
@@ -121,6 +129,8 @@ const projects = [
                 icon: jsIcon
             },
         ],
+        technologies: ['HTML', 'SASS', 'Javascript'],
+        info: '',
         type: 'Website',
         img: project5,
         githubUrl: 'https://github.com/brozinsky/architecture-studio-website',
@@ -142,6 +152,8 @@ const projects = [
                 icon: jsIcon
             },
         ],
+        technologies: ['HTML', 'SASS', 'Javascript'],
+        info: '',
         type: 'Website',
         img: project6,
         githubUrl: 'https://github.com/brozinsky/logistics-website',
@@ -150,12 +162,22 @@ const projects = [
 ]
 
 const Projects = () => {
+
     return (
         <ProjectsSection id="projects">
             <Title>_Projects</Title>
+
             {projects.map(project =>
-                <ProjectCard title={project.title} tag={project.tag} icons={project.tagIcons} type={project.type}
-                    img={project.img} githubUrl={project.githubUrl} webUrl={project.webUrl}
+                <ProjectCard
+                    title={project.title}
+                    tag={project.tag}
+                    icons={project.tagIcons}
+                    technologies={project.technologies}
+                    info={project.info}
+                    type={project.type}
+                    img={project.img}
+                    ithubUrl={project.githubUrl}
+                    webUrl={project.webUrl}
                 />
             )}
         </ProjectsSection>

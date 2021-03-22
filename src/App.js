@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 import GlobalStyle from './components/GlobalStyle';
 import Menu from './components/Menu';
@@ -15,11 +15,9 @@ function App() {
       <Menu />
       <Header />
       <Projects />
-      {/* <Skills /> */}
       <About />
       <Contact />
       <Footer />
-
     </>
   );
 }
