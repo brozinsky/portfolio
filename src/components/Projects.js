@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 
 import { StyledComponents, Firebase, Javascript, Css3, Html5, ReactLogo, Sass } from '@styled-icons/simple-icons'
 import { Redux } from '@styled-icons/boxicons-logos'
 
 import ProjectCard from './ProjectCard';
+import BgShape1 from './svg/BgShape1'
+import BgShape2 from './svg/BgShape2'
 
 import project1 from "../images/project-1.png";
 import project2 from "../images/project-2.png";
@@ -189,6 +191,14 @@ const projects = [
 ]
 
 const Projects = () => {
+    const [offsetY, setOffsetY] = useState(0);
+    const handleScroll = () => setOffsetY(window.pageYOffset);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [])
 
     return (
         <ProjectsSection id="projects">
@@ -206,6 +216,8 @@ const Projects = () => {
                     webUrl={project.webUrl}
                 />
             )}
+            <BgPosition1 style={{ transform: `translateY(${offsetY * 0.15}px)` }}> <BgShape1 /></BgPosition1>
+            <BgPosition2 style={{ transform: `translateY(${offsetY * 0.1}px)` }}> <BgShape2 /></BgPosition2>
         </ProjectsSection>
     )
 }
@@ -216,6 +228,23 @@ const ProjectsSection = styled.section`
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    position: relative;
+`
+
+const BgPosition1 = styled.div`
+ position: absolute;
+ top: 10%;
+ left: -5%;
+ z-index: -10;
+ scale: 1.2;
+`
+
+const BgPosition2 = styled.div`
+ position: absolute;
+ bottom: 0;
+ right: -5%;
+ z-index: -10;
+ scale: 1.2;
 `
 
 const Title = styled.h2`

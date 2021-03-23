@@ -93,9 +93,10 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
                             className={tag.name + '-tag card-tag'} >
                             <span
                                 className={tag.name === 'api' ? 'small' : ''}>
-                                {tag.icon}</span>
+                                {tag.icon} </span>
                         </div>
-                    )}</TagWrapper>
+                    )}
+                </TagWrapper>
                 <Card>
                     <WireFrame className="wire">
                         <DetailsImage
@@ -118,6 +119,7 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
                             <Link href={webUrl}>
                                 {webIcon}
                             </Link>
+
                         </LinksWrapper>
                         <CardType>{type}</CardType>
                     </Overlay>
@@ -201,6 +203,8 @@ const LinksWrapper = styled.div`
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+
+
 `
 const Link = styled.a`
     color: #c4c4c4;
@@ -234,12 +238,10 @@ const TagWrapper = styled.div`
 .card-tag{
     transition: 0.15s;
 }
-
 .card-tag:hover{
     border: 1px solid transparent;
     color: var(--color-background);
 }
-
 .sass-tag:hover {
         box-shadow: 0px 0px 8px 2px var(--color-sass);
         background: var(--color-sass);
@@ -276,7 +278,6 @@ const TagWrapper = styled.div`
         box-shadow: 0px 0px 8px 2px var(--color-styled-components);
         background: var(--color-styled-components);
 }
-
 .card-tag{
     text-transform: uppercase;
     border: 1px solid #C4C4C4;
@@ -293,9 +294,10 @@ const TagWrapper = styled.div`
     color: #C4C4C4;
     scale: 0.8;
 }
-    .small{
-        font-size: 1rem;
-    }
+.small{
+    font-size: 1rem;
+}
+
 `
 
 const CardType = styled.span`

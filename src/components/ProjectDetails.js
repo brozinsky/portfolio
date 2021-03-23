@@ -13,6 +13,7 @@ const webIcon = <FontAwesomeIcon
     icon={faGlobe} />
 
 const ProjectDetails = ({ title, img, technologies, info, tag, githubUrl, webUrl }) => {
+
     return (
         <Shadow>
             <LineTop
@@ -55,10 +56,24 @@ const ProjectDetails = ({ title, img, technologies, info, tag, githubUrl, webUrl
                 }}
             >
                 <div className="info-header">
-                    <Img src={img} />
+                    <Img
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{
+                            delay: 0.3,
+                            duration: 0.3,
+                        }}
+                        src={img} />
                     <div className="info-wrap">
 
-                        <Title>
+                        <Title
+                            initial={{ x: '-100px', opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{
+                                delay: 0.3,
+                                duration: 0.5,
+                            }}
+                        >
                             {title}
                         </Title>
                         <Underline
@@ -89,16 +104,40 @@ const ProjectDetails = ({ title, img, technologies, info, tag, githubUrl, webUrl
                         </SubtitleWrapper>
                         <ul>
                             {technologies.map(item =>
-                                <ListItem >{item}</ListItem>)}
+                                <ListItem
+                                    initial={{ opacity: 0, x: '-50px', }}
+                                    animate={{ opacity: 1, x: '0' }}
+                                    transition={{
+                                        delay: 0.8,
+                                    }}
+                                >{item}</ListItem>)}
                         </ul>
                     </div>
                 </div>
                 <InfoBottom>
-                    <div className="details-tags">
-                        {tag.map(tag =>
-                            <span className={`${tag.name}-dtag dtag`}>{tag.icon} <span>{tag.name}</span> </span>)}
-                    </div>
-                    <Info>
+                    <motion.div className="details-tags"
+                        initial={{ opacity: 0, x: '100px' }}
+                        animate={{
+                            opacity: 1,
+                            x: '0',
+                            transition: {
+                                delay: 0.6,
+                            }
+                        }}
+                    >
+                        {
+                            tag.map(tag =>
+                                <span className={`${tag.name}-dtag dtag`}>{tag.icon} <span>{tag.name}</span> </span>)
+                        }
+                    </motion.div>
+                    <Info
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{
+                            delay: 0.8,
+                            duration: 0.4,
+                        }}
+                    >
                         {info}
                     </Info>
                     <LinksWrapper>
@@ -140,7 +179,7 @@ const Shadow = styled.div`
     display: flex;
 `
 
-const Title = styled.h2`
+const Title = styled(motion.h2)`
 font-size: 2.5rem;
 text-align: center;
 margin: 2rem auto 1rem auto;
@@ -178,7 +217,7 @@ right:0;
 
 
 
-const ListItem = styled.li`
+const ListItem = styled(motion.li)`
 font-size: 1.15rem;
 margin: 0.4rem 0;
 font-weight: 300;
@@ -308,7 +347,7 @@ const Link = styled(motion.a)`
     text-decoration: none;
 }
 `
-const Info = styled.div`
+const Info = styled(motion.div)`
     width: 80%;
     font-size: 1.25rem;
     text-align: justify;
@@ -316,7 +355,7 @@ const Info = styled.div`
     font-weight: 200;
     line-height: 1.6rem;
 `
-const Img = styled.img`
+const Img = styled(motion.img)`
     height: 400px;
     margin: 2rem;
     transition: 1s;
