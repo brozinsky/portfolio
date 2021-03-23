@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
+import styled from "styled-components";
 
 const sentence = {
     initial: { opacity: 1 },
@@ -57,8 +58,3 @@ export const TextAppear = ({ text }) => {
         </motion.h1>
     )
 }
-
-
-
-
-
