@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHtml5 } from '@fortawesome/free-brands-svg-icons';
 import { faCss3Alt } from '@fortawesome/free-brands-svg-icons';
 import { faSass } from '@fortawesome/free-brands-svg-icons';
-import { faBootstrap } from '@fortawesome/free-brands-svg-icons';
 
 import { faJsSquare } from '@fortawesome/free-brands-svg-icons';
 import { faReact } from '@fortawesome/free-brands-svg-icons';
@@ -13,7 +12,6 @@ import { faReact } from '@fortawesome/free-brands-svg-icons';
 import { faFigma } from '@fortawesome/free-brands-svg-icons';
 
 import { faGitAlt } from '@fortawesome/free-brands-svg-icons';
-import { faNpm } from '@fortawesome/free-brands-svg-icons';
 
 import { faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
@@ -25,8 +23,6 @@ const cssIcon = <FontAwesomeIcon className="css-icon"
     icon={faCss3Alt} />
 const sassIcon = <FontAwesomeIcon className="sass-icon"
     icon={faSass} />
-const bootstrapIcon = <FontAwesomeIcon className="bootstrap-icon"
-    icon={faBootstrap} />
 
 const jsIcon = <FontAwesomeIcon className="js-icon"
     icon={faJsSquare} />
@@ -37,8 +33,6 @@ const figmaIcon = <FontAwesomeIcon className="figma-icon"
     icon={faFigma} />
 const gitIcon = <FontAwesomeIcon className="git-icon"
     icon={faGitAlt} />
-const npmIcon = <FontAwesomeIcon className="npm-icon"
-    icon={faNpm} />
 
 const mobileIcon = <FontAwesomeIcon className="mobile-icon"
     icon={faMobileAlt} />
@@ -69,7 +63,7 @@ const About = () => {
                 </IconsWrap>
                 <InfoText>
                     I write semantic <span className='hvr-pop react-hover'>HTML</span> to improve webpage SEO.
-                For styling I prefer using Styled Components but I feel comfortable in Sass preprocessor, which I like to use along with BEM methodology. </InfoText>
+                For styling I prefer using Styled Components but I feel comfortable with SASS preprocessor, which I like to use along with BEM methodology. </InfoText>
                 <IconsWrap>
                     <Icon>{jsIcon} Javascript ES6</Icon>
                     <Icon>{reactIcon} React</Icon>

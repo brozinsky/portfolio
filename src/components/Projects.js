@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from "styled-components";
 
+import { StyledComponents, Firebase, Javascript, Css3, Html5, ReactLogo, Sass } from '@styled-icons/simple-icons'
+import { Redux } from '@styled-icons/boxicons-logos'
+
 import ProjectCard from './ProjectCard';
 
 import project1 from "../images/project-1.png";
@@ -9,24 +12,48 @@ import project3 from "../images/project-3.png";
 import project4 from "../images/project-4.png";
 import project5 from "../images/project-5.png";
 import project6 from "../images/project-6.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { faHtml5 } from '@fortawesome/free-brands-svg-icons';
-import { faCss3Alt } from '@fortawesome/free-brands-svg-icons';
-import { faSass } from '@fortawesome/free-brands-svg-icons';
-import { faJsSquare } from '@fortawesome/free-brands-svg-icons';
-import { faReact } from '@fortawesome/free-brands-svg-icons';
+const StyledCompIocn = styled(StyledComponents)`
+margin-bottom: 5px;
+scale: 0.9;
+`
+const ReduxIcon = styled(Redux)`
+margin-bottom: 5px;
+scale: 0.8;
+`
+const FirebaseIcon = styled(Firebase)`
+margin-bottom: 5px;
+scale: 0.7;
+`
+const HtmlIcon = styled(Html5)`
+margin-bottom: 5px;
+scale: 0.6;
+`
+const CssIcon = styled(Css3)`
+margin-bottom: 5px;
+scale: 0.6;
+`
+const SassIcon = styled(Sass)`
+margin-bottom: 5px;
+scale: 0.6;
+`
+const JavascriptIcon = styled(Javascript)`
+margin-bottom: 5px;
+scale: 0.6;
+`
+const ReactIcon = styled(ReactLogo)`
+margin-bottom: 5px;
+scale: 0.7;
+`
+const sassIcon = <SassIcon className="sass-icon" />
+const reactIcon = <ReactIcon className="react-icon" />
+const htmlIcon = <HtmlIcon className="html-icon" />
+const cssIcon = <CssIcon className="css-icon" />
 
-const htmlIcon = <FontAwesomeIcon className="html-icon"
-    icon={faHtml5} />
-const cssIcon = <FontAwesomeIcon className="css-icon"
-    icon={faCss3Alt} />
-const sassIcon = <FontAwesomeIcon className="sass-icon"
-    icon={faSass} />
-const jsIcon = <FontAwesomeIcon className="js-icon"
-    icon={faJsSquare} />
-const reactIcon = <FontAwesomeIcon className="react-icon"
-    icon={faReact} />
+const jsIcon = <JavascriptIcon className="javascript-icon" />
+const firebaseIcon = <FirebaseIcon className="firebase-icon" />
+const styledIcon = <StyledCompIocn className="styled-icon" />
+const reduxIcon = <ReduxIcon className="redux-icon" />
 
 const projects = [
     {
@@ -37,12 +64,16 @@ const projects = [
                 icon: reactIcon
             },
             {
-                name: 'css',
-                icon: cssIcon
+                name: 'styled-components',
+                icon: styledIcon
+            },
+            {
+                name: 'firebase',
+                icon: firebaseIcon
             },
         ],
-        technologies: ['React', 'Styled-components', 'Firebase', 'Gsap', 'Material UI'],
-        info: '',
+        technologies: ['Main technology - React', 'Styling using Styled-Components', 'Products data stored in Firebase', 'Animations in Framer Motion', 'UI components from Material UI library', 'Designed using Figma'],
+        info: 'An e-commerce static web application. Loading of products and data storage from Firebase. App has a cart to add/remove items, it shows the total price and sends user to checkout. Routes implemented with React router, including seamlessly moving between pages. Styling made with Styled Components with the use of Material UI elements. ',
         type: 'e-commerce',
         img: project1,
         githubUrl: 'https://github.com/brozinsky/clothing-store',
@@ -56,6 +87,10 @@ const projects = [
                 icon: reactIcon
             },
             {
+                name: 'redux',
+                icon: reduxIcon
+            },
+            {
                 name: 'css',
                 icon: cssIcon
             },
@@ -64,8 +99,8 @@ const projects = [
                 icon: 'api'
             },
         ],
-        technologies: ['React', 'Redux', 'CSS', 'MovieDB API', 'Gsap'],
-        info: '',
+        technologies: ['React', 'State management using Redux', 'styling in CSS', 'The Movie Database (TMDb) API'],
+        info: "A movie search app built with ReactJS. It uses The Movie Database (TMDb) API to display data. App's features include search movies by title, list popular movies, view details of a selected movie (cast, genres, user scores).",
         type: 'App',
         img: project2,
         githubUrl: 'https://github.com/brozinsky/movies-app',
@@ -83,8 +118,8 @@ const projects = [
                 icon: cssIcon
             },
         ],
-        technologies: ['React', 'CSS'],
-        info: '',
+        technologies: ['Main technology - React', 'Styling made in CSS', 'Designed using Figma'],
+        info: "Jacks or Better is the most common casino game variation of video poker based on five-card draw poker. It's a mix of a slots machine and poker. My first application where I used React JS as a main technology. Styling made with simple CSS.",
         type: 'Game',
         img: project3,
         githubUrl: 'https://github.com/brozinsky/videopoker-jacks-or-better',
@@ -106,8 +141,8 @@ const projects = [
                 icon: jsIcon
             },
         ],
-        technologies: ['HTML', 'CSS', 'Javascript', 'ToneJS'],
-        info: "Simple app that shows a selected scale or chord on a key board based on any root note. My first web application made with Javascript. Its using a ToneJS library to play audio samples.",
+        technologies: ['HTML and CSS', 'App funcionality made with vanilla Javascript', 'Audio managed with ToneJS library'],
+        info: "Simple app useful for beginner piano players. It shows a selected scale or chord on a key board based on a chosen root note. My first web application made with Javascript. It's using a ToneJS library to play audio samples.",
         type: 'App',
         img: project4,
         githubUrl: 'https://github.com/brozinsky/piano-chords-and-scales',
@@ -124,13 +159,9 @@ const projects = [
                 name: 'sass',
                 icon: sassIcon
             },
-            {
-                name: 'js',
-                icon: jsIcon
-            },
         ],
-        technologies: ['HTML', 'SASS', 'Javascript'],
-        info: '',
+        technologies: ['HTML', 'styled in SASS with BEM', 'Fully responsive mobile first design', 'Designed using Figma'],
+        info: 'An architecture studio single page website template with photo gallery, dynamic animations and contact form. Fully responsive mobile first design, made with HTML, styling and animations made with SASS. ',
         type: 'Website',
         img: project5,
         githubUrl: 'https://github.com/brozinsky/architecture-studio-website',
@@ -147,13 +178,9 @@ const projects = [
                 name: 'sass',
                 icon: sassIcon
             },
-            {
-                name: 'js',
-                icon: jsIcon
-            },
         ],
-        technologies: ['HTML', 'SASS', 'Javascript'],
-        info: '',
+        technologies: ['HTML', 'styled in SASS with BEM', 'Fully responsive mobile first design', 'Designed using Figma'],
+        info: 'Example of a delivery company single page website template with contact form. My first static website. Fully responsive, made with HTML styling and animations made with SASS. ',
         type: 'Website',
         img: project6,
         githubUrl: 'https://github.com/brozinsky/logistics-website',
@@ -166,7 +193,6 @@ const Projects = () => {
     return (
         <ProjectsSection id="projects">
             <Title>_Projects</Title>
-
             {projects.map(project =>
                 <ProjectCard
                     title={project.title}
@@ -176,7 +202,7 @@ const Projects = () => {
                     info={project.info}
                     type={project.type}
                     img={project.img}
-                    ithubUrl={project.githubUrl}
+                    githubUrl={project.githubUrl}
                     webUrl={project.webUrl}
                 />
             )}

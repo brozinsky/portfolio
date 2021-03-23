@@ -7,23 +7,6 @@ import ProjectDetails from './ProjectDetails';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 
-import { faHtml5 } from '@fortawesome/free-brands-svg-icons';
-import { faCss3Alt } from '@fortawesome/free-brands-svg-icons';
-import { faSass } from '@fortawesome/free-brands-svg-icons';
-import { faJsSquare } from '@fortawesome/free-brands-svg-icons';
-import { faReact } from '@fortawesome/free-brands-svg-icons';
-
-const htmlIcon = <FontAwesomeIcon className="html-icon"
-    icon={faHtml5} />
-const cssIcon = <FontAwesomeIcon className="css-icon"
-    icon={faCss3Alt} />
-const sassIcon = <FontAwesomeIcon className="sass-icon"
-    icon={faSass} />
-const jsIcon = <FontAwesomeIcon className="js-icon"
-    icon={faJsSquare} />
-const reactIcon = <FontAwesomeIcon className="react-icon"
-    icon={faReact} />
-
 const githubIcon = <FontAwesomeIcon
     icon={faGithub} />
 const webIcon = <FontAwesomeIcon
@@ -143,6 +126,8 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
         </>
     )
 }
+
+
 
 const Card = styled.div`
     width: 500px;
@@ -278,6 +263,18 @@ const TagWrapper = styled.div`
 .api-tag:hover {
         box-shadow: 0px 0px 8px 2px #ffc400;
         background: #ffc400;
+}
+.redux-tag:hover {
+        box-shadow: 0px 0px 8px 2px var(--color-redux);
+        background: var(--color-redux);
+}
+.firebase-tag:hover {
+        box-shadow: 0px 0px 8px 2px var(--color-firebase);
+        background: var(--color-firebase);
+}
+.styled-components-tag:hover {
+        box-shadow: 0px 0px 8px 2px var(--color-styled-components);
+        background: var(--color-styled-components);
 }
 
 .card-tag{
