@@ -139,6 +139,11 @@ const Card = styled.div`
     border: 1px solid #666;
     overflow: hidden;
     margin: 2rem 2rem;
+
+    @media (max-width: 768px) {
+    width: 300px;
+    height: 270px;
+    }
 `
 
 const CardWrapper = styled.div`
@@ -184,6 +189,11 @@ const Overlay = styled.div`
     height: 100px;
     position: absolute;
     bottom: 0;
+
+    @media (max-width: 768px) {
+    width: 300px;
+    height: 100px;
+    }
 `
 
 const CardTitle = styled.h3`
@@ -196,6 +206,11 @@ const CardTitle = styled.h3`
     color: #fff;
     font-family: 'Montserrat', 'Helvetica Neue',
     sans-serif;
+
+    @media (max-width: 768px) {
+    font-size: 1.2rem;
+    margin-top: 0.3rem;
+    }
 `
 
 const LinksWrapper = styled.div`
@@ -203,8 +218,6 @@ const LinksWrapper = styled.div`
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-
-
 `
 const Link = styled.a`
     color: #c4c4c4;
@@ -215,6 +228,11 @@ const Link = styled.a`
     padding: 0.1rem 1rem;
     position:relative;
     outline:none;
+
+    @media (max-width: 768px) {
+    font-size: 1.8rem;
+    margin: 0.2rem 1rem;
+    }
 
 &:hover{
     color: #fff !important;
@@ -306,6 +324,11 @@ const CardType = styled.span`
     right: 15px;
     font-size: 0.9rem;
     color: #888;
+
+    @media (max-width: 768px) {
+        right: 10px;
+        font-size: 0.6rem;
+    }
 `
 
 const Close = styled.div`

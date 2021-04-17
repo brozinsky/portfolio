@@ -223,6 +223,10 @@ const HeaderStyle = styled(motion.header)`
 .header-title{
     text-align: center;
     font-size: 5.5rem;
+
+    @media (max-width: 768px) {
+    font-size: 2.5rem;
+    }
 }
 `
 const TreeContainer = styled.div`
@@ -271,6 +275,10 @@ const TopSubtitle = styled(motion.h2)`
     margin: 1rem auto 1.6rem auto;
     font-weight: bold;
     letter-spacing: 0.2rem;
+    @media (max-width: 768px) {
+    font-size: 2rem;
+    width: 90vw;
+    }
 `
 
 const SubtitleWrapper = styled.div`
@@ -293,7 +301,10 @@ const Subtitle = styled(motion.h2)`
     margin: 1rem 0 1rem 0;
     letter-spacing: 0.1rem;
     font-weight: 400;
-
+    @media (max-width: 768px) {
+    font-size: 2rem;
+    width: 100vw;
+    }
 `
 
 const SubtitleAppear = styled(motion.div)`

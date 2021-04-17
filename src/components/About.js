@@ -18,88 +18,88 @@ import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 import { faRedo } from "@fortawesome/free-solid-svg-icons";
 
 const htmlIcon = <FontAwesomeIcon className="html-icon"
-    icon={faHtml5} />
+  icon={faHtml5} />
 const cssIcon = <FontAwesomeIcon className="css-icon"
-    icon={faCss3Alt} />
+  icon={faCss3Alt} />
 const sassIcon = <FontAwesomeIcon className="sass-icon"
-    icon={faSass} />
+  icon={faSass} />
 
 const jsIcon = <FontAwesomeIcon className="js-icon"
-    icon={faJsSquare} />
+  icon={faJsSquare} />
 const reactIcon = <FontAwesomeIcon className="react-icon"
-    icon={faReact} />
+  icon={faReact} />
 
 const figmaIcon = <FontAwesomeIcon className="figma-icon"
-    icon={faFigma} />
+  icon={faFigma} />
 const gitIcon = <FontAwesomeIcon className="git-icon"
-    icon={faGitAlt} />
+  icon={faGitAlt} />
 
 const mobileIcon = <FontAwesomeIcon className="mobile-icon"
-    icon={faMobileAlt} />
+  icon={faMobileAlt} />
 const rwdIcon = <FontAwesomeIcon className="rwd-icon"
-    icon={faLaptopCode} />
+  icon={faLaptopCode} />
 const dryIcon = <FontAwesomeIcon className="dry-icon"
-    icon={faRedo} />
+  icon={faRedo} />
 
 
 
 const About = () => {
-    return (
-        <AboutSection id="about">
-            <h2>_About</h2>
-            <Info>
-                <SectionTitle>Hello, I'm Mateusz Brzeziński.</SectionTitle>
-                <InfoText>
-                    I'm a self taught Front-end Developer and a Creative Web Designer from the Szczecin.
-                    I create fast, responsive, and reliable websites using modern web development tools.
-                    I'm a civil engineering graduate of West Pomeranian University of Technology that fell in love in web development.
+  return (
+    <AboutSection id="about">
+      <Title>_About</Title>
+      <Info>
+        <SectionTitle>Hello, I'm Mateusz Brzeziński.</SectionTitle>
+        <InfoText>
+          I'm a self taught Front-end Developer and a Creative Web Designer from Szczecin.
+          I create fast, responsive, and reliable websites using modern web development tools.
+          I'm a civil engineering graduate of West Pomeranian University of Technology that fell in love in web development.
                     </InfoText>
-                <SectionTitle>Technologies I use:</SectionTitle>
-                <IconsWrap>
-                    <Icon>{htmlIcon} Html5</Icon>
-                    <Icon>{cssIcon} Css3</Icon>
-                    <Icon>{sassIcon} Sass</Icon>
-                    <Icon>BEM</Icon>
-                </IconsWrap>
-                <InfoText>
-                    I write semantic <span className='hvr-pop react-hover'>HTML</span> to improve webpage SEO.
+        <SectionTitle>Technologies I use:</SectionTitle>
+        <IconsWrap>
+          <Icon>{htmlIcon} Html5</Icon>
+          <Icon>{cssIcon} Css3</Icon>
+          <Icon>{sassIcon} Sass</Icon>
+          <Icon>BEM</Icon>
+        </IconsWrap>
+        <InfoText>
+          I write semantic <span className='hvr-pop react-hover'>HTML</span> to improve webpage SEO.
                 For styling I prefer using Styled Components but I feel comfortable with SASS preprocessor, which I like to use along with BEM methodology. </InfoText>
-                <IconsWrap>
-                    <Icon>{jsIcon} Javascript ES6</Icon>
-                    <Icon>{reactIcon} React</Icon>
-                    <Icon>Redux</Icon>
-                    <Icon>jQuery</Icon>
-                    <Icon>Typescript</Icon>
-                </IconsWrap>
-                <InfoText>
-                    I'm using <span className='hvr-pop react-hover'>React</span> as my main framework.
+        <IconsWrap>
+          <Icon>{jsIcon} Javascript ES6</Icon>
+          <Icon>{reactIcon} React</Icon>
+          <Icon>Redux</Icon>
+          <Icon>jQuery</Icon>
+          <Icon>Typescript</Icon>
+        </IconsWrap>
+        <InfoText>
+          I'm using <span className='hvr-pop react-hover'>React</span> as my main framework.
                     I know all the necessary basics of <span className='hvr-pop react-hover'>Redux</span>
                     but I prefer to keep state with useState and context hooks. </InfoText>
-                <IconsWrap>
-                    <Icon>{figmaIcon} Figma</Icon>
-                    <Icon> Photoshop</Icon>
-                    <Icon>{gitIcon} Git</Icon>
-                    <Icon>NPM</Icon>
-                    <InfoText>
-                        I'm designing website layouts using <span className="hvr-float figma-hover">Figma</span>
+        <IconsWrap>
+          <Icon>{figmaIcon} Figma</Icon>
+          <Icon> Photoshop</Icon>
+          <Icon>{gitIcon} Git</Icon>
+          <Icon>NPM</Icon>
+          <InfoText>
+            I'm designing website layouts using <span className="hvr-float figma-hover">Figma</span>
                         and sometimes using Photoshop for images optimalization.
                         I use Git to track all changes in my code that I store on my GitHub page.
                     </InfoText>
-                </IconsWrap>
-                <IconsWrap>
-                    <Icon>{mobileIcon} Mobile first</Icon>
-                    <Icon>{rwdIcon} RWD</Icon>
-                    <Icon>{dryIcon} DRY</Icon>
-                </IconsWrap>
-                <InfoText>
-                    I always focus on Responsive Web Design with mobile first approach to make sure my website works well on every device.
+        </IconsWrap>
+        <IconsWrap>
+          <Icon>{mobileIcon} Mobile first</Icon>
+          <Icon>{rwdIcon} RWD</Icon>
+          <Icon>{dryIcon} DRY</Icon>
+        </IconsWrap>
+        <InfoText>
+          I always focus on Responsive Web Design with mobile first approach to make sure my website works well on every device.
                 </InfoText>
-                <InfoText> Besides the work, I'm interested in music production, playing guitar and listening to basicially all genres of music.
+        <InfoText> Besides the work, I'm interested in music production, playing guitar and listening to basicially all genres of music.
                 You can follow my Instagram or SoundCloud.</InfoText>
-            </Info>
-            <Photo></Photo>
-        </AboutSection>
-    )
+      </Info>
+      <Photo></Photo>
+    </AboutSection>
+  )
 }
 
 const AboutSection = styled.section`
@@ -108,6 +108,18 @@ const AboutSection = styled.section`
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    }
+`
+
+const Title = styled.h2`
+    @media (max-width: 768px) {
+    font-size: column;
+    width: 90vw;
+      }
 `
 
 const Info = styled.div`
@@ -115,6 +127,11 @@ const Info = styled.div`
     width: 1000px;
     border: 1px solid #444;
     border-radius: 20px;
+
+    @media (max-width: 768px) {
+      width: 90vw;
+      height: 70rem;
+    }
 `
 const SectionTitle = styled.h3`
     font-size: 2rem;
@@ -130,7 +147,7 @@ const InfoText = styled.p`
     font-weight: 100;
     text-align: justify;
 
- /* POP */
+ /* Pop animation */
  @-webkit-keyframes hvr-pop {
    50% {
      -webkit-transform: scale(1.2);
@@ -161,7 +178,7 @@ const InfoText = styled.p`
    animation-iteration-count: 1;
  }
 
- /* Float */
+ /* Float animation */
  .hvr-float {
    display: inline-block;
    vertical-align: middle;
@@ -188,6 +205,11 @@ const Photo = styled.div`
     border-radius:20px;
     position: relative;
     overflow: hidden;
+
+    @media (max-width: 768px) {
+    height: 300px;
+    width: 239px;
+    }
 
 &::after, &::before {
     content: "";

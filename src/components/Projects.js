@@ -237,6 +237,9 @@ const BgPosition1 = styled.div`
  left: -5%;
  z-index: -10;
  scale: 1.2;
+ @media (max-width: 768px) {
+    display: none;
+}
 `
 
 const BgPosition2 = styled.div`
@@ -245,6 +248,9 @@ const BgPosition2 = styled.div`
  right: -5%;
  z-index: -10;
  scale: 1.2;
+ @media (max-width: 768px) {
+    display: none;
+}
 `
 
 const Title = styled.h2`

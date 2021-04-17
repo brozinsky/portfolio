@@ -9,10 +9,11 @@ const Contact = () => {
             <Form>
                 <InputWrap>
                     <Input placeholder="name" type="text" />
-                    <Input placeholder="e-mail" type="text" />
+                    <Input placeholder="e-mail" type="email" />
                 </InputWrap>
                 <TextArea placeholder="message..." name="Message" id="" cols="30" rows="10"></TextArea>
                 <FormButton>Send</FormButton>
+
             </Form>
         </ContactSection>
     )
@@ -45,10 +46,24 @@ const Form = styled.form`
     justify-content: space-between;
     width: 600px;
     margin: 0 auto;
+
+    @media (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    }
 `
 
 const InputWrap = styled.div`
     height: 60px;
+
+    @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    }
 `
 
 const Input = styled.input`
@@ -60,8 +75,14 @@ const Input = styled.input`
     margin: 3px;
     padding-left: 10px;
     box-shadow: none;
-    outline:none;
+    outline: none;
     box-sizing: content-box;
+
+    @media (max-width: 768px) {
+    width: 90vw;
+    box-sizing: border-box;
+    height: 70px;
+    }
 &:focus{
     border-bottom: 4px solid #F13F3F;
 }
@@ -78,6 +99,10 @@ const TextArea = styled.textarea`
     font-family: 'Rajdhani', 'Helvetica Neue',
     sans-serif;
     outline:none;
+
+    @media (max-width: 768px) {
+    width: 90vw;
+    }
 &:focus{
     border: 1px solid #F13F3F;
 }
