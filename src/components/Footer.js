@@ -14,12 +14,18 @@ const linkedinIcon = <FontAwesomeIcon className="footer-social-icon"
     icon={faLinkedin} />
 
 const Footer = () => {
+    const handleScrollButton = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
     return (
         <>
             <StyledFooter>
                 <TriangleBackground />
                 <ButtonCenter>
-                    <ButtonToTop>
+                    <ButtonToTop onClick={handleScrollButton}>
                         {arrowIcon}
                     </ButtonToTop>
                 </ButtonCenter>

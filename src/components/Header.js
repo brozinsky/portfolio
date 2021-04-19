@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 import { motion } from 'framer-motion';
-import { appearAnim, } from "../animations/animation";
 import { TextAppear } from "../animations/textAppear";
 import TreeMid from './CircuitTree/TreeMid'
 import TreeBot from './CircuitTree/TreeBot'
@@ -75,7 +74,7 @@ const Header = () => {
                     }}
                 />
             </SubtitleWrapper>
-            <HeaderButton
+            <HeaderButton href="#projects"
                 initial={{ y: '-100%', opacity: 0 }}
                 animate={{
                     y: 0,
@@ -86,7 +85,7 @@ const Header = () => {
                     duration: 1.2,
                 }}
 
-            >{buttonText} <ArrowIcon></ArrowIcon> </HeaderButton>
+            >{buttonText} <ArrowIcon /> </HeaderButton>
             <HeaderFrame>
                 <Icon
                     initial={{ opacity: 0 }}
@@ -107,7 +106,7 @@ const Header = () => {
                     className='social-icon'
                     href="">{linkedinIcon}</Icon>
             </HeaderFrame>
-            <ToBottom>
+            <ToBottom href="#projects" >
                 <Triangle
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 0.3 }}
@@ -178,7 +177,7 @@ const Header = () => {
     )
 }
 
-const ToBottom = styled.div`
+const ToBottom = styled.a`
 position: absolute;
 bottom: 15px;
 left: 50%;
@@ -239,16 +238,18 @@ display: flex;
 flex-direction: column;
 align-items: flex-end;
 `
-const HeaderButton = styled(motion.button)`
+const HeaderButton = styled(motion.a)`
     margin: 1rem auto;
     width: 200px;
     height: 55px;
+    line-height: 55px;
     border: 1px solid #F13F3F;
     color: #F13F3F;
     font-family: 'Rajdhani', 'Helvetica Neue',
     sans-serif;
     font-size: 1.4rem;
     text-transform: uppercase;
+    text-align: center;
     background: #111;
     backdrop-filter: blur( 18.0px );
     &:hover{
@@ -261,6 +262,13 @@ const HeaderButton = styled(motion.button)`
     }
     &:hover svg{
     transform: rotate(90deg)
+    }
+    &:link, &:visited, &:not(.default):link, &:not(.default):visited {
+    color: #F13F3F;
+    text-decoration: none;
+    &:hover{
+    color: #111;
+    }
     }
 `
 
@@ -325,7 +333,11 @@ const LineTop = styled(motion.div)`
     top: 10vh;
     left: 0;
     background: #666;
-    z-index:3;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+    display: none;
+    }
 `
 const LineBot = styled(motion.div)`
     width: 100vw;
@@ -334,7 +346,11 @@ const LineBot = styled(motion.div)`
     bottom: 8vh;
     left: 0;
     background: #666;
-    z-index:3;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+    display: none;
+    }
 `
 const LineLeft = styled(motion.div)`
     width: 1px;
@@ -343,7 +359,11 @@ const LineLeft = styled(motion.div)`
     top: 55px;
     left: 7vw;
     background: #666;
-    z-index:3;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+    display: none;
+    }
 `
 const LineRight = styled(motion.div)`
     width: 1px;
@@ -352,7 +372,11 @@ const LineRight = styled(motion.div)`
     top: 55px;
     right: 7vw;
     background: #666;
-    z-index:3;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+    display: none;
+    }
 `
 
 
