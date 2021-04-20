@@ -1,18 +1,45 @@
 import React from 'react';
 import styled from "styled-components";
+import { useForm } from '@formspree/react';
 
 const Contact = () => {
+    const [state, handleSubmit] = useForm("mvodgwog");
+
     return (
         <ContactSection id="contact">
             <Title>Want to contact me?</Title>
             <Text>Please, use the form below or send an email to mateusz0brzezinski@gmail.com</Text>
-            <Form>
+            {state.succeeded ? <MessageSuccess>Your message has been sent!</MessageSuccess> : null}
+            {state.errors.length ? <MessageError>Incorrect email</MessageError> : null}
+            <Form onSubmit={handleSubmit}>
                 <InputWrap>
-                    <Input placeholder="name" type="text" />
-                    <Input placeholder="e-mail" type="email" />
+                    <Input
+                        placeholder="name"
+                        type="text"
+                        name='name'
+                        required
+                    />
+                    <Input
+                        placeholder="e-mail"
+                        id="email"
+                        type="email"
+                        name="email"
+                        required
+                    />
+
                 </InputWrap>
-                <TextArea placeholder="message..." name="Message" id="" cols="30" rows="10"></TextArea>
-                <FormButton>Send</FormButton>
+                <TextArea
+                    placeholder="message..."
+                    name="message"
+                    id="message"
+                    cols="30"
+                    rows="10"
+                    required
+                ></TextArea>
+
+                <FormButton
+                    type="submit" disabled={state.submitting}
+                >Send</FormButton>
 
             </Form>
         </ContactSection>
@@ -23,6 +50,29 @@ const ContactSection = styled.section`
     font-family: 'Rajdhani', 'Helvetica Neue',
     sans-serif;
     margin-top: 10rem;
+`
+
+const MessageSuccess = styled.p`
+    font-family: 'Rajdhani', 'Helvetica Neue',
+    sans-serif;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    width: 100vw;
+    text-align: center;
+    color: #23c731;
+
+`
+
+const MessageError = styled.p`
+    font-family: 'Rajdhani', 'Helvetica Neue',
+    sans-serif;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    width: 100vw;
+    text-align: center;
+    color: #C92424;
 `
 
 const Title = styled.h3`
