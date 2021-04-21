@@ -107,6 +107,9 @@ const Svg = styled(motion.svg)`
 position: absolute;
 bottom: -15%;
 right: -5%;
+@media (max-width: 768px) {
+opacity: 0.8;
+}
 `
 
 const Group = styled(motion.g)`

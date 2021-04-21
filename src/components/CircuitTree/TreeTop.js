@@ -1,4 +1,3 @@
-
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
@@ -53,7 +52,6 @@ const TreeTop = () => {
 const Tree = styled.svg`
 z-index: -1;
 transform: translate(0,200px);
-
 `
 
 export default TreeTop

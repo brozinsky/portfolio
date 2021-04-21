@@ -32,6 +32,8 @@ top: 5%;
 right: 3%;
 opacity: 0.5;
 z-index: 0;
+@media (max-width: 768px) {
+display: none;}
 `
 
 export default SqStripes

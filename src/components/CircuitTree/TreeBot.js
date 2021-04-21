@@ -61,19 +61,9 @@ const TreeBot = () => {
     )
 }
 
-
-
-
 const Tree = styled.svg`
 z-index: -1;
 transform: translate(0,-250px);
-
-/* position: absolute;
-
-/* position: absolute;
-left: 50%;
-top:80%;
-transform: translate(-50%,-50%) */
 `
 
 export default TreeBot

@@ -27,8 +27,6 @@ const DetailsImage = ({ title, tag, technologies, info, type, img, githubUrl, we
     );
 
     const handleImageClick = () => {
-        console.log(technologies)
-        console.log(info)
         setDetails(
             {
                 title: title,
@@ -346,6 +344,11 @@ const Close = styled.div`
     align-items: center;
     margin: 0 auto;
     z-index: 9999;
+
+    @media (max-width: 768px) {
+        top: 2vh;
+        right: 17.5vw;
+    }
 
     &:before, &:after{
     position: absolute;

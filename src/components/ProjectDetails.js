@@ -215,8 +215,6 @@ right:0;
 
 `
 
-
-
 const ListItem = styled(motion.li)`
 font-size: 1.15rem;
 margin: 0.4rem 0;
@@ -238,10 +236,18 @@ const Card = styled(motion.div)`
     display: flex;
     flex-direction: column;
 
+    @media (max-width: 768px) {
+    height: 98vh;
+    }
+
 .info-header {
     display: flex;
     flex-direction: row;
     background: none;
+
+    @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    }
 }
 
 .info-wrap {
@@ -250,10 +256,16 @@ const Card = styled(motion.div)`
     height: 400px;
     margin: auto;
     max-width: 350px;
-
+    @media (max-width: 768px) {
+     height: 100%;
+     margin-bottom: 5rem;
+    }
 }
 .details-tags {
     margin: 0 auto;
+    @media (max-width: 768px) {
+    display: none;
+    }
 }
 
 .dtag{
@@ -265,6 +277,10 @@ const Card = styled(motion.div)`
     border-radius: 10px;
     padding: 0.15rem 0.3rem;
     margin: 0 0.5rem;
+
+    @media (max-width: 768px) {
+    display: none;
+    }
 
     & svg{
         height: 2rem;
@@ -359,6 +375,10 @@ const Img = styled(motion.img)`
     height: 400px;
     margin: 2rem;
     transition: 1s;
+    @media (max-width: 768px) {
+    height: 40vw;
+    display: none;
+    }
 /*
     &:hover{
         transform: rotate(-15deg);
@@ -383,6 +403,10 @@ const LineTop = styled(motion.div)`
     left: 0;
     background: #666;
     z-index:3;
+
+    @media (max-width: 768px) {
+    top: 2vh;
+    }
 `
 const LineBot = styled(motion.div)`
     width: 100vw;
@@ -392,6 +416,10 @@ const LineBot = styled(motion.div)`
     left: 0;
     background: #666;
     z-index:3;
+
+    @media (max-width: 768px) {
+    bottom: 2vh;
+    }
 `
 const LineLeft = styled(motion.div)`
     width: 1px;

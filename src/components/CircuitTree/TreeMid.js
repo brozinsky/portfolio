@@ -69,7 +69,6 @@ const TreeMid = () => {
 
 const Tree = styled.svg`
 z-index: -1;
-/* transform: translate(-50%,-50%) */
 `
 
 export default TreeMid

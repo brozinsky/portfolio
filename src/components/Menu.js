@@ -12,6 +12,7 @@ const menuIcon = <FontAwesomeIcon className="footer-social-icon"
 
 const Menu = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const logoText = 'codeTree';
 
     const burgerHandler = () => {
         setIsOpen(current => !current)
@@ -19,12 +20,15 @@ const Menu = () => {
 
     return (
         <NavBar>
-            <Logo>
-                <img
-                    className="logo"
-                    src={logo}
-                    alt="logo" />
-            </Logo>
+            <LogoWrap>
+                <Logo>
+                    <img
+                        className="logo"
+                        src={logo}
+                        alt="logo" />
+                </Logo>
+                <LogoText>{logoText}</LogoText>
+            </LogoWrap>
             <Burger onClick={burgerHandler} >
                 {menuIcon}
             </Burger>
@@ -48,15 +52,6 @@ const Menu = () => {
     )
 }
 
-const Burger = styled.div`
-width: 2rem;
-font-size: 2.4rem;
-margin-right: 1rem;
-@media (min-width: 768px) {
-display: none;
-}
-`
-
 const NavBar = styled.nav`
     position: fixed;
     width: 100vw;
@@ -67,13 +62,17 @@ const NavBar = styled.nav`
     font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
-    z-index: 1;
+    z-index: 2;
     background: rgba(17, 17, 17, 0.8);
     margin-top: 0;
     align-items: center;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     backdrop-filter: blur( 18.0px );
     -webkit-backdrop-filter: blur( 18.0px );
+
+    @media (max-width: 768px) {
+        background: #000;
+    }
 
     .tabs{
     @media (max-width: 768px) {
@@ -82,18 +81,19 @@ const NavBar = styled.nav`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 55px);
     width: 100vw;
     position: fixed;
-    top:0;
+    top:55px;
     left:0;
     transform: translateX(-100vw);
     transition: 0.2s;
+    z-index: 0;
     }
     }
     .tabs-open{
     @media (max-width: 768px) {
-    transform: translateX(0)
+    transform: translateX(0);
     }
     }
 
@@ -130,9 +130,36 @@ const NavLink = styled.li`
 }
 `
 
-const Logo = styled.div`
-    margin-left: 3rem;
-    scale: 0.6;
+const Burger = styled.div`
+width: 2rem;
+font-size: 2rem;
+margin-right: 2rem;
+@media (min-width: 768px) {
+display: none;
+}
 `
+
+const Logo = styled.div`
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+    & img{
+        height: 33px;
+        margin-right: 0.4rem;
+    }
+`
+const LogoText = styled.h3`
+font-size: 1.8rem;
+text-transform: none;
+color: #fff;
+`
+const LogoWrap = styled.div`
+display: flex;
+flex-direction: row;
+height: 100%;
+align-items: center;
+`
+
+
 
 export default Menu;

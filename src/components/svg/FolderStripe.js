@@ -39,6 +39,9 @@ top: 79%;
 left: -25px;
 opacity: 0.6;
 z-index: 0;
+@media (max-width: 768px) {
+display: none;
+}
 `
 
 export default FolderStripe

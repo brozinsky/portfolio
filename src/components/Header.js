@@ -87,24 +87,26 @@ const Header = () => {
 
             >{buttonText} <ArrowIcon /> </HeaderButton>
             <HeaderFrame>
-                <Icon
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.6 }}
-                    transition={{
-                        delay: 2.2,
-                        duration: 1.5,
-                    }}
-                    className='social-icon'
-                    href="https://github.com/brozinsky">{githubIcon}</Icon>
-                <Icon
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.6 }}
-                    transition={{
-                        delay: 2.2,
-                        duration: 1.5,
-                    }}
-                    className='social-icon'
-                    href="">{linkedinIcon}</Icon>
+                <IconContainer>
+                    <Icon
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 0.6 }}
+                        transition={{
+                            delay: 2.2,
+                            duration: 1.5,
+                        }}
+                        className='social-icon'
+                        href="https://github.com/brozinsky">{githubIcon}</Icon>
+                    <Icon
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 0.6 }}
+                        transition={{
+                            delay: 2.2,
+                            duration: 1.5,
+                        }}
+                        className='social-icon'
+                        href="">{linkedinIcon}</Icon>
+                </IconContainer>
             </HeaderFrame>
             <ToBottom href="#projects" >
                 <Triangle
@@ -185,6 +187,22 @@ transform: translate(-50%,0%);
 cursor: pointer;
 `
 
+const IconContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 8vh;
+    right: 7vw;
+
+    @media (max-width: 768px) {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    flex-direction: row-reverse;
+    }
+
+`
+
 const Icon = styled(motion.a)`
     color: #111;
     font-size: 2.5rem;
@@ -195,7 +213,6 @@ const Icon = styled(motion.a)`
     &:hover {
         color: #fff;
     }
-
 `
 
 const Triangle = styled(motion.div)`
@@ -230,13 +247,25 @@ const HeaderStyle = styled(motion.header)`
 `
 const TreeContainer = styled.div`
 position: absolute;
-left: 50%;
-top:50%;
-z-index: -1;
-transform: translate(-50%,-50%);
+max-width: 90vw;
+right: 50%;
+top: 50%;
+transform: translate(50%,-50%);
 display: flex;
 flex-direction: column;
 align-items: flex-end;
+z-index: -1;
+
+@media (max-width: 1200px) {
+    transform: translate(60%,-50%) scale(0.8);
+    }
+
+@media (max-width: 768px) {
+    top: 15vh;
+    transform: translate(50%,0) rotate(90deg) scale(0.7);
+    }
+
+
 `
 const HeaderButton = styled(motion.a)`
     margin: 1rem auto;
