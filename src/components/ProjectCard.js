@@ -86,8 +86,9 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
         <>
             <CardWrapper>
                 <TagWrapper>{
-                    tag.map((tag) =>
+                    tag.map((tag, i) =>
                         <div
+                            key={i}
                             className={tag.name + '-tag card-tag'} >
                             <span
                                 className={tag.name === 'api' ? 'small' : ''}>

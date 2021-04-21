@@ -203,8 +203,9 @@ const Projects = () => {
     return (
         <ProjectsSection id="projects">
             <Title>_Projects</Title>
-            {projects.map(project =>
+            {projects.map((project, i) =>
                 <ProjectCard
+                    key={i}
                     title={project.title}
                     tag={project.tag}
                     icons={project.tagIcons}

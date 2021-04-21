@@ -29,12 +29,13 @@ const pathArray = [
 const TreeTop = () => {
     return (
         <Tree width="983" height="297" viewBox="0 0 983 297" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {pathArray.map(path => {
+            {pathArray.map((path, i) => {
                 return (
                     <motion.path
+                        key={i}
                         style={path.isReverse ? { rotate: '180deg' } : ''}
-                        initial={!path.isReceiver ? { pathLength: 0, pathLOffset: 1 } : { scale: 0 }}
-                        animate={!path.isReceiver ? { pathLength: 1, pathLOffset: 0 } : { scale: 1 }}
+                        initial={!path.isReceiver ? { pathLength: 0, pathOffset: 1 } : { scale: 0 }}
+                        animate={!path.isReceiver ? { pathLength: 1, pathOffset: 0 } : { scale: 1 }}
                         transition={{
                             delay: path.delay,
                             duration: path.duration,
@@ -42,7 +43,7 @@ const TreeTop = () => {
                         }}
                         d={path.d}
                         stroke="#555"
-                        stroke-width="0.5" />
+                        strokeWidth="0.5" />
                 )
             })}
         </Tree>

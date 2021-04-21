@@ -31,7 +31,7 @@ const Footer = () => {
                 </ButtonCenter>
                 <WrapLinks>
                     <a href="https://github.com/brozinsky">{githubIcon}</a>
-                    <a href="">{linkedinIcon}</a>
+                    <a href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/">{linkedinIcon}</a>
                 </WrapLinks>
                 <Small>Created by &nbsp;
                 <SmallLink

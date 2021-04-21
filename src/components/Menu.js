@@ -20,7 +20,9 @@ const Menu = () => {
 
     return (
         <NavBar>
-            <LogoWrap>
+            <LogoWrap
+                href="#"
+            >
                 <Logo>
                     <img
                         className="logo"
@@ -153,7 +155,7 @@ font-size: 1.8rem;
 text-transform: none;
 color: #fff;
 `
-const LogoWrap = styled.div`
+const LogoWrap = styled.a`
 display: flex;
 flex-direction: row;
 height: 100%;
