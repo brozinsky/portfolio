@@ -50,6 +50,10 @@ const ContactSection = styled.section`
     font-family: 'Rajdhani', 'Helvetica Neue',
     sans-serif;
     margin-top: 10rem;
+
+    @media (max-width: 1200px) {
+        margin-top: 0;
+    }
 `
 
 const MessageSuccess = styled.p`
@@ -80,6 +84,10 @@ const Title = styled.h3`
     text-align: center;
     font-size: 2rem;
     margin: 2rem ;
+
+    @media (max-width: 1200px) {
+    margin-top: 4rem;
+    }
 `
 
 const Text = styled.p`

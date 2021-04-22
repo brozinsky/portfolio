@@ -261,6 +261,9 @@ const Title = styled.h2`
     font-weight: 400;
     width: 100%;
     margin: 4rem 5rem 2rem 5rem;
+    @media (max-width: 1200px) {
+    text-align: center;
+}
 `
 
 export default Projects

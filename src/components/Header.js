@@ -57,14 +57,14 @@ const Header = () => {
             </TopSubtitle>
             <TextAppear text={titleText} />
             <SubtitleWrapper>
-                <Subtitle
+                <BotSubtitle
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{
                         delay: 2.2,
                     }}>
                     {subTitleText}
-                </Subtitle>
+                </BotSubtitle>
                 <SubtitleAppear
                     initial={{ x: '-100%', opacity: 0 }}
                     animate={{ x: '100%', opacity: 1 }}
@@ -105,7 +105,7 @@ const Header = () => {
                             duration: 1.5,
                         }}
                         className='social-icon'
-                        href="">{linkedinIcon}</Icon>
+                        href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/">{linkedinIcon}</Icon>
                 </IconContainer>
             </HeaderFrame>
             <ToBottom href="#projects" >
@@ -229,6 +229,7 @@ display: flex;
 flex-direction: row;
 justify-content: flex-end;
 align-items: flex-end;
+
 `
 
 const HeaderStyle = styled(motion.header)`
@@ -327,10 +328,9 @@ position: relative;
 margin: 1.6rem auto 2rem auto;
 `
 
-const Subtitle = styled(motion.h2)`
+const BotSubtitle = styled(motion.h2)`
     text-align: center;
     color: #fff;
-    /* margin: 3rem; */
     font-size: 3.5rem;
     position: absolute;
     top: 0;
@@ -338,9 +338,12 @@ const Subtitle = styled(motion.h2)`
     margin: 1rem 0 1rem 0;
     letter-spacing: 0.1rem;
     font-weight: 400;
+
     @media (max-width: 768px) {
     font-size: 2rem;
-    width: 100vw;
+    }
+    @media (max-width: 930px) {
+        width: 100vw;
     }
 `
 

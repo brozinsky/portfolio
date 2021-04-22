@@ -49,6 +49,10 @@ const StyledFooter = styled.footer`
     height:150px;
     position: relative;
     margin-top: 12rem;
+
+    @media (max-width: 1200px) {
+        margin-top: 5rem;
+    }
 `
 
 const TriangleBackground = styled.div`

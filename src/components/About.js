@@ -62,7 +62,7 @@ const About = () => {
           <Icon>BEM</Icon>
         </IconsWrap>
         <InfoText>
-          I write semantic <span className='hvr-pop react-hover'>HTML</span> to improve webpage SEO.
+          I write semantic HTML to improve webpage SEO.
                 For styling I prefer using Styled Components but I feel comfortable with SASS preprocessor, which I like to use along with BEM methodology. </InfoText>
         <IconsWrap>
           <Icon>{jsIcon} Javascript ES6</Icon>
@@ -72,18 +72,16 @@ const About = () => {
           <Icon>Typescript</Icon>
         </IconsWrap>
         <InfoText>
-          I'm using <span className='hvr-pop react-hover'>React</span> as my main framework.
-                    I know all the necessary basics of <span className='hvr-pop react-hover'>Redux</span>
-                    but I prefer to keep state with useState and context hooks. </InfoText>
+          I'm using React as my main framework.
+                    I know all the necessary basics of Redux but I prefer to keep state with useState and context hooks. </InfoText>
         <IconsWrap>
           <Icon>{figmaIcon} Figma</Icon>
           <Icon> Photoshop</Icon>
           <Icon>{gitIcon} Git</Icon>
           <Icon>NPM</Icon>
           <InfoText>
-            I'm designing website layouts using <span className="hvr-float figma-hover">Figma</span>
-                        and sometimes using Photoshop for images optimalization.
-                        I use Git to track all changes in my code that I store on my GitHub page.
+            I'm designing website layouts using Figma and sometimes using Photoshop for images optimalization.
+            I use Git to track all changes in my code that I store on my GitHub page.
                     </InfoText>
         </IconsWrap>
         <IconsWrap>
@@ -112,25 +110,25 @@ const AboutSection = styled.section`
     @media (max-width: 768px) {
     flex-direction: column;
     justify-content: center;
+    flex-wrap: nowrap;
     }
 `
 
 const Title = styled.h2`
-    @media (max-width: 768px) {
-    font-size: column;
+    @media (max-width: 1200px) {
     width: 90vw;
-      }
+    text-align: center;
+    }
 `
 
 const Info = styled.div`
-    height: 750px;
-    width: 1000px;
+    max-height: 100%;
+    max-width: 1000px;
     border: 1px solid #444;
     border-radius: 20px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
       width: 90vw;
-      height: 70rem;
     }
 `
 const SectionTitle = styled.h3`
@@ -146,56 +144,9 @@ const InfoText = styled.p`
     font-size: 1.2rem;
     font-weight: 100;
     text-align: justify;
-
- /* Pop animation */
- @-webkit-keyframes hvr-pop {
-   50% {
-     -webkit-transform: scale(1.2);
-     transform: scale(1.2);
-   }
- }
- @keyframes hvr-pop {
-   50% {
-     -webkit-transform: scale(1.2);
-     transform: scale(1.2);
-   }
- }
- .hvr-pop {
-   display: inline-block;
-   vertical-align: middle;
-   -webkit-transform: perspective(1px) translateZ(0);
-   transform: perspective(1px) translateZ(0);
-   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
- }
- .hvr-pop:hover, .hvr-pop:focus, .hvr-pop:active {
-   -webkit-animation-name: hvr-pop;
-   animation-name: hvr-pop;
-   -webkit-animation-duration: 0.3s;
-   animation-duration: 0.3s;
-   -webkit-animation-timing-function: linear;
-   animation-timing-function: linear;
-   -webkit-animation-iteration-count: 1;
-   animation-iteration-count: 1;
- }
-
- /* Float animation */
- .hvr-float {
-   display: inline-block;
-   vertical-align: middle;
-   -webkit-transform: perspective(1px) translateZ(0);
-   transform: perspective(1px) translateZ(0);
-   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-   -webkit-transition-duration: 0.3s;
-   transition-duration: 0.3s;
-   -webkit-transition-property: transform;
-   transition-property: transform;
-   -webkit-transition-timing-function: ease-out;
-   transition-timing-function: ease-out;
- }
- .hvr-float:hover, .hvr-float:focus, .hvr-float:active {
-   -webkit-transform: translateY(-8px);
-   transform: translateY(-8px);
- }
+    @media (max-width: 1200px) {
+      text-align: center;
+    }
 `
 
 const Photo = styled.div`
@@ -207,8 +158,15 @@ const Photo = styled.div`
     overflow: hidden;
 
     @media (max-width: 768px) {
+    margin: 2rem auto;
     height: 300px;
     width: 239px;
+    }
+
+    @media (max-width: 1200px) {
+    margin: 2rem auto;
+    height: 520px;
+    width: 415px;
     }
 
 &::after, &::before {
@@ -236,8 +194,7 @@ text-transform: uppercase;
 font-weight: 400;
 color: #bbb;
 display:inline-block;
-margin-left: 0.3rem;
-margin-right: 0.3rem;
+margin: 0.3rem;
 border: 1px solid #bbb;
 border-radius: 20px;
 padding: 0.1rem 0.5rem;

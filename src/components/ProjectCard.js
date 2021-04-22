@@ -142,7 +142,9 @@ const Card = styled.div`
     @media (max-width: 768px) {
     width: 300px;
     height: 270px;
+    margin-top: 4rem;
     }
+
 `
 
 const CardWrapper = styled.div`
@@ -251,6 +253,14 @@ const TagWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+        flex-direction: row;
+        right: 50%;
+        top: 5px;
+        width: 100%;
+        transform: translate(50%, 0)
+    }
 
 .card-tag{
     transition: 0.15s;
