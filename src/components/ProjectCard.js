@@ -347,7 +347,7 @@ const Close = styled.div`
     background: #666;
     position: fixed;
     top: 10vh;
-    right: 15vw;
+    right: 16vw;
     cursor: pointer;
     line-height: 3rem;
     display: flex;
@@ -356,9 +356,9 @@ const Close = styled.div`
     margin: 0 auto;
     z-index: 9999;
 
-    @media (max-width: 768px) {
-        top: 2vh;
-        right: 17.5vw;
+    @media (max-width: 1200px) {
+        top: 55px;
+        right: 1rem;
     }
 
     &:before, &:after{

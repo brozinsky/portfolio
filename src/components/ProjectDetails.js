@@ -179,50 +179,6 @@ const Shadow = styled.div`
     display: flex;
 `
 
-const Title = styled(motion.h2)`
-font-size: 2.5rem;
-text-align: center;
-margin: 2rem auto 1rem auto;
-font-weight: 600;
-letter-spacing: 1px;
-`
-
-const SubtitleWrapper = styled.div`
-height: 30px;
-width: 350px;
-margin: 1rem 0 0.5rem 0;
-overflow:hidden;
-position: relative;
-`
-
-const Subtitle = styled(motion.h3)`
-font-size: 1.5rem;
-text-align: center;
-position: absolute;
-top: 0;
-left: 0;
-color: #fff;
-z-index: 9000;
-/* margin: 1rem 0 0.5rem 0; */
-`
-const SubtitleAppear = styled(motion.div)`
-height: 30px;
-width: 350px;
-background: #fff;
-position: absolute;
-top: 0;
-right:0;
-
-`
-
-const ListItem = styled(motion.li)`
-font-size: 1.15rem;
-margin: 0.4rem 0;
-font-weight: 300;
-color: #bbb;
-list-style-type: square;
-`
-
 const Card = styled(motion.div)`
     width: 70vw;
     margin: auto;
@@ -232,18 +188,34 @@ const Card = styled(motion.div)`
     z-index: 2;
     overflow-y: auto;
     overflow-x: hidden;
-    /* border: solid 1px #666; */
     display: flex;
     flex-direction: column;
+    align-items: center;
 
-    @media (max-width: 768px) {
-    height: 98vh;
+    @media (max-width: 1200px) {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    justify-content: center;
     }
 
 .info-header {
     display: flex;
     flex-direction: row;
     background: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+
+    @media (max-width: 1600px) {
+        justify-content: space-around;
+        width: 80%;
+    }
+
+    @media (max-width: 1200px) {
+        justify-content: space-around;
+        width: 100vw;
+    }
 
     @media (max-width: 768px) {
     flex-direction: column-reverse;
@@ -254,11 +226,11 @@ const Card = styled(motion.div)`
     display: flex;
     flex-direction: column;
     height: 400px;
-    margin: auto;
+    /* margin-left: 2rem; */
     max-width: 350px;
     @media (max-width: 768px) {
      height: 100%;
-     margin-bottom: 5rem;
+     /* margin-bottom: 5rem; */
     }
 }
 .details-tags {
@@ -324,18 +296,71 @@ const Card = styled(motion.div)`
         background: var(--color-styled-components);
 }
 `
+
+const Title = styled(motion.h2)`
+font-size: 2.5rem;
+text-align: center;
+margin: 2rem auto 1rem auto;
+font-weight: 600;
+letter-spacing: 1px;
+`
+
+const SubtitleWrapper = styled.div`
+height: 30px;
+width: 350px;
+margin: 1rem 0 0.5rem 0;
+overflow:hidden;
+position: relative;
+`
+
+const Subtitle = styled(motion.h3)`
+font-size: 1.5rem;
+text-align: center;
+position: absolute;
+top: 0;
+left: 0;
+color: #fff;
+z-index: 9000;
+/* margin: 1rem 0 0.5rem 0; */
+`
+const SubtitleAppear = styled(motion.div)`
+height: 30px;
+width: 350px;
+background: #fff;
+position: absolute;
+top: 0;
+right:0;
+`
+
+const ListItem = styled(motion.li)`
+font-size: 1.15rem;
+margin: 0.4rem 0;
+font-weight: 300;
+color: #bbb;
+list-style-type: square;
+`
+
+
 const InfoBottom = styled.div`
-    height: 30vh;;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     background: none;
+    @media (max-width: 768px) {
+    margin-top: 1rem;
+    height: auto;
+    }
 `
 const LinksWrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    @media (max-width: 768px) {
+    max-height: 100%;
+    margin-top: 1rem;
+    }
 `
 
 const Link = styled(motion.a)`
@@ -370,15 +395,21 @@ const Info = styled(motion.div)`
     margin: 0 auto;
     font-weight: 200;
     line-height: 1.6rem;
+    @media (max-width: 768px) {
+    width: 50vw;
+    min-width: 384px;
+    }
 `
 const Img = styled(motion.img)`
-    height: 400px;
+    /* height: 400px; */
     margin: 2rem;
     transition: 1s;
     @media (max-width: 768px) {
-    height: 40vw;
     display: none;
     }
+    @media (max-width: 1200px) {
+    height: 270px;
+}
 /*
     &:hover{
         transform: rotate(-15deg);
@@ -404,7 +435,7 @@ const LineTop = styled(motion.div)`
     background: #666;
     z-index:3;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
     top: 2vh;
     }
 `
@@ -417,8 +448,8 @@ const LineBot = styled(motion.div)`
     background: #666;
     z-index:3;
 
-    @media (max-width: 768px) {
-    bottom: 2vh;
+    @media (max-width: 1200px) {
+    display: none;
     }
 `
 const LineLeft = styled(motion.div)`
@@ -429,6 +460,9 @@ const LineLeft = styled(motion.div)`
     left: 15vw;
     background: #666;
     z-index:3;
+    @media (max-width: 1200px) {
+    display: none;
+    }
 `
 const LineRight = styled(motion.div)`
     width: 1px;
@@ -438,6 +472,9 @@ const LineRight = styled(motion.div)`
     right: 15vw;
     background: #666;
     z-index:3;
+    @media (max-width: 1200px) {
+    display: none;
+    }
 `
 
 
