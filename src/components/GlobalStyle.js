@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
-body {
+html {
   margin: 0;
   font-family: 'Montserrat', 'Helvetica Neue',
     sans-serif;
@@ -10,7 +10,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #111111;
   color: #fff;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 *{

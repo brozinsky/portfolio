@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -16,6 +16,11 @@ import { faGitAlt } from '@fortawesome/free-brands-svg-icons';
 import { faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 import { faRedo } from "@fortawesome/free-solid-svg-icons";
+
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger)
 
 const htmlIcon = <FontAwesomeIcon className="html-icon"
   icon={faHtml5} />
@@ -44,6 +49,34 @@ const dryIcon = <FontAwesomeIcon className="dry-icon"
 
 
 const About = () => {
+  useEffect(() => {
+    const icons = document.querySelectorAll(".icons-wrap");
+    const iconsText = document.querySelectorAll(".icons-text");
+
+    icons.forEach(item => {
+      gsap.fromTo(item.children, { x: '+=20', opacity: 0 },
+        {
+          x: 0, opacity: 1, stagger: 0.2, duration: 0.6,
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 65%',
+            ease: 'power1. out'
+          }
+        })
+    })
+
+    iconsText.forEach(item => {
+      gsap.fromTo(item, { y: '-=20', opacity: 0, delay: 1 },
+        {
+          y: 0, opacity: 1, stagger: 0.2, duration: 1,
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 65%',
+            ease: 'power1. out'
+          }
+        })
+    })
+  }, [])
   return (
     <AboutSection id="about">
       <Title>_About</Title>
@@ -55,41 +88,41 @@ const About = () => {
           I'm a civil engineering graduate of West Pomeranian University of Technology that fell in love in web development.
                     </InfoText>
         <SectionTitle>Technologies I use:</SectionTitle>
-        <IconsWrap>
+        <IconsWrap className='icons-wrap'>
           <Icon>{htmlIcon} Html5</Icon>
           <Icon>{cssIcon} Css3</Icon>
           <Icon>{sassIcon} Sass</Icon>
           <Icon>BEM</Icon>
         </IconsWrap>
-        <InfoText>
+        <InfoText className='icons-text'>
           I write semantic HTML to improve webpage SEO.
                 For styling I prefer using Styled Components but I feel comfortable with SASS preprocessor, which I like to use along with BEM methodology. </InfoText>
-        <IconsWrap>
+        <IconsWrap className='icons-wrap'>
           <Icon>{jsIcon} Javascript ES6</Icon>
           <Icon>{reactIcon} React</Icon>
           <Icon>Redux</Icon>
           <Icon>jQuery</Icon>
           <Icon>Typescript</Icon>
         </IconsWrap>
-        <InfoText>
+        <InfoText className='icons-text'>
           I'm using React as my main framework.
                     I know all the necessary basics of Redux but I prefer to keep state with useState and context hooks. </InfoText>
-        <IconsWrap>
+        <IconsWrap className='icons-wrap'>
           <Icon>{figmaIcon} Figma</Icon>
           <Icon> Photoshop</Icon>
           <Icon>{gitIcon} Git</Icon>
           <Icon>NPM</Icon>
-          <InfoText>
-            I'm designing website layouts using Figma and sometimes using Photoshop for images optimalization.
-            I use Git to track all changes in my code that I store on my GitHub page.
-                    </InfoText>
         </IconsWrap>
-        <IconsWrap>
+        <InfoText className='icons-text'>
+          I'm designing website layouts using Figma and sometimes using Photoshop for images optimalization.
+          I use Git to track all changes in my code that I store on my GitHub page.
+                    </InfoText>
+        <IconsWrap className='icons-wrap'>
           <Icon>{mobileIcon} Mobile first</Icon>
           <Icon>{rwdIcon} RWD</Icon>
           <Icon>{dryIcon} DRY</Icon>
         </IconsWrap>
-        <InfoText>
+        <InfoText className='icons-text'>
           I always focus on Responsive Web Design with mobile first approach to make sure my website works well on every device.
                 </InfoText>
         <InfoText> Besides the work, I'm interested in music production, playing guitar and listening to basicially all genres of music.
@@ -159,14 +192,8 @@ const Photo = styled.div`
 
     @media (max-width: 768px) {
     margin: 2rem auto;
-    height: 300px;
-    width: 239px;
-    }
-
-    @media (max-width: 1200px) {
-    margin: 2rem auto;
-    height: 520px;
-    width: 415px;
+    height: 250px;
+    width: 200px;
     }
 
 &::after, &::before {

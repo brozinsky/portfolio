@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from "styled-components";
 import { motion } from 'framer-motion';
 import { TextAppear } from "../animations/textAppear";
@@ -10,6 +10,8 @@ import FolderStripe from './svg/FolderStripe';
 import HexGrp1 from './svg/HexGrp1';
 import HexGrp2 from './svg/HexGrp2';
 import HexGrp3 from './svg/HexGrp3';
+
+import gsap, { ScrollTrigger } from 'gsap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -34,58 +36,85 @@ const Header = () => {
     const subTitleText = "Your own website";
     const buttonText = "See my work";
 
+    let subTitleTopRef = useRef(null);
+    let subTitleBotRef = useRef(null);
+    let subTitleBotSwipeRef = useRef(null);
+    let buttonRef = useRef(null);
+
+    useEffect(() => {
+        gsap.set([subTitleTopRef, subTitleBotRef, buttonRef], { autoAlpha: 0 });
+        const tl = gsap.timeline({ defaults: { ease: 'power1.out' } });
+
+        //added label to get rid of default delay between scenes
+        tl.addLabel('reveal')
+            .fromTo(subTitleTopRef, { x: '-10vw' }, { duration: 1.4, x: '0', autoAlpha: 1, delay: 0.3 }, 'reveal')
+            .fromTo(subTitleBotSwipeRef, { x: '-100vw' }, { duration: 2, x: '+100vw', autoAlpha: 1, delay: 1 }, 'reveal')
+            .to(subTitleBotRef, { duration: 0.2, autoAlpha: 1, delay: 1.6 }, 'reveal')
+            .fromTo(buttonRef, { y: '-=100' }, { duration: 1.8, y: '0', autoAlpha: 1, delay: 2.4 }, 'reveal')
+
+    })
+
     return (
         <HeaderStyle>
-            <SqStripes />
+            {/* <SqStripes />
             <FolderStripe />
             <HexGrp1 />
             <HexGrp2 />
-            <HexGrp3 />
-            <TreeContainer>
+            <HexGrp3 /> */}
+            {/* <TreeContainer>
                 <TreeTop />
                 <TreeMid />
                 <TreeBot />
-            </TreeContainer>
+            </TreeContainer> */}
             <TopSubtitle
-                initial={{ opacity: 0, x: '10vw' }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{
-                    delay: 0.2,
-                    duration: 0.4,
-                }}>
+                ref={element => { subTitleTopRef = element }}
+            // initial={{ opacity: 0, x: '10vw' }}
+            // animate={{ opacity: 1, x: 0 }}
+            // transition={{
+            //     delay: 0.2,
+            //     duration: 0.4,
+            // }}
+            >
                 {topTitleText}
             </TopSubtitle>
-            <TextAppear text={titleText} />
+            <TextAppear
+                text={titleText} />
             <SubtitleWrapper>
                 <BotSubtitle
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{
-                        delay: 2.2,
-                    }}>
+                    ref={element => { subTitleBotRef = element }}
+                // initial={{ opacity: 0 }}
+                // animate={{ opacity: 1 }}
+                // transition={{
+                //     delay: 2.2,
+                // }}
+                >
                     {subTitleText}
                 </BotSubtitle>
                 <SubtitleAppear
-                    initial={{ x: '-100%', opacity: 0 }}
-                    animate={{ x: '100%', opacity: 1 }}
-                    transition={{
-                        delay: 1.8,
-                        duration: 0.8,
-                    }}
+                    ref={element => { subTitleBotSwipeRef = element }}
+                // initial={{ x: '-100%', opacity: 0 }}
+                // animate={{ x: '100%', opacity: 1 }}
+                // transition={{
+                //     delay: 1.8,
+                //     duration: 0.8,
+                // }}
                 />
             </SubtitleWrapper>
-            <HeaderButton href="#projects"
-                initial={{ y: '-100%', opacity: 0 }}
-                animate={{
-                    y: 0,
-                    opacity: 1
-                }}
-                transition={{
-                    delay: 2.4,
-                    duration: 1.2,
-                }}
+            <HeaderButton
+                href="#projects"
+                ref={element => { buttonRef = element }}
+            // initial={{ y: '-100%', opacity: 0 }
+            // }
+            // animate={{
+            //     y: 0,
+            //     opacity: 1
+            // }}
+            // transition={{
+            //     delay: 2.4,
+            //     duration: 1.2,
+            // }}
 
-            >{buttonText} <ArrowIcon /> </HeaderButton>
+            > {buttonText} < ArrowIcon /> </HeaderButton >
             <HeaderFrame>
                 <IconContainer>
                     <Icon
@@ -175,7 +204,7 @@ const Header = () => {
                     duration: 0.6,
                 }}
             />
-        </HeaderStyle>
+        </HeaderStyle >
     )
 }
 
@@ -229,7 +258,6 @@ display: flex;
 flex-direction: row;
 justify-content: flex-end;
 align-items: flex-end;
-
 `
 
 const HeaderStyle = styled(motion.header)`
@@ -326,6 +354,10 @@ margin: 0 auto;
 overflow:hidden;
 position: relative;
 margin: 1.6rem auto 2rem auto;
+
+@media (max-width: 1200px) {
+    width: 90vw;
+    }
 `
 
 const BotSubtitle = styled(motion.h2)`
@@ -354,6 +386,10 @@ background: #fff;
 position: absolute;
 top: 0;
 right:0;
+
+    @media (max-width: 1200px) {
+    width: 90vw;
+    }
 `
 
 // Lines
@@ -366,6 +402,7 @@ const LineTop = styled(motion.div)`
     left: 0;
     background: #666;
     z-index: 1;
+    overflow-x: hidden;
 
     @media (max-width: 768px) {
     display: none;

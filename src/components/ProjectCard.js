@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -6,6 +6,12 @@ import ProjectDetails from './ProjectDetails';
 
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger)
+
 
 const githubIcon = <FontAwesomeIcon
     icon={faGithub} />
@@ -82,9 +88,43 @@ const DetailsImage = ({ title, tag, technologies, info, type, img, githubUrl, we
 }
 
 const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, webUrl }) => {
+    useEffect(() => {
+
+        const projects = document.querySelectorAll(".project");
+        const overlays = document.querySelectorAll(".overlay");
+        console.log(projects)
+
+        projects.forEach(project => {
+            console.log(project)
+            gsap.fromTo(project.children, { y: '+=10', opacity: 0 },
+                {
+                    y: 0, opacity: 1, stagger: 0.2, duration: 0.8,
+                    scrollTrigger: {
+                        trigger: project,
+                        start: 'top 65%',
+                        ease: 'power1. out'
+                    }
+                })
+        })
+
+        overlays.forEach(project => {
+            console.log(project)
+            gsap.fromTo(project.children, { y: '+=10', opacity: 0, delay: 1 },
+                {
+                    y: 0, opacity: 1, stagger: 0.2, duration: 1,
+                    scrollTrigger: {
+                        trigger: project,
+                        start: 'top 65%',
+                        ease: 'power1. out'
+                    }
+                })
+        })
+    }, [])
+
     return (
         <>
-            <CardWrapper>
+            <CardWrapper
+                className='project'>
                 <TagWrapper>{
                     tag.map((tag, i) =>
                         <div
@@ -109,19 +149,21 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
                             webUrl={webUrl}
                             src={img} />
                     </WireFrame>
-                    <Overlay>
-                        <CardTitle>{title}</CardTitle>
-                        <LinksWrapper>
-                            <Link href={githubUrl}>
-                                {githubIcon}
-                            </Link>
-                            <Link href={webUrl}>
-                                {webIcon}
-                            </Link>
+                    <div className="overlay">
+                        <Overlay>
+                            <CardTitle>{title}</CardTitle>
+                            <LinksWrapper>
+                                <Link href={githubUrl}>
+                                    {githubIcon}
+                                </Link>
+                                <Link href={webUrl}>
+                                    {webIcon}
+                                </Link>
 
-                        </LinksWrapper>
-                        <CardType>{type}</CardType>
-                    </Overlay>
+                            </LinksWrapper>
+                            <CardType>{type}</CardType>
+                        </Overlay>
+                    </div>
                 </Card>
             </CardWrapper>
         </>

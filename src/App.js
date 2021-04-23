@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Menu />
+      {/* <Menu /> */}
       <Header />
       <Projects />
       <About />

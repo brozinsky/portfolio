@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from "styled-components";
 
 import { StyledComponents, Firebase, Javascript, Css3, Html5, ReactLogo, Sass } from '@styled-icons/simple-icons'
@@ -14,6 +14,10 @@ import project3 from "../images/project-3.png";
 import project4 from "../images/project-4.png";
 import project5 from "../images/project-5.png";
 import project6 from "../images/project-6.png";
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger)
 
 const StyledCompIocn = styled(StyledComponents)`
 margin-bottom: 5px;
@@ -194,18 +198,57 @@ const Projects = () => {
     const [offsetY, setOffsetY] = useState(0);
     const handleScroll = () => setOffsetY(window.pageYOffset);
 
+    let sectionRef = useRef(null);
+
+
+    //handling parallax scrolling background elements
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-
         return () => window.removeEventListener('scroll', handleScroll);
     }, [])
 
+    useEffect(() => {
+
+        const title = document.querySelector(".projects-title");
+        const projects = document.querySelectorAll(".project");
+        console.log(title)
+        console.log(projects)
+
+        projects.forEach(project => {
+            console.log(project)
+            gsap.fromTo(project, { y: '+=100', opacity: 0 },
+                {
+                    y: 0, opacity: 1, stagger: 0.2, duration: 0.8,
+                    scrollTrigger: {
+                        trigger: project,
+                        start: 'top 65%',
+                        ease: 'power3. out',
+                        markers: true,
+                    }
+                })
+        })
+
+
+        // gsap.fromTo(sectionRef, { y: '+=100', opacity: 0 },
+        //     {
+        //         y: 0, opacity: 1, duration: 1, ease: 'easeInOut',
+        //         scrollTrigger: {
+        //             trigger: sectionRef,
+        //             start: 'top 65%',
+        //             markers: true
+        //         }
+        //     })
+    }, [])
+
     return (
-        <ProjectsSection id="projects">
-            <Title>_Projects</Title>
+        <ProjectsSection
+            ref={element => { sectionRef = element }}
+            id="projects">
+            <Title className={'projects-title'}>_Projects</Title>
             {projects.map((project, i) =>
                 <ProjectCard
                     key={i}
+                    className={'project'}
                     title={project.title}
                     tag={project.tag}
                     icons={project.tagIcons}

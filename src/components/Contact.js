@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from "styled-components";
 import { useForm } from '@formspree/react';
 
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger)
+
 const Contact = () => {
     const [state, handleSubmit] = useForm("mvodgwog");
+
+    useEffect(() => {
+        const section = document.getElementById("contact");
+        gsap.fromTo(section.children, { y: '+=20', opacity: 0 },
+            {
+                y: 0, opacity: 1, stagger: 0.2, duration: 0.6,
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 65%',
+                    ease: 'power1. out'
+                }
+            })
+
+    }, [])
 
     return (
         <ContactSection id="contact">
