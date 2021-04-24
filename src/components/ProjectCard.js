@@ -18,7 +18,9 @@ const githubIcon = <FontAwesomeIcon
 const webIcon = <FontAwesomeIcon
     icon={faGlobe} />
 
-const DetailsImage = ({ title, tag, technologies, info, type, img, githubUrl, webUrl }) => {
+
+const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, webUrl }) => {
+
     const [details, setDetails] = useState(
         {
             title: null,
@@ -62,6 +64,38 @@ const DetailsImage = ({ title, tag, technologies, info, type, img, githubUrl, we
         )
     }
 
+    useEffect(() => {
+
+        const projects = document.querySelectorAll(".project");
+        const overlays = document.querySelectorAll(".overlay");
+
+        projects.forEach(project => {
+            console.log(project)
+            gsap.fromTo(project.children, { y: '+=10', opacity: 0 },
+                {
+                    y: 0, opacity: 1, stagger: 0.2, duration: 0.8,
+                    scrollTrigger: {
+                        trigger: project,
+                        start: 'top 80%',
+                        ease: 'power1. out'
+                    }
+                })
+        })
+
+        overlays.forEach(project => {
+            console.log(project)
+            gsap.fromTo(project.children, { y: '+=10', opacity: 0, delay: 1 },
+                {
+                    y: 0, opacity: 1, stagger: 0.2, duration: 1,
+                    scrollTrigger: {
+                        trigger: project,
+                        start: 'top 80%',
+                        ease: 'power1. out',
+                    }
+                })
+        })
+    }, [])
+
     return (
         <>
             {details.title ?
@@ -80,49 +114,6 @@ const DetailsImage = ({ title, tag, technologies, info, type, img, githubUrl, we
                     </Close>
                 </>
                 : null}
-            <CardImg
-                onClick={handleImageClick}
-                src={img} />
-        </>
-    )
-}
-
-const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, webUrl }) => {
-    useEffect(() => {
-
-        const projects = document.querySelectorAll(".project");
-        const overlays = document.querySelectorAll(".overlay");
-        console.log(projects)
-
-        projects.forEach(project => {
-            console.log(project)
-            gsap.fromTo(project.children, { y: '+=10', opacity: 0 },
-                {
-                    y: 0, opacity: 1, stagger: 0.2, duration: 0.8,
-                    scrollTrigger: {
-                        trigger: project,
-                        start: 'top 65%',
-                        ease: 'power1. out'
-                    }
-                })
-        })
-
-        overlays.forEach(project => {
-            console.log(project)
-            gsap.fromTo(project.children, { y: '+=10', opacity: 0, delay: 1 },
-                {
-                    y: 0, opacity: 1, stagger: 0.2, duration: 1,
-                    scrollTrigger: {
-                        trigger: project,
-                        start: 'top 65%',
-                        ease: 'power1. out'
-                    }
-                })
-        })
-    }, [])
-
-    return (
-        <>
             <CardWrapper
                 className='project'>
                 <TagWrapper>{
@@ -138,7 +129,10 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
                 </TagWrapper>
                 <Card>
                     <WireFrame className="wire">
-                        <DetailsImage
+                        <CardImg
+                            onClick={handleImageClick}
+                            src={img} />
+                        {/* <DetailsImage
                             title={title}
                             tag={tag}
                             img={img}
@@ -147,7 +141,7 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
                             type={type}
                             githubUrl={githubUrl}
                             webUrl={webUrl}
-                            src={img} />
+                            src={img} /> */}
                     </WireFrame>
                     <div className="overlay">
                         <Overlay>

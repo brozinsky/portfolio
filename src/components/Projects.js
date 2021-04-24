@@ -223,7 +223,6 @@ const Projects = () => {
                         trigger: project,
                         start: 'top 65%',
                         ease: 'power3. out',
-                        markers: true,
                     }
                 })
         })
@@ -248,7 +247,7 @@ const Projects = () => {
             {projects.map((project, i) =>
                 <ProjectCard
                     key={i}
-                    className={'project'}
+                    // className={'project'}
                     title={project.title}
                     tag={project.tag}
                     icons={project.tagIcons}
