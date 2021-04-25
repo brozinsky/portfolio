@@ -51,7 +51,7 @@ const TreeMid = () => {
                 return (
                     <motion.path
                         key={i}
-                        style={path.isReverse ? { rotate: '180deg' } : ''}
+                        style={!path.isReverse ? { rotate: '180deg' } : ''}
                         initial={!path.isReceiver ? { pathLength: 0, pathOffset: 1 } : { scale: 0 }}
                         animate={!path.isReceiver ? { pathLength: 1, pathOffset: 0 } : { scale: 1 }}
                         transition={{
