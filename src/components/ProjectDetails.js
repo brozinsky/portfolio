@@ -65,7 +65,6 @@ const ProjectDetails = ({ title, img, technologies, info, tag, githubUrl, webUrl
                         }}
                         src={img} />
                     <div className="info-wrap">
-
                         <Title
                             initial={{ x: '-100px', opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
@@ -73,8 +72,7 @@ const ProjectDetails = ({ title, img, technologies, info, tag, githubUrl, webUrl
                                 delay: 0.3,
                                 duration: 0.5,
                             }}
-                        >
-                            {title}
+                        >{title}
                         </Title>
                         <Underline
                             initial={{ x: '300px', opacity: 0 }}
@@ -82,8 +80,7 @@ const ProjectDetails = ({ title, img, technologies, info, tag, githubUrl, webUrl
                             transition={{
                                 delay: 0.3,
                                 duration: 0.8,
-                            }}
-                        />
+                            }} />
                         <SubtitleWrapper>
                             <SubtitleAppear
                                 initial={{ x: '-100%', opacity: 0 }}
@@ -100,7 +97,6 @@ const ProjectDetails = ({ title, img, technologies, info, tag, githubUrl, webUrl
                                     delay: 0.8,
                                 }}
                             >Features/used technologies:</Subtitle>
-
                         </SubtitleWrapper>
                         <ul>
                             {technologies.map(item =>
@@ -186,7 +182,7 @@ const Card = styled(motion.div)`
     background: var(--color-background);
     position: relative;
     z-index: 2;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -219,18 +215,19 @@ const Card = styled(motion.div)`
 
     @media (max-width: 768px) {
     flex-direction: column-reverse;
+    width: 80vw;
     }
 }
 
 .info-wrap {
     display: flex;
     flex-direction: column;
-    height: 400px;
-    /* margin-left: 2rem; */
+    /* height: 400px; */
     max-width: 350px;
     @media (max-width: 768px) {
-     height: 100%;
-     /* margin-bottom: 5rem; */
+     /* height: 100%; */
+     margin-top: 70px;
+     max-width: 300px;
     }
 }
 .details-tags {
@@ -303,6 +300,7 @@ text-align: center;
 margin: 2rem auto 1rem auto;
 font-weight: 600;
 letter-spacing: 1px;
+
 `
 
 const SubtitleWrapper = styled.div`
@@ -311,6 +309,9 @@ width: 350px;
 margin: 1rem 0 0.5rem 0;
 overflow:hidden;
 position: relative;
+@media (max-width: 768px) {
+    margin: 0.2rem 0 0.5rem 0;
+}
 `
 
 const Subtitle = styled(motion.h3)`
@@ -321,7 +322,10 @@ top: 0;
 left: 0;
 color: #fff;
 z-index: 9000;
-/* margin: 1rem 0 0.5rem 0; */
+
+@media (max-width: 768px) {
+    font-size: 1.2rem;
+}
 `
 const SubtitleAppear = styled(motion.div)`
 height: 30px;
@@ -338,8 +342,12 @@ margin: 0.4rem 0;
 font-weight: 300;
 color: #bbb;
 list-style-type: square;
-`
 
+@media (max-width: 768px) {
+    font-size: 1rem;
+    list-style-position: inside;
+}
+`
 
 const InfoBottom = styled.div`
     height: 30vh;
@@ -352,6 +360,7 @@ const InfoBottom = styled.div`
     height: auto;
     }
 `
+
 const LinksWrapper = styled.div`
     display: flex;
     flex-direction: row;
@@ -373,6 +382,12 @@ const Link = styled(motion.a)`
     position:relative;
     outline:none;
     text-decoration: none;
+
+    @media (max-width: 768px) {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 1rem;
+    }
 
 & span{
         font-size: 1.5rem;
@@ -399,9 +414,13 @@ const Info = styled(motion.div)`
     width: 50vw;
     min-width: 384px;
     }
+
+    @media (max-width: 420px) {
+    font-size: 1rem;
+    min-width: 80vw;
+    }
 `
 const Img = styled(motion.img)`
-    /* height: 400px; */
     margin: 2rem;
     transition: 1s;
     @media (max-width: 768px) {

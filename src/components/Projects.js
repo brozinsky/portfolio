@@ -21,35 +21,35 @@ gsap.registerPlugin(ScrollTrigger)
 
 const StyledCompIocn = styled(StyledComponents)`
 margin-bottom: 5px;
-scale: 0.9;
+transform: scale(0.9);
 `
 const ReduxIcon = styled(Redux)`
 margin-bottom: 5px;
-scale: 0.8;
+transform: scale(0.8);
 `
 const FirebaseIcon = styled(Firebase)`
 margin-bottom: 5px;
-scale: 0.7;
+transform: scale(0.7);
 `
 const HtmlIcon = styled(Html5)`
 margin-bottom: 5px;
-scale: 0.6;
+transform: scale(0.6);
 `
 const CssIcon = styled(Css3)`
 margin-bottom: 5px;
-scale: 0.6;
+transform: scale(0.6);
 `
 const SassIcon = styled(Sass)`
 margin-bottom: 5px;
-scale: 0.6;
+transform: scale(0.6);
 `
 const JavascriptIcon = styled(Javascript)`
 margin-bottom: 5px;
-scale: 0.6;
+transform: scale(0.6);
 `
 const ReactIcon = styled(ReactLogo)`
 margin-bottom: 5px;
-scale: 0.7;
+transform: scale(0.7);
 `
 const sassIcon = <SassIcon className="sass-icon" />
 const reactIcon = <ReactIcon className="react-icon" />
@@ -215,7 +215,6 @@ const Projects = () => {
         console.log(projects)
 
         projects.forEach(project => {
-            console.log(project)
             gsap.fromTo(project, { y: '+=100', opacity: 0 },
                 {
                     y: 0, opacity: 1, stagger: 0.2, duration: 0.8,
@@ -279,7 +278,7 @@ const BgPosition1 = styled.div`
  top: 10%;
  left: -5%;
  z-index: -10;
- scale: 1.2;
+ transform: scale(1.2);
  @media (max-width: 768px) {
     display: none;
 }
@@ -290,7 +289,7 @@ const BgPosition2 = styled.div`
  bottom: 0;
  right: -5%;
  z-index: -10;
- scale: 1.2;
+ transform: scale(1.2);
  @media (max-width: 768px) {
     display: none;
 }

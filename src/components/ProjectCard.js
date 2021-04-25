@@ -64,37 +64,37 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
         )
     }
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        const projects = document.querySelectorAll(".project");
-        const overlays = document.querySelectorAll(".overlay");
+    //     const projects = document.querySelectorAll(".project");
+    //     const overlays = document.querySelectorAll(".overlay");
 
-        projects.forEach(project => {
-            console.log(project)
-            gsap.fromTo(project.children, { y: '+=10', opacity: 0 },
-                {
-                    y: 0, opacity: 1, stagger: 0.2, duration: 0.8,
-                    scrollTrigger: {
-                        trigger: project,
-                        start: 'top 80%',
-                        ease: 'power1. out'
-                    }
-                })
-        })
+    //     projects.forEach(project => {
+    //         console.log(project)
+    //         gsap.fromTo(project.children, { y: '+=10', opacity: 0 },
+    //             {
+    //                 y: 0, opacity: 1, stagger: 0.2, duration: 0.8,
+    //                 scrollTrigger: {
+    //                     trigger: project,
+    //                     start: 'top 80%',
+    //                     ease: 'power1. out'
+    //                 }
+    //             })
+    //     })
 
-        overlays.forEach(project => {
-            console.log(project)
-            gsap.fromTo(project.children, { y: '+=10', opacity: 0, delay: 1 },
-                {
-                    y: 0, opacity: 1, stagger: 0.2, duration: 1,
-                    scrollTrigger: {
-                        trigger: project,
-                        start: 'top 80%',
-                        ease: 'power1. out',
-                    }
-                })
-        })
-    }, [])
+    //     overlays.forEach(project => {
+    //         console.log(project)
+    //         gsap.fromTo(project.children, { y: '+=10', opacity: 0, delay: 1 },
+    //             {
+    //                 y: 0, opacity: 1, stagger: 0.2, duration: 1,
+    //                 scrollTrigger: {
+    //                     trigger: project,
+    //                     start: 'top 80%',
+    //                     ease: 'power1. out',
+    //                 }
+    //             })
+    //     })
+    // }, [])
 
     return (
         <>
@@ -120,7 +120,8 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
                     tag.map((tag, i) =>
                         <div
                             key={i}
-                            className={tag.name + '-tag card-tag'} >
+                            className=
+                            {tag.name + '-tag card-tag'} >
                             <span
                                 className={tag.name === 'api' ? 'small' : ''}>
                                 {tag.icon} </span>
@@ -132,16 +133,6 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
                         <CardImg
                             onClick={handleImageClick}
                             src={img} />
-                        {/* <DetailsImage
-                            title={title}
-                            tag={tag}
-                            img={img}
-                            technologies={technologies}
-                            info={info}
-                            type={type}
-                            githubUrl={githubUrl}
-                            webUrl={webUrl}
-                            src={img} /> */}
                     </WireFrame>
                     <div className="overlay">
                         <Overlay>
@@ -176,15 +167,15 @@ const Card = styled.div`
     margin: 2rem 2rem;
 
     @media (max-width: 768px) {
-    width: 300px;
-    height: 270px;
+    margin: 2rem auto;
+    width: 250px;
+    height: 225px;
     margin-top: 4rem;
     }
-
 `
 
 const CardWrapper = styled.div`
-    position: relative;
+    /* position: relative; */
 `
 
 const WireFrame = styled.div`
@@ -215,7 +206,7 @@ const CardImg = styled.img`
     transition: 0.5s;
 
     &:hover{
-        scale: 1.05;
+        transform: scale(1.05);
         opacity: 1;
     }
 `
@@ -228,7 +219,7 @@ const Overlay = styled.div`
     bottom: 0;
 
     @media (max-width: 768px) {
-    width: 300px;
+    width: 250px;
     height: 100px;
     }
 `
@@ -292,6 +283,7 @@ const TagWrapper = styled.div`
 
     @media (max-width: 768px) {
         flex-direction: row;
+        /* width: 90vw; */
         right: 50%;
         top: 5px;
         width: 100%;
@@ -346,21 +338,18 @@ const TagWrapper = styled.div`
     border: 1px solid #C4C4C4;
     border-radius: 2px;
     display: inline-block;
-    width: 2.7rem;
-    height: 2.7rem;
+    width: 2.3rem;
+    height: 2.3rem;
     text-align: center;
-    margin: 0.2rem 0.2rem;
+    margin: 0.3rem 0.2rem;
     font-weight: 300;
-    font-size: 1.8rem;
-    padding: 2px 2px;
-    line-height: 2.4rem;
+    font-size: 1.4rem;
+    padding: 4px 4px;
     color: #C4C4C4;
-    scale: 0.8;
 }
 .small{
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
-
 `
 
 const CardType = styled.span`
