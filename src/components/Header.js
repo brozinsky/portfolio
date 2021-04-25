@@ -56,16 +56,16 @@ const Header = () => {
 
     return (
         <HeaderStyle>
-            {/* <SqStripes />
+            <SqStripes />
             <FolderStripe />
             <HexGrp1 />
             <HexGrp2 />
-            <HexGrp3 /> */}
-            {/* <TreeContainer>
+            <HexGrp3 />
+            <TreeContainer>
                 <TreeTop />
                 <TreeMid />
                 <TreeBot />
-            </TreeContainer> */}
+            </TreeContainer>
             <TopSubtitle
                 ref={element => { subTitleTopRef = element }}
             // initial={{ opacity: 0, x: '10vw' }}
@@ -290,11 +290,8 @@ z-index: -1;
     }
 
 @media (max-width: 768px) {
-    top: 15vh;
-    transform: translate(50%,0) rotate(90deg) scale(0.7);
-    }
-
-
+    display: none;
+}
 `
 const HeaderButton = styled(motion.a)`
     margin: 1rem auto;

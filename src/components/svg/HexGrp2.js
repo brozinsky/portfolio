@@ -109,7 +109,7 @@ top: -10%;
 left: 0%;
 z-index: -1;
 @media (max-width: 768px) {
-opacity: 0.8;
+max-width: 100vw;
 }
 `
 

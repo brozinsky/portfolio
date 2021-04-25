@@ -220,7 +220,7 @@ const Projects = () => {
                     y: 0, opacity: 1, stagger: 0.2, duration: 0.8,
                     scrollTrigger: {
                         trigger: project,
-                        start: 'top 65%',
+                        start: 'top 85%',
                         ease: 'power3. out',
                     }
                 })

@@ -108,7 +108,9 @@ position: absolute;
 bottom: -15%;
 right: -5%;
 @media (max-width: 768px) {
-opacity: 0.8;
+bottom: 0;
+right: 5%;
+width: 100vw;
 }
 `
 
