@@ -182,7 +182,6 @@ const Card = styled(motion.div)`
     background: var(--color-background);
     position: relative;
     z-index: 2;
-    /* overflow-y: auto; */
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -192,7 +191,6 @@ const Card = styled(motion.div)`
     height: 100vh;
     width: 100vw;
     position: fixed;
-    justify-content: center;
     }
 
 .info-header {
