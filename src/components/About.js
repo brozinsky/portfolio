@@ -46,12 +46,12 @@ const rwdIcon = <FontAwesomeIcon className="rwd-icon"
 const dryIcon = <FontAwesomeIcon className="dry-icon"
   icon={faRedo} />
 
-
-
 const About = () => {
   useEffect(() => {
     const icons = document.querySelectorAll(".icons-wrap");
     const iconsText = document.querySelectorAll(".icons-text");
+    const aboutSubtitle = document.querySelectorAll(".about-subtitle");
+    const photo = document.querySelectorAll(".about-photo");
 
     icons.forEach(item => {
       gsap.fromTo(item.children, { x: '+=20', opacity: 0 },
@@ -59,7 +59,7 @@ const About = () => {
           x: 0, opacity: 1, stagger: 0.2, duration: 0.6,
           scrollTrigger: {
             trigger: item,
-            start: 'top 65%',
+            start: 'top 75%',
             ease: 'power1. out'
           }
         })
@@ -71,23 +71,45 @@ const About = () => {
           y: 0, opacity: 1, stagger: 0.2, duration: 1,
           scrollTrigger: {
             trigger: item,
-            start: 'top 65%',
+            start: 'top 75%',
             ease: 'power1. out'
           }
         })
     })
+
+    aboutSubtitle.forEach(item => {
+      gsap.fromTo(item, { x: '+=30', opacity: 0, delay: 0.6 },
+        {
+          x: 0, opacity: 1, stagger: 0.2, duration: 0.7,
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 75%',
+            ease: 'power3. out'
+          }
+        })
+    })
+
+    gsap.fromTo(photo, { transform: 'scale(0)', opacity: 0, delay: 0.6 },
+      {
+        transform: 'scale(1)', opacity: 1, stagger: 0.2, duration: 0.7,
+        scrollTrigger: {
+          trigger: photo,
+          start: 'top 70%',
+          ease: 'power1. out'
+        }
+      })
   }, [])
   return (
     <AboutSection id="about">
       <Title>_About</Title>
       <Info>
-        <SectionTitle>Hello, I'm Mateusz Brzeziński.</SectionTitle>
-        <InfoText>
+        <SectionTitle className='about-subtitle'>Hello, I'm Mateusz Brzeziński.</SectionTitle>
+        <InfoText className='icons-text'>
           I'm a self taught Front-end Developer and a Creative Web Designer from Szczecin.
           I create fast, responsive, and reliable websites using modern web development tools.
           I'm a civil engineering graduate of West Pomeranian University of Technology that fell in love in web development.
                     </InfoText>
-        <SectionTitle>Technologies I use:</SectionTitle>
+        <SectionTitle className='about-subtitle'>Technologies I use:</SectionTitle>
         <IconsWrap className='icons-wrap'>
           <Icon>{htmlIcon} Html5</Icon>
           <Icon>{cssIcon} Css3</Icon>
@@ -125,10 +147,10 @@ const About = () => {
         <InfoText className='icons-text'>
           I always focus on Responsive Web Design with mobile first approach to make sure my website works well on every device.
                 </InfoText>
-        <InfoText> Besides the work, I'm interested in music production, playing guitar and listening to basicially all genres of music.
+        <InfoText className='icons-text'> Besides the work, I'm interested in music production, playing guitar and listening to basicially all genres of music.
                 You can follow my Instagram or SoundCloud.</InfoText>
       </Info>
-      <Photo></Photo>
+      <Photo className='about-photo'></Photo>
     </AboutSection>
   )
 }
