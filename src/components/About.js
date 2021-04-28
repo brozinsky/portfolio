@@ -10,12 +10,14 @@ import { faJsSquare } from '@fortawesome/free-brands-svg-icons';
 import { faReact } from '@fortawesome/free-brands-svg-icons';
 
 import { faFigma } from '@fortawesome/free-brands-svg-icons';
-
 import { faGitAlt } from '@fortawesome/free-brands-svg-icons';
 
 import { faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 import { faRedo } from "@fortawesome/free-solid-svg-icons";
+
+import photo from "../images/holo-photo.jpg";
+
 
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -102,76 +104,87 @@ const About = () => {
   return (
     <AboutSection id="about">
       <Title>_About</Title>
-      <Info>
-        <SectionTitle className='about-subtitle'>Hello, I'm Mateusz Brzeziński.</SectionTitle>
-        <InfoText className='icons-text'>
-          I'm a self taught Front-end Developer and a Creative Web Designer from Szczecin.
-          I create fast, responsive, and reliable websites using modern web development tools.
-          I'm a civil engineering graduate of West Pomeranian University of Technology that fell in love in web development.
+      <div className="section-wrap">
+        <Info>
+          <SectionTitle className='about-subtitle'>Hello, I'm Mateusz Brzeziński.</SectionTitle>
+          <InfoText className='icons-text'>
+            I'm a self taught Front-end Developer and a Creative Web Designer from Szczecin.
+            I create fast, responsive, and reliable websites using modern web development tools.
+            I'm a civil engineering graduate of West Pomeranian University of Technology that fell in love in web development.
                     </InfoText>
-        <SectionTitle className='about-subtitle'>Technologies I use:</SectionTitle>
-        <IconsWrap className='icons-wrap'>
-          <Icon>{htmlIcon} Html5</Icon>
-          <Icon>{cssIcon} Css3</Icon>
-          <Icon>{sassIcon} Sass</Icon>
-          <Icon>BEM</Icon>
-        </IconsWrap>
-        <InfoText className='icons-text'>
-          I write semantic HTML to improve webpage SEO.
+          <SectionTitle className='about-subtitle'>Technologies I use:</SectionTitle>
+          <IconsWrap className='icons-wrap'>
+            <Icon>{htmlIcon} Html5</Icon>
+            <Icon>{cssIcon} Css3</Icon>
+            <Icon>{sassIcon} Sass</Icon>
+            <Icon>BEM</Icon>
+          </IconsWrap>
+          <InfoText className='icons-text'>
+            I write semantic HTML to improve webpage SEO.
                 For styling I prefer using Styled Components but I feel comfortable with SASS preprocessor, which I like to use along with BEM methodology. </InfoText>
-        <IconsWrap className='icons-wrap'>
-          <Icon>{jsIcon} Javascript ES6</Icon>
-          <Icon>{reactIcon} React</Icon>
-          <Icon>Redux</Icon>
-          <Icon>jQuery</Icon>
-          <Icon>Typescript</Icon>
-        </IconsWrap>
-        <InfoText className='icons-text'>
-          I'm using React as my main framework.
+          <IconsWrap className='icons-wrap'>
+            <Icon>{jsIcon} Javascript ES6</Icon>
+            <Icon>{reactIcon} React</Icon>
+            <Icon>Redux</Icon>
+            <Icon>jQuery</Icon>
+            <Icon>Typescript</Icon>
+          </IconsWrap>
+          <InfoText className='icons-text'>
+            I'm using React as my main framework.
                     I know all the necessary basics of Redux but I prefer to keep state with useState and context hooks. </InfoText>
-        <IconsWrap className='icons-wrap'>
-          <Icon>{figmaIcon} Figma</Icon>
-          <Icon> Photoshop</Icon>
-          <Icon>{gitIcon} Git</Icon>
-          <Icon>NPM</Icon>
-        </IconsWrap>
-        <InfoText className='icons-text'>
-          I'm designing website layouts using Figma and sometimes using Photoshop for images optimalization.
-          I use Git to track all changes in my code that I store on my GitHub page.
+          <IconsWrap className='icons-wrap'>
+            <Icon>{figmaIcon} Figma</Icon>
+            <Icon> Photoshop</Icon>
+            <Icon>{gitIcon} Git</Icon>
+            <Icon>NPM</Icon>
+          </IconsWrap>
+          <InfoText className='icons-text'>
+            I'm designing website layouts using Figma and sometimes using Photoshop for images optimalization.
+            I use Git to track all changes in my code that I store on my GitHub page.
                     </InfoText>
-        <IconsWrap className='icons-wrap'>
-          <Icon>{mobileIcon} Mobile first</Icon>
-          <Icon>{rwdIcon} RWD</Icon>
-          <Icon>{dryIcon} DRY</Icon>
-        </IconsWrap>
-        <InfoText className='icons-text'>
-          I always focus on Responsive Web Design with mobile first approach to make sure my website works well on every device.
+          <IconsWrap className='icons-wrap'>
+            <Icon>{mobileIcon} Mobile first</Icon>
+            <Icon>{rwdIcon} RWD</Icon>
+            <Icon>{dryIcon} DRY</Icon>
+          </IconsWrap>
+          <InfoText className='icons-text'>
+            I always focus on Responsive Web Design with mobile first approach to make sure my website works well on every device.
                 </InfoText>
-        <InfoText className='icons-text'> Besides the work, I'm interested in music production, playing guitar and listening to basicially all genres of music.
+          <InfoText className='icons-text'> Besides the work, I'm interested in music production, playing guitar and listening to basicially all genres of music.
                 You can follow my Instagram or SoundCloud.</InfoText>
-      </Info>
-      <Photo className='about-photo'></Photo>
+        </Info>
+        <PhotoContainer className='about-photo'>
+          <img className='about-photo-img' src={photo} alt="me" />
+        </PhotoContainer>
+      </div>
     </AboutSection>
   )
 }
 
 const AboutSection = styled.section`
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-
-    @media (max-width: 768px) {
     flex-direction: column;
+
+    .section-wrap{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      max-width: 95vw;
+      align-items: center;
+      flex-wrap: wrap;
+
+    @media (max-width: 1490px) {
+    flex-direction: column-reverse;
     justify-content: center;
     flex-wrap: nowrap;
+    }
     }
 `
 
 const Title = styled.h2`
     @media (max-width: 1200px) {
     width: 90vw;
+    margin: 4rem auto 1rem auto;
     text-align: center;
     }
 `
@@ -204,18 +217,41 @@ const InfoText = styled.p`
     }
 `
 
-const Photo = styled.div`
+const PhotoContainer = styled.div`
     height: 520px;
     width: 415px;
     border: 1px solid #444;
-    border-radius:20px;
     position: relative;
     overflow: hidden;
+    animation: glow 6s infinite ease-in-out;
+
+    @keyframes glow {
+      0%{
+        filter: brightness(1.2);
+      }
+      50%{
+        filter: brightness(1.55);
+      }
+      100%{
+        filter: brightness(1.2);
+      }
+    }
+
+    @media (max-width: 1490px) {
+    margin-bottom: 3rem;
+    }
 
     @media (max-width: 768px) {
     margin: 2rem auto;
-    height: 250px;
-    width: 200px;
+    height: 400px;
+    width: 319px;
+    }
+
+    .about-photo-img{
+    @media (max-width: 768px) {
+    height: 400px;
+    width: 319px;
+    }
     }
 
 &::after, &::before {
@@ -226,6 +262,7 @@ const Photo = styled.div`
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: -5;
 }
 &::after{
     background: linear-gradient(to top right,transparent calc(50% - 1px),

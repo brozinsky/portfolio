@@ -70,7 +70,7 @@ const ContactSection = styled.section`
     sans-serif;
     margin-top: 10rem;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1430px) {
         margin-top: 0;
     }
 `
