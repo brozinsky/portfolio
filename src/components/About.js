@@ -154,7 +154,7 @@ const About = () => {
                 You can follow my Instagram or SoundCloud.</InfoText>
         </Info>
         <PhotoContainer className='about-photo'>
-          <img className='about-photo-img' src={photo} alt="me" />
+          <img className='about-photo-img' src={photo} alt="me" width="430" height="520" />
         </PhotoContainer>
       </div>
     </AboutSection>

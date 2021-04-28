@@ -27,7 +27,9 @@ const Menu = () => {
                     <img
                         className="logo"
                         src={logo}
-                        alt="logo" />
+                        alt="logo"
+                        width="33" height="33"
+                    />
                 </Logo>
                 <LogoText>{logoText}</LogoText>
             </LogoWrap>
