@@ -126,8 +126,6 @@ const About = () => {
             <Icon>{jsIcon} Javascript ES6</Icon>
             <Icon>{reactIcon} React</Icon>
             <Icon>Redux</Icon>
-            <Icon>jQuery</Icon>
-            <Icon>Typescript</Icon>
           </IconsWrap>
           <InfoText className='icons-text'>
             I'm using React as my main framework.
@@ -137,9 +135,10 @@ const About = () => {
             <Icon> Photoshop</Icon>
             <Icon>{gitIcon} Git</Icon>
             <Icon>NPM</Icon>
+            <Icon>Webpack</Icon>
           </IconsWrap>
           <InfoText className='icons-text'>
-            I'm designing website layouts using Figma and sometimes using Photoshop for images optimalization.
+            I'm designing website layouts using Figma and sometimes Photoshop for images optimalization.
             I use Git to track all changes in my code that I store on my GitHub page.
                     </InfoText>
           <IconsWrap className='icons-wrap'>
@@ -151,7 +150,7 @@ const About = () => {
             I always focus on Responsive Web Design with mobile first approach to make sure my website works well on every device.
                 </InfoText>
           <InfoText className='icons-text'> Besides the work, I'm interested in music production, playing guitar and listening to basicially all genres of music.
-                You can follow my Instagram or SoundCloud.</InfoText>
+                </InfoText>
         </Info>
         <PhotoContainer className='about-photo'>
           <img className='about-photo-img' src={photo} alt="me" width="430" height="520" />
