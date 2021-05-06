@@ -11,7 +11,7 @@ import HexGrp1 from './svg/HexGrp1';
 import HexGrp2 from './svg/HexGrp2';
 import HexGrp3 from './svg/HexGrp3';
 
-import gsap, { ScrollTrigger } from 'gsap';
+import gsap from 'gsap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -68,12 +68,6 @@ const Header = () => {
             </TreeContainer>
             <TopSubtitle
                 ref={element => { subTitleTopRef = element }}
-            // initial={{ opacity: 0, x: '10vw' }}
-            // animate={{ opacity: 1, x: 0 }}
-            // transition={{
-            //     delay: 0.2,
-            //     duration: 0.4,
-            // }}
             >
                 {topTitleText}
             </TopSubtitle>
@@ -82,38 +76,16 @@ const Header = () => {
             <SubtitleWrapper>
                 <BotSubtitle
                     ref={element => { subTitleBotRef = element }}
-                // initial={{ opacity: 0 }}
-                // animate={{ opacity: 1 }}
-                // transition={{
-                //     delay: 2.2,
-                // }}
                 >
                     {subTitleText}
                 </BotSubtitle>
                 <SubtitleAppear
                     ref={element => { subTitleBotSwipeRef = element }}
-                // initial={{ x: '-100%', opacity: 0 }}
-                // animate={{ x: '100%', opacity: 1 }}
-                // transition={{
-                //     delay: 1.8,
-                //     duration: 0.8,
-                // }}
                 />
             </SubtitleWrapper>
             <HeaderButton
                 href="#projects"
                 ref={element => { buttonRef = element }}
-            // initial={{ y: '-100%', opacity: 0 }
-            // }
-            // animate={{
-            //     y: 0,
-            //     opacity: 1
-            // }}
-            // transition={{
-            //     delay: 2.4,
-            //     duration: 1.2,
-            // }}
-
             > {buttonText} < ArrowIcon /> </HeaderButton >
             <HeaderFrame>
                 <IconContainer>
@@ -333,7 +305,6 @@ const TopSubtitle = styled(motion.h2)`
     background: #999;
     padding: 0.5rem;
     width: 650px;
-    /* margin: 3rem; */
     font-size: 2.5rem;
     margin: 1rem auto 1.6rem auto;
     font-weight: bold;
@@ -444,6 +415,5 @@ const LineRight = styled(motion.div)`
     display: none;
     }
 `
-
 
 export default Header;

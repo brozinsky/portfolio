@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -114,7 +114,7 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
                     </Close>
                 </>
                 : null}
-            <CardWrapper
+            <div
                 className='project'>
                 <TagWrapper>{
                     tag.map((tag, i) =>
@@ -150,12 +150,10 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
                         </Overlay>
                     </div>
                 </Card>
-            </CardWrapper>
+            </div>
         </>
     )
 }
-
-
 
 const Card = styled.div`
     width: 500px;
@@ -172,10 +170,6 @@ const Card = styled.div`
     height: 225px;
     margin-top: 4rem;
     }
-`
-
-const CardWrapper = styled.div`
-    /* position: relative; */
 `
 
 const WireFrame = styled.div`
@@ -247,6 +241,7 @@ const LinksWrapper = styled.div`
     justify-content: center;
     flex-wrap: wrap;
 `
+
 const Link = styled.a`
     color: #c4c4c4;
     margin: 0 2rem;

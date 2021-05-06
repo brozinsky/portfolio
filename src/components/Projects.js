@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 
 import { StyledComponents, Firebase, Javascript, Css3, Html5, ReactLogo, Sass } from '@styled-icons/simple-icons'
@@ -198,9 +198,6 @@ const Projects = () => {
     const [offsetY, setOffsetY] = useState(0);
     const handleScroll = () => setOffsetY(window.pageYOffset);
 
-    let sectionRef = useRef(null);
-
-
     //handling parallax scrolling background elements
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -225,28 +222,15 @@ const Projects = () => {
                     }
                 })
         })
-
-
-        // gsap.fromTo(sectionRef, { y: '+=100', opacity: 0 },
-        //     {
-        //         y: 0, opacity: 1, duration: 1, ease: 'easeInOut',
-        //         scrollTrigger: {
-        //             trigger: sectionRef,
-        //             start: 'top 65%',
-        //             markers: true
-        //         }
-        //     })
     }, [])
 
     return (
         <ProjectsSection
-            ref={element => { sectionRef = element }}
             id="projects">
             <Title className={'projects-title'}>_Projects</Title>
             {projects.map((project, i) =>
                 <ProjectCard
                     key={i}
-                    // className={'project'}
                     title={project.title}
                     tag={project.tag}
                     icons={project.tagIcons}
