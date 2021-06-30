@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import ProjectDetails from './ProjectDetails';
-
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
-
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ProjectCardTag from "./ProjectCardTag";
+import Tooltip from '@material-ui/core/Tooltip';
 
 gsap.registerPlugin(ScrollTrigger)
-
 
 const githubIcon = <FontAwesomeIcon
     icon={faGithub} />
@@ -118,14 +116,7 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
                 className='project'>
                 <TagWrapper>{
                     tag.map((tag, i) =>
-                        <div
-                            key={i}
-                            className=
-                            {tag.name + '-tag card-tag'} >
-                            <span
-                                className={tag.name === 'api' ? 'small' : ''}>
-                                {tag.icon} </span>
-                        </div>
+                        <ProjectCardTag key={i} tag={tag} />
                     )}
                 </TagWrapper>
                 <Card>
@@ -138,13 +129,16 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
                         <Overlay>
                             <CardTitle>{title}</CardTitle>
                             <LinksWrapper>
-                                <Link href={githubUrl}>
-                                    {githubIcon}
-                                </Link>
-                                <Link href={webUrl}>
-                                    {webIcon}
-                                </Link>
-
+                                <Tooltip title='Code' placement="bottom" arrow>
+                                    <Link href={githubUrl}>
+                                        {githubIcon}
+                                    </Link>
+                                </Tooltip>
+                                <Tooltip title='Live' placement="bottom" arrow>
+                                    <Link href={webUrl}>
+                                        {webIcon}
+                                    </Link>
+                                </Tooltip>
                             </LinksWrapper>
                             <CardType>{type}</CardType>
                         </Overlay>
@@ -328,6 +322,18 @@ const TagWrapper = styled.div`
         box-shadow: 0px 0px 8px 2px var(--color-styled-components);
         background: var(--color-styled-components);
 }
+.graphql-tag:hover {
+        box-shadow: 0px 0px 8px 2px var(--color-graphql);
+        background: var(--color-graphql);
+}
+.woo-commerce-tag:hover {
+        box-shadow: 0px 0px 8px 2px var(--color-woo-commerce);
+        background: var(--color-woo-commerce);
+}
+.heroku-tag:hover {
+        box-shadow: 0px 0px 8px 2px var(--color-heroku);
+        background: var(--color-heroku);
+}
 .card-tag{
     text-transform: uppercase;
     border: 1px solid #C4C4C4;
@@ -367,7 +373,7 @@ const Close = styled.div`
     background: #666;
     position: fixed;
     top: 10vh;
-    right: 16vw;
+    right: 15vw;
     cursor: pointer;
     line-height: 3rem;
     display: flex;

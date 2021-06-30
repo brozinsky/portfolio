@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 
-import { StyledComponents, Firebase, Javascript, Css3, Html5, ReactLogo, Sass } from '@styled-icons/simple-icons'
+import { StyledComponents, Firebase, Javascript, Css3, Html5, ReactLogo, Sass, Graphql, Heroku } from '@styled-icons/simple-icons'
 import { Redux } from '@styled-icons/boxicons-logos'
 
 import ProjectCard from './ProjectCard';
@@ -14,6 +14,7 @@ import project3 from "../images/project-3.png";
 import project4 from "../images/project-4.png";
 import project5 from "../images/project-5.png";
 import project6 from "../images/project-6.png";
+import project7 from "../images/project-7.png";
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -23,9 +24,17 @@ const StyledCompIocn = styled(StyledComponents)`
 margin-bottom: 5px;
 transform: scale(0.9);
 `
+const HerokuIcon = styled(Heroku)`
+margin-bottom: 5px;
+transform: scale(0.9);
+`
 const ReduxIcon = styled(Redux)`
 margin-bottom: 5px;
 transform: scale(0.8);
+`
+const GraphqlIcon = styled(Graphql)`
+margin-bottom: 5px;
+transform: scale(0.7);
 `
 const FirebaseIcon = styled(Firebase)`
 margin-bottom: 5px;
@@ -55,6 +64,8 @@ const sassIcon = <SassIcon className="sass-icon" />
 const reactIcon = <ReactIcon className="react-icon" />
 const htmlIcon = <HtmlIcon className="html-icon" />
 const cssIcon = <CssIcon className="css-icon" />
+const graphqlIcon = <GraphqlIcon className="graphql-icon" />
+const herokuIcon = <HerokuIcon className="heroku-icon" />
 
 const jsIcon = <JavascriptIcon className="javascript-icon" />
 const firebaseIcon = <FirebaseIcon className="firebase-icon" />
@@ -63,22 +74,64 @@ const reduxIcon = <ReduxIcon className="redux-icon" />
 
 const projects = [
     {
+        title: 'Handmade Store',
+        tag: [
+            {
+                name: 'react',
+                icon: reactIcon,
+                tooltip: 'React'
+            },
+            {
+                name: 'sass',
+                icon: sassIcon,
+                tooltip: 'Sass'
+            },
+            {
+                name: 'graphql',
+                icon: graphqlIcon,
+                tooltip: 'GraphQL'
+            },
+            {
+                name: 'heroku',
+                icon: herokuIcon,
+                tooltip: 'Heroku and Hasura'
+            },
+        ],
+        technologies: ['Main technology - React', 'Styled in SASS with BEM',
+            'API made in Hasura and deployed on Heroku',
+            'Designed using Figma',
+            'Fully responsive mobile first design',
+            'Designed using Figma'],
+        info: 'An e-commerce static web application. Store has a cart to add/remove items, it shows the total price and sends user to checkout. Routes implemented with React router, including seamlessly moving between pages. Styling made with Sass. Database on GraphQL server, API consumed with Apollo Client.',
+        type: 'e-commerce',
+        img: project7,
+        githubUrl: 'https://github.com/brozinsky/handmade-store',
+        webUrl: 'https://brozinsky.github.io/handmade-store/'
+    },
+    {
         title: 'Clothing Store',
         tag: [
             {
                 name: 'react',
-                icon: reactIcon
+                icon: reactIcon,
+                tooltip: 'React'
             },
             {
                 name: 'styled-components',
-                icon: styledIcon
+                icon: styledIcon,
+                tooltip: 'Styled Components'
             },
             {
                 name: 'firebase',
-                icon: firebaseIcon
+                icon: firebaseIcon,
+                tooltip: 'Firebase'
             },
         ],
-        technologies: ['Main technology - React', 'Styling using Styled-Components', 'Products data stored in Firebase', 'Animations in Framer Motion', 'UI components from Material UI library', 'Designed using Figma'],
+        technologies: ['Main technology - React', 'Styling using Styled-Components',
+            'Products data stored in Firebase',
+            'Animations in Framer Motion',
+            'UI components from Material UI library',
+            'Designed using Figma'],
         info: 'An e-commerce static web application. Loading of products and data storage from Firebase. App has a cart to add/remove items, it shows the total price and sends user to checkout. Routes implemented with React router, including seamlessly moving between pages. Styling made with Styled Components with the use of Material UI elements. ',
         type: 'e-commerce',
         img: project1,
@@ -90,22 +143,29 @@ const projects = [
         tag: [
             {
                 name: 'react',
-                icon: reactIcon
+                icon: reactIcon,
+                tooltip: 'React'
             },
             {
                 name: 'redux',
-                icon: reduxIcon
+                icon: reduxIcon,
+                tooltip: 'Redux'
             },
             {
                 name: 'css',
-                icon: cssIcon
+                icon: cssIcon,
+                tooltip: 'CSS'
             },
             {
                 name: 'api',
-                icon: 'api'
+                icon: 'api',
+                tooltip: 'TMDB Api'
             },
         ],
-        technologies: ['React', 'State management using Redux', 'styling in CSS', 'The Movie Database (TMDb) API'],
+        technologies: ['React',
+            'State management using Redux',
+            'Styling in CSS',
+            'The Movie Database (TMDb) API'],
         info: "A movie search app built with ReactJS. It uses The Movie Database (TMDb) API to display data. App's features include search movies by title, list popular movies, view details of a selected movie (cast, genres, user scores).",
         type: 'App',
         img: project2,
@@ -117,14 +177,18 @@ const projects = [
         tag: [
             {
                 name: 'react',
-                icon: reactIcon
+                icon: reactIcon,
+                tooltip: 'React'
             },
             {
                 name: 'css',
-                icon: cssIcon
+                icon: cssIcon,
+                tooltip: 'CSS'
             },
         ],
-        technologies: ['Main technology - React', 'Styling made in CSS', 'Designed using Figma'],
+        technologies: ['Main technology - React',
+            'Styling made in CSS',
+            'Designed using Figma'],
         info: "Jacks or Better is the most common casino game variation of video poker based on five-card draw poker. It's a mix of a slots machine and poker. My first application where I used React JS as a main technology. Styling made with simple CSS.",
         type: 'Game',
         img: project3,
@@ -136,18 +200,23 @@ const projects = [
         tag: [
             {
                 name: 'html',
-                icon: htmlIcon
+                icon: htmlIcon,
+                tooltip: 'HTML'
             },
             {
                 name: 'css',
-                icon: cssIcon
+                icon: cssIcon,
+                tooltip: 'CSS'
             },
             {
                 name: 'js',
-                icon: jsIcon
+                icon: jsIcon,
+                tooltip: 'Javascript'
             },
         ],
-        technologies: ['HTML and CSS', 'App funcionality made with vanilla Javascript', 'Audio managed with ToneJS library'],
+        technologies: ['HTML and CSS',
+            'App funcionality made with vanilla Javascript',
+            'Audio managed with ToneJS library'],
         info: "Simple app useful for beginner piano players. It shows a selected scale or chord on a key board based on a chosen root note. My first web application made with Javascript. It's using a ToneJS library to play audio samples.",
         type: 'App',
         img: project4,
@@ -159,14 +228,19 @@ const projects = [
         tag: [
             {
                 name: 'html',
-                icon: htmlIcon
+                icon: htmlIcon,
+                tooltip: 'HTML'
             },
             {
                 name: 'sass',
-                icon: sassIcon
+                icon: sassIcon,
+                tooltip: 'Sass'
             },
         ],
-        technologies: ['HTML', 'styled in SASS with BEM', 'Fully responsive mobile first design', 'Designed using Figma'],
+        technologies: ['HTML',
+            'styled in SASS with BEM',
+            'Fully responsive mobile first design',
+            'Designed using Figma'],
         info: 'An architecture studio single page website template with photo gallery, dynamic animations and contact form. Fully responsive mobile first design, made with HTML, styling and animations made with SASS. ',
         type: 'Website',
         img: project5,
@@ -178,14 +252,18 @@ const projects = [
         tag: [
             {
                 name: 'html',
-                icon: htmlIcon
+                icon: htmlIcon,
+                tooltip: 'HTML'
             },
             {
                 name: 'sass',
-                icon: sassIcon
+                icon: sassIcon,
+                tooltip: 'Sass'
             },
         ],
-        technologies: ['HTML', 'styled in SASS with BEM', 'Fully responsive mobile first design', 'Designed using Figma'],
+        technologies: ['HTML', 'styled in SASS with BEM',
+            'Fully responsive mobile first design',
+            'Designed using Figma'],
         info: 'Example of a delivery company single page website template with contact form. My first static website. Fully responsive, made with HTML styling and animations made with SASS. ',
         type: 'Website',
         img: project6,
@@ -206,10 +284,8 @@ const Projects = () => {
 
     useEffect(() => {
 
-        const title = document.querySelector(".projects-title");
+        // const title = document.querySelector(".projects-title");
         const projects = document.querySelectorAll(".project");
-        console.log(title)
-        console.log(projects)
 
         projects.forEach(project => {
             gsap.fromTo(project, { y: '+=100', opacity: 0 },

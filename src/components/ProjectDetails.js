@@ -101,8 +101,9 @@ const ProjectDetails = ({ title, img, technologies, info, tag, githubUrl, webUrl
                             >Features/used technologies:</Subtitle>
                         </SubtitleWrapper>
                         <ul>
-                            {technologies.map(item =>
+                            {technologies.map((item, index) =>
                                 <ListItem
+                                    key={index}
                                     initial={{ opacity: 0, x: '-50px', }}
                                     animate={{ opacity: 1, x: '0' }}
                                     transition={{
@@ -124,8 +125,8 @@ const ProjectDetails = ({ title, img, technologies, info, tag, githubUrl, webUrl
                         }}
                     >
                         {
-                            tag.map(tag =>
-                                <span className={`${tag.name}-dtag dtag`}>{tag.icon} <span>{tag.name}</span> </span>)
+                            tag.map((tag, index) =>
+                                <span key={index} className={`${tag.name}-dtag dtag`}>{tag.icon} <span>{tag.tooltip}</span> </span>)
                         }
                     </motion.div>
                     <Info
@@ -188,6 +189,7 @@ const Card = styled(motion.div)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     @media (max-width: 1200px) {
     height: 100vh;
@@ -291,6 +293,18 @@ const Card = styled(motion.div)`
 .styled-components-dtag {
         box-shadow: 0px 0px 5px 1.5px var(--color-styled-components);
         background: var(--color-styled-components);
+}
+.graphql-dtag {
+        box-shadow: 0px 0px 5px 1.5px var(--color-graphql);
+        background: var(--color-graphql);
+}
+.woo-commerce-dtag {
+        box-shadow: 0px 0px 5px 1.5px var(--color-woo-commerce);
+        background: var(--color-woo-commerce);
+}
+.heroku-dtag {
+        box-shadow: 0px 0px 5px 1.5px var(--color-heroku);
+        background: var(--color-heroku);
 }
 `
 
@@ -426,14 +440,6 @@ const Img = styled(motion.img)`
     @media (max-width: 768px) {
     display: none;
     }
-    @media (max-width: 1200px) {
-    height: 270px;
-}
-/*
-    &:hover{
-        transform: rotate(-15deg);
-        scale: 1.3;
-    } */
 `
 
 // Lines

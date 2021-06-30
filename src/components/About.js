@@ -111,7 +111,7 @@ const About = () => {
             I'm a self taught Front-end Developer and a Creative Web Designer from Szczecin.
             I create fast, responsive, and reliable websites using modern web development tools.
             I'm a civil engineering graduate of West Pomeranian University of Technology that fell in love in web development.
-                    </InfoText>
+          </InfoText>
           <SectionTitle className='about-subtitle'>Technologies I use:</SectionTitle>
           <IconsWrap className='icons-wrap'>
             <Icon>{htmlIcon} Html5</Icon>
@@ -121,7 +121,7 @@ const About = () => {
           </IconsWrap>
           <InfoText className='icons-text'>
             I write semantic HTML to improve webpage SEO.
-                For styling I prefer using Styled Components but I feel comfortable with SASS preprocessor, which I like to use along with BEM methodology. </InfoText>
+            For styling I prefer using Styled Components but I feel comfortable with SASS preprocessor, which I like to use along with BEM methodology. </InfoText>
           <IconsWrap className='icons-wrap'>
             <Icon>{jsIcon} Javascript ES6</Icon>
             <Icon>{reactIcon} React</Icon>
@@ -129,18 +129,17 @@ const About = () => {
           </IconsWrap>
           <InfoText className='icons-text'>
             I'm using React as my main framework.
-                    I know all the necessary basics of Redux but I prefer to keep state with useState and context hooks. </InfoText>
+            I know all the necessary basics of Redux but I prefer to keep state with useState and context hooks. </InfoText>
           <IconsWrap className='icons-wrap'>
             <Icon>{figmaIcon} Figma</Icon>
             <Icon> Photoshop</Icon>
             <Icon>{gitIcon} Git</Icon>
             <Icon>NPM</Icon>
-            <Icon>Webpack</Icon>
           </IconsWrap>
           <InfoText className='icons-text'>
             I'm designing website layouts using Figma and sometimes Photoshop for images optimalization.
             I use Git to track all changes in my code that I store on my GitHub page.
-                    </InfoText>
+          </InfoText>
           <IconsWrap className='icons-wrap'>
             <Icon>{mobileIcon} Mobile first</Icon>
             <Icon>{rwdIcon} RWD</Icon>
@@ -148,9 +147,9 @@ const About = () => {
           </IconsWrap>
           <InfoText className='icons-text'>
             I always focus on Responsive Web Design with mobile first approach to make sure my website works well on every device.
-                </InfoText>
+          </InfoText>
           <InfoText className='icons-text'> Besides the work, I'm interested in music production, playing guitar and listening to basicially all genres of music.
-                </InfoText>
+          </InfoText>
         </Info>
         <PhotoContainer className='about-photo'>
           <img className='about-photo-img' src={photo} alt="me" width="430" height="520" />

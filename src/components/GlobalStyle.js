@@ -99,6 +99,9 @@ a:not(.default):visited {
   --color-photoshop:   #31A8FF;
   --color-autocad:     #E51937;
 
+  --color-woo-commerce: #96588A;
+  --color-graphql: #E434AA;
+  --color-heroku: #8762B2;
 }
 
 `
