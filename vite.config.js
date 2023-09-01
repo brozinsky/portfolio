@@ -21,6 +21,7 @@ export default defineConfig({
       "@/lib": path.join(__dirname, "src/lib"),
       "@/hooks": path.join(__dirname, "src/hooks"),
       "@/fonts": path.join(__dirname, "src/fonts"),
+      "@/images": path.join(__dirname, "src/images"),
     },
   },
 });

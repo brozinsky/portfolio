@@ -15,6 +15,7 @@
       "@/lib/*": ["src/lib/*"],
       "@/hooks/*": ["src/hooks/*"],
       "@/fonts/*": ["src/fonts/*"],
+      "@/images/*": ["src/images/*"],
     }
   }
 }
