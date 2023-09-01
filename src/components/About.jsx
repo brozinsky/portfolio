@@ -1,20 +1,22 @@
 import React, { useEffect } from 'react';
 import styled from "styled-components";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-// import { faHtml5 } from '@fortawesome/free-brands-svg-icons';
-// import { faCss3Alt } from '@fortawesome/free-brands-svg-icons';
-// import { faSass } from '@fortawesome/free-brands-svg-icons';
+import {
+  faHtml5,
+  faCss3Alt,
+  faSass,
+  faJsSquare,
+  faReact,
+  faFigma,
+  faGitAlt,
+} from '@fortawesome/free-brands-svg-icons';
 
-// import { faJsSquare } from '@fortawesome/free-brands-svg-icons';
-// import { faReact } from '@fortawesome/free-brands-svg-icons';
-
-// import { faFigma } from '@fortawesome/free-brands-svg-icons';
-// import { faGitAlt } from '@fortawesome/free-brands-svg-icons';
-
-// import { faMobileAlt } from "@fortawesome/free-solid-svg-icons";
-// import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
-// import { faRedo } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMobileAlt,
+  faLaptopCode,
+  faRedo,
+} from "@fortawesome/free-solid-svg-icons";
 
 import photo from "../images/holo-photo.jpg";
 
@@ -106,9 +108,9 @@ const About = () => {
       <Title>_About</Title>
       <div className="section-wrap">
         <Info>
-          <SectionTitle className='about-subtitle'>Hello, I'm Mateusz Brzeziński.</SectionTitle>
+          {/* <SectionTitle className='about-subtitle'>Hello, I'm Mateusz Brzeziński.</SectionTitle> */}
           <InfoText className='icons-text'>
-            I'm a self taught Front-end Developer and a Creative Web Designer from Szczecin.
+            I'm a self taught Front-end Developer from Szczecin.
             I create fast, responsive, and reliable websites using modern web development tools.
             I'm a civil engineering graduate of West Pomeranian University of Technology that fell in love in web development.
           </InfoText>
@@ -151,9 +153,9 @@ const About = () => {
           <InfoText className='icons-text'> Besides the work, I'm interested in music production, playing guitar and listening to basicially all genres of music.
           </InfoText>
         </Info>
-        <PhotoContainer className='about-photo'>
+        {/* <PhotoContainer className='about-photo'>
           <img className='about-photo-img' src={photo} alt="me" width="430" height="520" />
-        </PhotoContainer>
+        </PhotoContainer> */}
       </div>
     </AboutSection>
   )
@@ -180,10 +182,13 @@ const AboutSection = styled.section`
 `
 
 const Title = styled.h2`
+    text-align: center;
+    margin: 0;
+    padding: 4rem 5rem 2rem;
     @media (max-width: 1200px) {
     width: 90vw;
-    margin: 4rem auto 1rem auto;
-    text-align: center;
+    margin: 0;
+    padding: 4rem auto 1rem auto;
     }
 `
 
@@ -272,20 +277,25 @@ const PhotoContainer = styled.div`
 }
 `
 
-const Icon = styled.h4`
+const Icon = styled.div`
 font-size: 1.1rem;
-text-transform: uppercase;
 font-weight: 400;
 color: #bbb;
 display:inline-block;
-margin: 0.3rem;
 border: 1px solid #bbb;
-border-radius: 20px;
-padding: 0.1rem 0.5rem;
+border-radius: 1rem;
+padding: 0.25rem 1rem;
+display: inline-flex;
+gap: 0.5rem;
+align-items: center;
 `
 const IconsWrap = styled.div`
 width: 100%;
 text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 0.5rem;
 `
 
 
