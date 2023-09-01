@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ProjectDetails from './ProjectDetails';
-// import { faGithub } from '@fortawesome/free-brands-svg-icons';
-// import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ProjectCardTag from "./ProjectCardTag";
@@ -11,10 +11,10 @@ import ProjectCardTag from "./ProjectCardTag";
 
 gsap.registerPlugin(ScrollTrigger)
 
-// const githubIcon = <FontAwesomeIcon
-//     icon={faGithub} />
-// const webIcon = <FontAwesomeIcon
-//     icon={faGlobe} />
+const githubIcon = <FontAwesomeIcon
+    icon={faGithub} />
+const webIcon = <FontAwesomeIcon
+    icon={faGlobe} />
 
 
 const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, webUrl }) => {
@@ -131,12 +131,12 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
                             <LinksWrapper>
                                 {/* <Tooltip title='Code' placement="bottom" arrow> */}
                                     <Link href={githubUrl}>
-                                        {/* {githubIcon} */}
+                                        {githubIcon}
                                     </Link>
                                 {/* </Tooltip> */}
                                 {/* <Tooltip title='Live' placement="bottom" arrow> */}
                                     <Link href={webUrl}>
-                                        {/* {webIcon} */}
+                                        {webIcon}
                                     </Link>
                                 {/* </Tooltip> */}
                             </LinksWrapper>
@@ -213,7 +213,7 @@ const Overlay = styled.div`
 `
 
 const CardTitle = styled.h3`
-    text-transform: uppercase;
+    text-transform: none;
     text-align: center;
     margin:  0;
     font-size: 1.5rem;

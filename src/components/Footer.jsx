@@ -1,22 +1,21 @@
 import React, { useEffect } from 'react'
 import styled from "styled-components";
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
-// import { faGithub } from '@fortawesome/free-brands-svg-icons';
-// import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger)
 
-// const arrowIcon = <FontAwesomeIcon className="arrow-top"
-//     icon={faChevronUp} />
-// const githubIcon = <FontAwesomeIcon className="footer-social-icon"
-//     icon={faGithub} />
-// const linkedinIcon = <FontAwesomeIcon className="footer-social-icon"
-//     icon={faLinkedin} />
+const arrowIcon = <FontAwesomeIcon className="arrow-top"
+    icon={faChevronUp} />
+const githubIcon = <FontAwesomeIcon className="footer-social-icon"
+    icon={faGithub} />
+const linkedinIcon = <FontAwesomeIcon className="footer-social-icon"
+    icon={faLinkedin} />
 
 const Footer = () => {
     useEffect(() => {
@@ -44,15 +43,15 @@ const Footer = () => {
                 <TriangleBackground />
                 <ButtonCenter>
                     <ButtonToTop onClick={handleScrollButton}>
-                        {/* {arrowIcon} */}
+                        {arrowIcon}
                     </ButtonToTop>
                 </ButtonCenter>
                 <WrapLinks>
                     <a href="https://github.com/brozinsky">
-                        {/* {githubIcon} */}
+                        {githubIcon}
                     </a>
                     <a href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/">
-                        {/* {linkedinIcon} */}
+                        {linkedinIcon}
                         </a>
                 </WrapLinks>
                 <Small>Created by &nbsp;

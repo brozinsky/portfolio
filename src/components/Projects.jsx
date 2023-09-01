@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 
-import { Firebase, Javascript, Css3, Html5, ReactLogo, Sass, Graphql, Heroku } from '@styled-icons/simple-icons'
-// import { StyledComponents, Firebase, Javascript, Css3, Html5, ReactLogo, Sass, Graphql, Heroku } from '@styled-icons/simple-icons'
+import { Styledcomponents, Firebase, Javascript, Css3, Html5, ReactLogo, Sass, Graphql, Heroku } from '@styled-icons/simple-icons'
+
 import { Redux } from '@styled-icons/boxicons-logos'
 
 import ProjectCard from './ProjectCard';
@@ -21,10 +21,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger)
 
-// const StyledCompIocn = styled(StyledComponents)`
-// margin-bottom: 5px;
-// transform: scale(0.9);
-// `
+const StyledCompIocn = styled(Styledcomponents)`
+margin-bottom: 5px;
+transform: scale(0.9);
+`
 const HerokuIcon = styled(Heroku)`
 margin-bottom: 5px;
 transform: scale(0.9);

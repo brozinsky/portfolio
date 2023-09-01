@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { textFromTop } from '../animations/animation';
 import { motion } from 'framer-motion';
-import logo from '../images/logo.png';
+import logo from '@/images/logo.svg';
+import Logo from '@/components/svg/Logo';
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const logoText = 'codeTree';
 
   const burgerHandler = () => {
     setIsOpen((current) => !current);
@@ -15,9 +15,9 @@ const Menu = () => {
     <nav className={`navbar ${isOpen ? 'tabs-open' : ''}`}>
       <a href="#" className="logo-wrap">
         <div className="logo">
-          <img src={logo} alt="logo" width="33" height="33" />
+          {/* <img src={logo} alt="logo" width="33" height="33" /> */}
+          <Logo />
         </div>
-        <h3 className="logo-text">{logoText}</h3>
       </a>
       <div className="burger" onClick={burgerHandler}>
         {/* {menuIcon} */}
@@ -38,11 +38,11 @@ const Menu = () => {
             About
           </a>
         </li>
-        <li className="nav-link">
+        {/* <li className="nav-link">
           <a onClick={burgerHandler} href="#contact">
             Contact
           </a>
-        </li>
+        </li> */}
       </motion.ul>
     </nav>
   );

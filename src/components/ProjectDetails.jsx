@@ -1,16 +1,14 @@
 import React from 'react';
 import styled from "styled-components";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-// import { faGithub } from '@fortawesome/free-brands-svg-icons';
-// import { faGlobe } from '@fortawesome/free-solid-svg-icons';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 
-// const githubIcon = <FontAwesomeIcon
-//     icon={faGithub} />
-// const webIcon = <FontAwesomeIcon
-//     icon={faGlobe} />
+const githubIcon = <FontAwesomeIcon
+    icon={faGithub} />
+const webIcon = <FontAwesomeIcon
+    icon={faGlobe} />
 
 const ProjectDetails = ({ title, img, technologies, info, tag, githubUrl, webUrl }) => {
 
@@ -148,7 +146,7 @@ const ProjectDetails = ({ title, img, technologies, info, tag, githubUrl, webUrl
                                 duration: 0.5,
                             }}
                             href={githubUrl}>
-                            {/* {githubIcon}  */}
+                            {githubIcon}
                             <span>Code</span>
                         </Link>
                         <Link
@@ -159,7 +157,7 @@ const ProjectDetails = ({ title, img, technologies, info, tag, githubUrl, webUrl
                                 duration: 0.5,
                             }}
                             href={webUrl}>
-                            {/* {webIcon}  */}
+                            {webIcon}
                             <span>Live</span>
                         </Link>
                     </LinksWrapper>

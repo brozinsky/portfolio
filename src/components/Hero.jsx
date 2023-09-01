@@ -2,27 +2,27 @@ import React, { useEffect, useRef } from 'react';
 import styled from "styled-components";
 import { motion } from 'framer-motion';
 import { TextAppear } from "../animations/textAppear";
-import TreeMid from './CircuitTree/TreeMid'
-import TreeBot from './CircuitTree/TreeBot'
-import TreeTop from './CircuitTree/TreeTop'
-import SqStripes from './svg/SqStripes';
-import FolderStripe from './svg/FolderStripe';
-import HexGrp1 from './svg/HexGrp1';
-import HexGrp2 from './svg/HexGrp2';
-import HexGrp3 from './svg/HexGrp3';
+import TreeMid from '@/components/CircuitTree/TreeMid'
+import TreeBot from '@/components/CircuitTree/TreeBot'
+import TreeTop from '@/components/CircuitTree/TreeTop'
+import SqStripes from '@/components/svg/SqStripes';
+import FolderStripe from '@/components/svg/FolderStripe';
+import HexGrp1 from '@/components/svg/HexGrp1';
+import HexGrp2 from '@/components/svg/HexGrp2';
+import HexGrp3 from '@/components/svg/HexGrp3';
 
 import gsap from 'gsap';
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faGithub } from '@fortawesome/free-brands-svg-icons';
-// import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import { ArrowRightShort } from '@styled-icons/bootstrap'
 
-// const githubIcon = <FontAwesomeIcon className="footer-social-icon"
-//     icon={faGithub} />
-// const linkedinIcon = <FontAwesomeIcon className="footer-social-icon"
-//     icon={faLinkedin} />
+const githubIcon = <FontAwesomeIcon className="footer-social-icon"
+    icon={faGithub} />
+const linkedinIcon = <FontAwesomeIcon className="footer-social-icon"
+    icon={faLinkedin} />
 
 const ArrowIcon = styled(ArrowRightShort)`
 margin-bottom: 5px;
@@ -89,7 +89,7 @@ const Hero = () => {
             > {buttonText} < ArrowIcon /> </HeaderButton >
             <HeaderFrame>
                 <IconContainer>
-                    {/* <Icon
+                    <Icon
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 0.6 }}
                         transition={{
@@ -97,8 +97,8 @@ const Hero = () => {
                             duration: 1.5,
                         }}
                         className='social-icon'
-                        href="https://github.com/brozinsky">{githubIcon}</Icon> */}
-                    {/* <Icon
+                        href="https://github.com/brozinsky">{githubIcon}</Icon>
+                    <Icon
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 0.6 }}
                         transition={{
@@ -106,7 +106,7 @@ const Hero = () => {
                             duration: 1.5,
                         }}
                         className='social-icon'
-                        href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/">{linkedinIcon}</Icon> */}
+                        href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/">{linkedinIcon}</Icon>
                 </IconContainer>
             </HeaderFrame>
             <ToBottom href="#projects" >
