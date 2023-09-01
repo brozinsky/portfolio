@@ -2,7 +2,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  // overflow-x: hidden;
 }
 
 a {
@@ -18,4 +17,28 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+h1, h2, h3{
+  font-family: 'Rajdhani', 'Helvetica Neue',
+  sans-serif;
+  color: #F13F3F;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+h1{
+  font-size: 3.5rem;
+  line-height: 3.5rem;
+  font-weight: 700;
+}
+
+h2 {
+    line-height:  2.4rem;
+    text-transform: uppercase;
+    color: #F13F3F;
+    font-size: 2.4rem;
+    font-weight: 400;
+    width: 100%;
+    margin: 4rem 5rem 2rem 5rem;
 }
