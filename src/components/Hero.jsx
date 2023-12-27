@@ -84,7 +84,7 @@ const Hero = () => {
                 />
             </SubtitleWrapper>
             <HeaderButton
-                href="#projects"
+                href="#featured"
                 ref={element => { buttonRef = element }}
             > {buttonText} < ArrowIcon /> </HeaderButton >
             <HeaderFrame>
@@ -109,7 +109,7 @@ const Hero = () => {
                         href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/">{linkedinIcon}</Icon>
                 </IconContainer>
             </HeaderFrame>
-            <ToBottom href="#projects" >
+            <ToBottom href="#featured" >
                 <Triangle
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 0.3 }}

@@ -7,6 +7,7 @@ import Projects from '@/components/Projects';
 import About from '@/components/About';
 // import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import Featured from '@/components/Featured';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <GlobalStyle />
       <Menu />
       <Hero />
+      <Featured />
       <Projects />
       <About />
       {/* <Contact /> */}

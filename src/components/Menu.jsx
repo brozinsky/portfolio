@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { textFromTop } from '../animations/animation';
-import { motion } from 'framer-motion';
-import logo from '@/images/logo.svg';
-import Logo from '@/components/svg/Logo';
+import React, { useState } from "react";
+import { textFromTop } from "../animations/animation";
+import { motion } from "framer-motion";
+import logo from "@/images/logo.svg";
+import Logo from "@/components/svg/Logo";
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +12,7 @@ const Menu = () => {
   };
 
   return (
-    <nav className={`navbar ${isOpen ? 'tabs-open' : ''}`}>
+    <nav className={`navbar ${isOpen ? "tabs-open" : ""}`}>
       <a href="#" className="logo-wrap">
         <div className="logo">
           {/* <img src={logo} alt="logo" width="33" height="33" /> */}
@@ -26,8 +26,13 @@ const Menu = () => {
         variants={textFromTop}
         initial="hidden"
         animate="show"
-        className={`tabs ${isOpen ? 'tabs-open' : ''}`}
+        className={`tabs ${isOpen ? "tabs-open" : ""}`}
       >
+        <li className="nav-link">
+          <a onClick={burgerHandler} href="#featured">
+            Featured
+          </a>
+        </li>
         <li className="nav-link">
           <a onClick={burgerHandler} href="#projects">
             Projects
