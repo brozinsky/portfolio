@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./public/index.html",
@@ -25,16 +26,16 @@ module.exports = {
     },
     extend: {
       colors: {
+        background: {
+          500: "#111"
+        },
+        neural: {
+          500: "#e5e7eb",
+          600: "#bbb",
+          800: "#888"
+        },
         primary: {
-          100: "#8dc6fb",
-          200: "#6ab4fa",
-          300: "#48a3f8",
-          400: "#2592f7",
-          500: "#1188f7",
-          600: "#066ecf",
-          700: "#055cac",
-          800: "#04498a",
-          900: "#033767",
+          500: "#F13F3F",
         },
       },
     },
