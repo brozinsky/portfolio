@@ -1,7 +1,11 @@
-import React, { useEffect } from 'react';
+import React from "react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { motion } from "framer-motion";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Marquee from "react-fast-marquee";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 import {
   faHtml5,
   faCss3Alt,
@@ -9,294 +13,239 @@ import {
   faJsSquare,
   faReact,
   faFigma,
-  faGitAlt,
-} from '@fortawesome/free-brands-svg-icons';
-
+} from "@fortawesome/free-brands-svg-icons";
 import {
-  faMobileAlt,
-  faLaptopCode,
-  faRedo,
-} from "@fortawesome/free-solid-svg-icons";
+  Styledcomponents,
+  Firebase,
+  Redux,
+  // TailwindCss,
+  Graphql,
+  Nextdotjs,
+} from "@styled-icons/simple-icons";
+import Text from "./ui/Text";
+import Heading from "./ui/Heading";
+import { ArrowRightShort } from "@styled-icons/bootstrap";
 
-import photo from "../images/holo-photo.jpg";
+const githubIcon = <FontAwesomeIcon icon={faGithub} />;
+const linkedinIcon = (
+  <FontAwesomeIcon className="footer-social-icon" icon={faLinkedin} />
+);
+const htmlIcon = <FontAwesomeIcon className="html-icon" icon={faHtml5} />;
+const cssIcon = <FontAwesomeIcon className="css-icon" icon={faCss3Alt} />;
+const sassIcon = <FontAwesomeIcon className="sass-icon" icon={faSass} />;
+const jsIcon = <FontAwesomeIcon className="js-icon" icon={faJsSquare} />;
+const reactIcon = <FontAwesomeIcon className="react-icon" icon={faReact} />;
+const figmaIcon = <FontAwesomeIcon className="figma-icon" icon={faFigma} />;
+const StyledCompIocn = styled(Styledcomponents)`
+  transform: scale(0.5);
+`;
+const ReduxIcon = styled(Redux)`
+  transform: scale(0.3);
+`;
+const GraphqlIcon = styled(Graphql)`
+  transform: scale(0.3);
+`;
+const FirebaseIcon = styled(Firebase)`
+  transform: scale(0.3);
+`;
+const ArrowIcon = styled(ArrowRightShort)`
+  margin-bottom: 5px;
+  height: 30px;
+  transition: 0.5s;
+`;
+const graphqlIcon = <GraphqlIcon className="graphql-icon" />;
+const firebaseIcon = <FirebaseIcon className="firebase-icon" />;
+const styledIcon = <StyledCompIocn className="styled-icon" />;
+const reduxIcon = <ReduxIcon className="redux-icon" />;
 
+const skills1 = [
+  { name: "Html 5", icon: htmlIcon },
+  { name: "Css3", icon: cssIcon },
+  { name: "Sass", icon: sassIcon },
+  { name: "Javascript ES6", icon: jsIcon },
+  { name: "React", icon: reactIcon },
+  { name: "Figma", icon: figmaIcon },
+];
 
-import gsap from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+const skills2 = [
+  { name: "Styled Components", icon: styledIcon },
+  { name: "GraphQL", icon: graphqlIcon },
+  { name: "Redux", icon: reduxIcon },
+  { name: "Firebase", icon: firebaseIcon },
+  { name: "Github", icon: githubIcon },
+];
 
-gsap.registerPlugin(ScrollTrigger)
-
-const htmlIcon = <FontAwesomeIcon className="html-icon"
-  icon={faHtml5} />
-const cssIcon = <FontAwesomeIcon className="css-icon"
-  icon={faCss3Alt} />
-const sassIcon = <FontAwesomeIcon className="sass-icon"
-  icon={faSass} />
-
-const jsIcon = <FontAwesomeIcon className="js-icon"
-  icon={faJsSquare} />
-const reactIcon = <FontAwesomeIcon className="react-icon"
-  icon={faReact} />
-
-const figmaIcon = <FontAwesomeIcon className="figma-icon"
-  icon={faFigma} />
-const gitIcon = <FontAwesomeIcon className="git-icon"
-  icon={faGitAlt} />
-
-const mobileIcon = <FontAwesomeIcon className="mobile-icon"
-  icon={faMobileAlt} />
-const rwdIcon = <FontAwesomeIcon className="rwd-icon"
-  icon={faLaptopCode} />
-const dryIcon = <FontAwesomeIcon className="dry-icon"
-  icon={faRedo} />
-
-const About = () => {
-  useEffect(() => {
-    const icons = document.querySelectorAll(".icons-wrap");
-    const iconsText = document.querySelectorAll(".icons-text");
-    const aboutSubtitle = document.querySelectorAll(".about-subtitle");
-    const photo = document.querySelectorAll(".about-photo");
-
-    icons.forEach(item => {
-      gsap.fromTo(item.children, { x: '+=20', opacity: 0 },
-        {
-          x: 0, opacity: 1, stagger: 0.2, duration: 0.6,
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 75%',
-            ease: 'power1. out'
-          }
-        })
-    })
-
-    iconsText.forEach(item => {
-      gsap.fromTo(item, { y: '-=20', opacity: 0, delay: 1 },
-        {
-          y: 0, opacity: 1, stagger: 0.2, duration: 1,
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 75%',
-            ease: 'power1. out'
-          }
-        })
-    })
-
-    aboutSubtitle.forEach(item => {
-      gsap.fromTo(item, { x: '+=30', opacity: 0, delay: 0.6 },
-        {
-          x: 0, opacity: 1, stagger: 0.2, duration: 0.7,
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 75%',
-            ease: 'power3. out'
-          }
-        })
-    })
-
-    gsap.fromTo(photo, { transform: 'scale(0)', opacity: 0, delay: 0.6 },
-      {
-        transform: 'scale(1)', opacity: 1, stagger: 0.2, duration: 0.7,
-        scrollTrigger: {
-          trigger: photo,
-          start: 'top 70%',
-          ease: 'power1. out'
-        }
-      })
-  }, [])
+export default function About() {
   return (
-    <AboutSection id="about">
-      <Title>_About</Title>
-      <div className="section-wrap">
-        <Info>
-          {/* <SectionTitle className='about-subtitle'>Hello, I'm Mateusz Brzeziński.</SectionTitle> */}
-          <InfoText className='icons-text'>
-            I'm a self taught Front-end Developer from Szczecin.
-            I create fast, responsive, and reliable websites using modern web development tools.
-            I'm a civil engineering graduate of West Pomeranian University of Technology that fell in love in web development.
-          </InfoText>
-          <SectionTitle className='about-subtitle'>Technologies I use:</SectionTitle>
-          <IconsWrap className='icons-wrap'>
-            <Icon>{htmlIcon} Html5</Icon>
-            <Icon>{cssIcon} Css3</Icon>
-            <Icon>{sassIcon} Sass</Icon>
-            <Icon>BEM</Icon>
-          </IconsWrap>
-          <InfoText className='icons-text'>
-            I write semantic HTML to improve webpage SEO.
-            For styling I prefer using Styled Components but I feel comfortable with SASS preprocessor, which I like to use along with BEM methodology. </InfoText>
-          <IconsWrap className='icons-wrap'>
-            <Icon>{jsIcon} Javascript ES6</Icon>
-            <Icon>{reactIcon} React</Icon>
-            <Icon>Redux</Icon>
-          </IconsWrap>
-          <InfoText className='icons-text'>
-            I'm using React as my main framework.
-            I know all the necessary basics of Redux but I prefer to keep state with useState and context hooks. </InfoText>
-          <IconsWrap className='icons-wrap'>
-            <Icon>{figmaIcon} Figma</Icon>
-            <Icon> Photoshop</Icon>
-            <Icon>{gitIcon} Git</Icon>
-            <Icon>NPM</Icon>
-          </IconsWrap>
-          <InfoText className='icons-text'>
-            I'm designing website layouts using Figma and sometimes Photoshop for images optimalization.
-            I use Git to track all changes in my code that I store on my GitHub page.
-          </InfoText>
-          <IconsWrap className='icons-wrap'>
-            <Icon>{mobileIcon} Mobile first</Icon>
-            <Icon>{rwdIcon} RWD</Icon>
-            <Icon>{dryIcon} DRY</Icon>
-          </IconsWrap>
-          <InfoText className='icons-text'>
-            I always focus on Responsive Web Design with mobile first approach to make sure my website works well on every device.
-          </InfoText>
-          <InfoText className='icons-text'> Besides the work, I'm interested in music production, playing guitar and listening to basicially all genres of music.
-          </InfoText>
-        </Info>
-        {/* <PhotoContainer className='about-photo'>
-          <img className='about-photo-img' src={photo} alt="me" width="430" height="520" />
-        </PhotoContainer> */}
+    <section className="pb-8 pt-16" id="about">
+      {/* <h2 className={"projects-title"}>_About</h2> */}
+      <div className=" lg:max-w-none w-[86vw] mx-auto">
+        <div className="xl:grid flex flex-col xl:grid-cols-3 xl:grid-rows-2 gap-4">
+          <div className="flex flex-col gap-4 col-start-1 xl:col-end-3 row-span-2">
+            <div className="flex flex-col lg:grid grid-cols-2 gap-4">
+              <div className="p-8 rounded-xl border border-neutral-600">
+                <h2 className={"mx-auto text-center projects-title m-0"}>
+                  _About
+                </h2>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <a
+                  href="https://github.com/brozinsky"
+                  className="h-full w-full"
+                >
+                  <div className="h-full p-8 rounded-xl border border-neutral-600 transition text-3xl gap-4 text-neutral-400 hover:text-white flex items-center justify-center">
+                    {githubIcon}
+                    <span className="text-xl">Github</span>
+                  </div>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/"
+                  className="h-full w-full"
+                >
+                  <div className="h-full p-8 rounded-xl border border-neutral-600 transition gap-4 text-3xl text-neutral-400 hover:text-white flex items-center justify-center">
+                    {linkedinIcon}
+                    <span className="text-xl">Linkedin</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="p-8 rounded-xl border border-neutral-600 col-start-1">
+              <div className="space-y-4">
+                <Text>
+                  I'm a self taught Front-end Developer from Szczecin.
+                  <br />I create fast, responsive, and reliable websites using
+                  modern web development tools. I'm a civil engineering graduate
+                  of West Pomeranian University of Technology that fell in love
+                  in web development.
+                </Text>
+                <Text>
+                  I write semantic HTML to improve webpage SEO.
+                  <br />
+                  For styling I prefer using TailwindCss or Sass, which I use
+                  along with BEM methodology.
+                </Text>
+                <Text>
+                  I'm using React as my main framework. My preffered tool for
+                  state management is React Query or Zustand.
+                </Text>
+                <Text>
+                  I'm designing website layouts using Figma and sometimes
+                  Photoshop for images optimalization.
+                  <br />I use Git to track all changes in my code that I store
+                  on my GitHub page.
+                </Text>
+                <Text>
+                  I always focus on Responsive Web Design with mobile first
+                  approach to make sure my website works well on every device.
+                </Text>
+                <Text>
+                  Besides the work, I'm interested in music production, playing
+                  guitar and listening to basicially all genres of music.
+                </Text>
+              </div>
+              {/* <PhotoContainer className='about-photo'>
+            <img className='about-photo-img' src={photo} alt="me" width="430" height="520" />
+                    </PhotoContainer> */}
+            </div>
+          </div>
+          <div className="p-8 rounded-xl border border-neutral-600 flex flex-col justify-center w-full xl:col-start-3 row-start-1 row-end-2">
+            <Heading variant="h3" color="light" className="mb-4 text-center">
+              Technologies I use:
+            </Heading>
+            <div className="marquee">
+              <Marquee direction="left" speed={15} pauseOnHover>
+                {skills1.map(({ name, icon }) => {
+                  return (
+                    <div
+                      key={name}
+                      data-tooltip-id={name}
+                      className="hover:bg-neutral-800 transition hover:text-neutral-100 w-28 text-neutral-400 h-16 m-1.5 bg-neutral-900 text-3xl items-center justify-center flex"
+                    >
+                      {icon}
+                      <ReactTooltip
+                        className="text-sm"
+                        style={{ fontSize: 14, height: "fit-content" }}
+                        id={name}
+                        variant="dark"
+                        content={name}
+                      />
+                    </div>
+                  );
+                })}
+              </Marquee>
+            </div>
+            <div className="marquee">
+              <Marquee direction="right" speed={13} pauseOnHover>
+                {skills2.map(({ name, icon }) => {
+                  return (
+                    <div
+                      key={name}
+                      data-tooltip-id={name}
+                      className="w-28 text-neutral-400 h-16 m-1.5 bg-neutral-900 border-neutral-400 text-3xl items-center justify-center flex"
+                    >
+                      {icon}
+                      <ReactTooltip
+                        className="text-sm"
+                        style={{ fontSize: 14, height: "fit-content" }}
+                        id={name}
+                        variant="dark"
+                        content={name}
+                      />
+                    </div>
+                  );
+                })}
+              </Marquee>
+            </div>
+          </div>
+          <div className="p-8 rounded-xl border border-neutral-600 flex flex-col justify-center w-full xl:col-start-3 row-start-2 row-end-3">
+            <Heading variant="h3" color="light" className="mb-4 text-center">
+              Let's get in touch:
+            </Heading>
+            <HeaderButton
+              href="mailto:mateusz0brzezinski@gmail.com"
+              // ref={element => { buttonRef = element }}
+            >
+              Email <ArrowIcon />
+            </HeaderButton>
+          </div>
+        </div>
       </div>
-    </AboutSection>
-  )
+    </section>
+  );
 }
 
-const AboutSection = styled.section`
-    display: flex;
-    flex-direction: column;
-
-    .section-wrap{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      max-width: 95vw;
-      align-items: center;
-      flex-wrap: wrap;
-
-    @media (max-width: 1490px) {
-    flex-direction: column-reverse;
-    justify-content: center;
-    flex-wrap: nowrap;
+const HeaderButton = styled(motion.a)`
+  margin: 1rem auto;
+  width: 200px;
+  height: 55px;
+  line-height: 55px;
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: "Rajdhani", "Helvetica Neue", sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  text-align: center;
+  background: transparent;
+  backdrop-filter: blur(18px);
+  &:hover {
+    border: 1px solid #fff;
+    background: #fff;
+    color: #111;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
+  }
+  &:hover svg {
+    transform: rotate(90deg);
+  }
+  &:link,
+  &:visited,
+  &:not(.default):link,
+  &:not(.default):visited {
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      color: #111;
     }
-    }
-`
-
-const Title = styled.h2`
-    text-align: center;
-    margin: 0;
-    padding: 4rem 5rem 2rem;
-    @media (max-width: 1200px) {
-    width: 90vw;
-    margin: 0;
-    padding: 4rem auto 1rem auto;
-    }
-`
-
-const Info = styled.div`
-    max-height: 100%;
-    max-width: 1000px;
-    border: 1px solid #444;
-    border-radius: 20px;
-
-    @media (max-width: 1200px) {
-      width: 90vw;
-    }
-`
-const SectionTitle = styled.h3`
-    font-size: 2rem;
-    margin: 1rem auto;
-    text-align: center;
-    font-weight: bold;
-    color: #bbb;
-`
-
-const InfoText = styled.p`
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    font-weight: 100;
-    text-align: justify;
-    @media (max-width: 1200px) {
-      text-align: center;
-    }
-`
-
-const PhotoContainer = styled.div`
-    height: 520px;
-    width: 415px;
-    border: 1px solid #444;
-    position: relative;
-    overflow: hidden;
-    animation: glow 6s infinite ease-in-out;
-
-    @keyframes glow {
-      0%{
-        filter: brightness(1.2);
-      }
-      50%{
-        filter: brightness(1.55);
-      }
-      100%{
-        filter: brightness(1.2);
-      }
-    }
-
-    @media (max-width: 1490px) {
-    margin-bottom: 3rem;
-    }
-
-    @media (max-width: 768px) {
-    margin: 2rem auto;
-    height: 400px;
-    width: 319px;
-    }
-
-    .about-photo-img{
-    @media (max-width: 768px) {
-    height: 400px;
-    width: 319px;
-    }
-    }
-
-&::after, &::before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -5;
-}
-&::after{
-    background: linear-gradient(to top right,transparent calc(50% - 1px),
-    #444,transparent calc(50% + 1px));
-}
-&::before {
-    background: linear-gradient(to top left,transparent calc(50% - 1px),
-    #444,transparent calc(50% + 1px));
-}
-`
-
-const Icon = styled.div`
-font-size: 1.1rem;
-font-weight: 400;
-color: #bbb;
-display:inline-block;
-border: 1px solid #bbb;
-border-radius: 1rem;
-padding: 0.25rem 1rem;
-display: inline-flex;
-gap: 0.5rem;
-align-items: center;
-`
-const IconsWrap = styled.div`
-width: 100%;
-text-align: center;
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 0.5rem;
-`
-
-
-export default About;
+  }
+`;
