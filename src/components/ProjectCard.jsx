@@ -113,7 +113,7 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
                 </>
                 : null}
             <div
-                className='project'>
+                className='project w-full'>
                 <TagWrapper>{
                     tag.map((tag, i) =>
                         <ProjectCardTag key={i} tag={tag} />
@@ -130,12 +130,12 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
                             <CardTitle>{title}</CardTitle>
                             <LinksWrapper>
                                 {/* <Tooltip title='Code' placement="bottom" arrow> */}
-                                    <Link href={githubUrl}>
+                                    <Link href={githubUrl} target="_blank">
                                         {githubIcon}
                                     </Link>
                                 {/* </Tooltip> */}
                                 {/* <Tooltip title='Live' placement="bottom" arrow> */}
-                                    <Link href={webUrl}>
+                                    <Link href={webUrl} target="_blank">
                                         {webIcon}
                                     </Link>
                                 {/* </Tooltip> */}
@@ -150,19 +150,29 @@ const ProjectCard = ({ title, tag, technologies, info, type, img, githubUrl, web
 }
 
 const Card = styled.div`
-    width: 500px;
-    height: 450px;
+    width: calc(100% - 45px);
+    height: 24vw;
     position: relative;
     border-radius:  10px;
     border: 1px solid #666;
     overflow: hidden;
-    margin: 2rem 2rem;
+    aspect-ratio: 460 / 445;
 
+    @media (max-width: 1535px) {
+        width: calc(100% - 45px);
+        height: 35.5vw;
+    }
+
+    @media (max-width: 1023px) {
+    margin-top: 0;
+    width: 100%;
+    max-width: 560px;
+    height: 77vw;
+    max-height: 519px;
+    }
     @media (max-width: 768px) {
-    margin: 2rem auto;
-    width: 250px;
-    height: 225px;
     margin-top: 4rem;
+    height: 82vw;
     }
 `
 
@@ -201,14 +211,12 @@ const CardImg = styled.img`
 
 const Overlay = styled.div`
     background: #000;
-    width: 500px;
-    height: 100px;
+    width: 100%;
     position: absolute;
     bottom: 0;
 
     @media (max-width: 768px) {
-    width: 250px;
-    height: 100px;
+    width: 100%;
     }
 `
 
@@ -262,13 +270,21 @@ const Link = styled.a`
 
 const TagWrapper = styled.div`
     position: absolute;
-    top: 18px;
-    right: -25px;
+    top: -12px;
+    right: -8px;
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
+
+    @media (max-width: 1535px) {
+        right: -8px;
+    }
+
+    @media (max-width: 1023px) {
+        right: -12px;
+    }
 
     @media (max-width: 768px) {
         flex-direction: row;

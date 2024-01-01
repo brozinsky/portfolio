@@ -97,7 +97,7 @@ const Hero = () => {
                             duration: 1.5,
                         }}
                         className='social-icon'
-                        href="https://github.com/brozinsky">{githubIcon}</Icon>
+                        href="https://github.com/brozinsky" target="_blank">{githubIcon}</Icon>
                     <Icon
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 0.6 }}
@@ -106,7 +106,7 @@ const Hero = () => {
                             duration: 1.5,
                         }}
                         className='social-icon'
-                        href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/">{linkedinIcon}</Icon>
+                        href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/" target="_blank">{linkedinIcon}</Icon>
                 </IconContainer>
             </HeaderFrame>
             <ToBottom href="#featured" >

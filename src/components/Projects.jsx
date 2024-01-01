@@ -28,6 +28,7 @@ import project6 from "../images/project-6.png";
 import project7 from "../images/project-7.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Heading from "./ui/Heading";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -216,36 +217,36 @@ const projects = [
     githubUrl: "https://github.com/brozinsky/videopoker-jacks-or-better",
     webUrl: "https://brozinsky.github.io/videopoker-jacks-or-better/",
   },
-  {
-    title: "Piano App",
-    tag: [
-      {
-        name: "html",
-        icon: htmlIcon,
-        tooltip: "HTML",
-      },
-      {
-        name: "css",
-        icon: cssIcon,
-        tooltip: "CSS",
-      },
-      {
-        name: "js",
-        icon: jsIcon,
-        tooltip: "Javascript",
-      },
-    ],
-    technologies: [
-      "HTML and CSS",
-      "App funcionality made with vanilla Javascript",
-      "Audio managed with ToneJS library",
-    ],
-    info: "Simple app useful for beginner piano players. It shows a selected scale or chord on a key board based on a chosen root note. My first web application made with Javascript. It's using a ToneJS library to play audio samples.",
-    type: "App",
-    img: project4,
-    githubUrl: "https://github.com/brozinsky/piano-chords-and-scales",
-    webUrl: "https://brozinsky.github.io/piano-chords-and-scales/",
-  },
+  // {
+  //   title: "Piano App",
+  //   tag: [
+  //     {
+  //       name: "html",
+  //       icon: htmlIcon,
+  //       tooltip: "HTML",
+  //     },
+  //     {
+  //       name: "css",
+  //       icon: cssIcon,
+  //       tooltip: "CSS",
+  //     },
+  //     {
+  //       name: "js",
+  //       icon: jsIcon,
+  //       tooltip: "Javascript",
+  //     },
+  //   ],
+  //   technologies: [
+  //     "HTML and CSS",
+  //     "App funcionality made with vanilla Javascript",
+  //     "Audio managed with ToneJS library",
+  //   ],
+  //   info: "Simple app useful for beginner piano players. It shows a selected scale or chord on a key board based on a chosen root note. My first web application made with Javascript. It's using a ToneJS library to play audio samples.",
+  //   type: "App",
+  //   img: project4,
+  //   githubUrl: "https://github.com/brozinsky/piano-chords-and-scales",
+  //   webUrl: "https://brozinsky.github.io/piano-chords-and-scales/",
+  // },
   {
     title: "Architecture studio website",
     tag: [
@@ -334,22 +335,28 @@ const Projects = () => {
   }, []);
 
   return (
-    <ProjectsSection id="projects">
-      <Title className={"projects-title"}>_Projects</Title>
-      {projects.map((project, i) => (
-        <ProjectCard
-          key={i}
-          title={project.title}
-          tag={project.tag}
-          icons={project.tagIcons}
-          technologies={project.technologies}
-          info={project.info}
-          type={project.type}
-          img={project.img}
-          githubUrl={project.githubUrl}
-          webUrl={project.webUrl}
-        />
-      ))}
+    <ProjectsSection className="py-section" id="projects">
+      <div className="container">
+        <Heading variant="h2" color="primary" size="h2" className="m-0 mb-6">
+          _Projects
+        </Heading>
+        <div className="grid max-lg:w-full max-lg:max-w-[604px] mx-auto grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-8 xl:gap-x-12 xl:gap-y-16 xl:gap-x-8">
+          {projects.map((project, i) => (
+            <ProjectCard
+              key={project.title}
+              title={project.title}
+              tag={project.tag}
+              icons={project.tagIcons}
+              technologies={project.technologies}
+              info={project.info}
+              type={project.type}
+              img={project.img}
+              githubUrl={project.githubUrl}
+              webUrl={project.webUrl}
+            />
+          ))}
+        </div>
+      </div>
       <BgPosition1 style={{ transform: `translateY(${offsetY * 0.15}px)` }}>
         {" "}
         <BgShape1 />
@@ -390,18 +397,6 @@ const BgPosition2 = styled.div`
   transform: scale(1.2);
   @media (max-width: 768px) {
     display: none;
-  }
-`;
-
-const Title = styled.h2`
-  text-transform: uppercase;
-  color: #f13f3f;
-  font-size: 2.4rem;
-  font-weight: 400;
-  width: 100%;
-  margin: 4rem 5rem 2rem 5rem;
-  @media (max-width: 1200px) {
-    text-align: center;
   }
 `;
 

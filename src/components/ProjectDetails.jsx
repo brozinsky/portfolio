@@ -145,7 +145,7 @@ const ProjectDetails = ({ title, img, technologies, info, tag, githubUrl, webUrl
                                 delay: 0.3,
                                 duration: 0.5,
                             }}
-                            href={githubUrl}>
+                            href={githubUrl} target="_blank">
                             {githubIcon}
                             <span>Code</span>
                         </Link>
@@ -156,7 +156,7 @@ const ProjectDetails = ({ title, img, technologies, info, tag, githubUrl, webUrl
                                 delay: 0.5,
                                 duration: 0.5,
                             }}
-                            href={webUrl}>
+                            href={webUrl} target="_blank">
                             {webIcon}
                             <span>Live</span>
                         </Link>

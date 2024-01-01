@@ -39,7 +39,7 @@ const Footer = () => {
     }
     return (
         <>
-            <StyledFooter className="footer">
+            <StyledFooter className="footer mt-section">
                 <TriangleBackground />
                 <ButtonCenter>
                     <ButtonToTop onClick={handleScrollButton}>
@@ -47,10 +47,10 @@ const Footer = () => {
                     </ButtonToTop>
                 </ButtonCenter>
                 <WrapLinks>
-                    <a href="https://github.com/brozinsky">
+                    <a href="https://github.com/brozinsky" target="_blank">
                         {githubIcon}
                     </a>
-                    <a href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/">
+                    <a href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/" target="_blank">
                         {linkedinIcon}
                         </a>
                 </WrapLinks>
@@ -69,7 +69,6 @@ const Footer = () => {
 const StyledFooter = styled.footer`
     height:150px;
     position: relative;
-    margin-top: 12rem;
 
     @media (max-width: 1200px) {
         margin-top: 5rem;

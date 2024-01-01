@@ -14,6 +14,7 @@ import {
   faReact,
   faFigma,
 } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
   Styledcomponents,
   Firebase,
@@ -36,6 +37,7 @@ const sassIcon = <FontAwesomeIcon className="sass-icon" icon={faSass} />;
 const jsIcon = <FontAwesomeIcon className="js-icon" icon={faJsSquare} />;
 const reactIcon = <FontAwesomeIcon className="react-icon" icon={faReact} />;
 const figmaIcon = <FontAwesomeIcon className="figma-icon" icon={faFigma} />;
+const envelopeIcon = <FontAwesomeIcon icon={faEnvelope} />;
 const StyledCompIocn = styled(Styledcomponents)`
   transform: scale(0.5);
 `;
@@ -77,9 +79,8 @@ const skills2 = [
 
 export default function About() {
   return (
-    <section className="pb-8 pt-16" id="about">
-      {/* <h2 className={"projects-title"}>_About</h2> */}
-      <div className=" lg:max-w-none w-[86vw] mx-auto">
+    <section className="py-section" id="about">
+      <div className="container">
         <div className="xl:grid flex flex-col xl:grid-cols-3 xl:grid-rows-2 gap-4">
           <div className="flex flex-col gap-4 col-start-1 xl:col-end-3 row-span-2">
             <div className="flex flex-col lg:grid grid-cols-2 gap-4">
@@ -87,11 +88,13 @@ export default function About() {
                 <h2 className={"mx-auto text-center projects-title m-0"}>
                   _About
                 </h2>
+                <Heading ></Heading>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <a
                   href="https://github.com/brozinsky"
                   className="h-full w-full"
+                  target="_blank"
                 >
                   <div className="h-full p-8 rounded-xl border border-neutral-600 transition text-3xl gap-4 text-neutral-400 hover:text-white flex items-center justify-center">
                     {githubIcon}
@@ -101,6 +104,7 @@ export default function About() {
                 <a
                   href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/"
                   className="h-full w-full"
+                  target="_blank"
                 >
                   <div className="h-full p-8 rounded-xl border border-neutral-600 transition gap-4 text-3xl text-neutral-400 hover:text-white flex items-center justify-center">
                     {linkedinIcon}
@@ -109,7 +113,7 @@ export default function About() {
                 </a>
               </div>
             </div>
-            <div className="p-8 rounded-xl border border-neutral-600 col-start-1">
+            <div className="p-8 rounded-xl flex-grow border border-neutral-600 col-start-1">
               <div className="space-y-4">
                 <Text>
                   I'm a self taught Front-end Developer from Szczecin.
@@ -149,63 +153,66 @@ export default function About() {
             </div>
           </div>
           <div className="p-8 rounded-xl border border-neutral-600 flex flex-col justify-center w-full xl:col-start-3 row-start-1 row-end-2">
-            <Heading variant="h3" color="light" className="mb-4 text-center">
+            <Heading variant="h3" size="h2" color="light" className="mb-4 text-center">
               Technologies I use:
             </Heading>
-            <div className="marquee">
-              <Marquee direction="left" speed={15} pauseOnHover>
-                {skills1.map(({ name, icon }) => {
-                  return (
-                    <div
-                      key={name}
-                      data-tooltip-id={name}
-                      className="hover:bg-neutral-800 transition hover:text-neutral-100 w-28 text-neutral-400 h-16 m-1.5 bg-neutral-900 text-3xl items-center justify-center flex"
-                    >
-                      {icon}
-                      <ReactTooltip
-                        className="text-sm"
-                        style={{ fontSize: 14, height: "fit-content" }}
-                        id={name}
-                        variant="dark"
-                        content={name}
-                      />
-                    </div>
-                  );
-                })}
-              </Marquee>
-            </div>
-            <div className="marquee">
-              <Marquee direction="right" speed={13} pauseOnHover>
-                {skills2.map(({ name, icon }) => {
-                  return (
-                    <div
-                      key={name}
-                      data-tooltip-id={name}
-                      className="w-28 text-neutral-400 h-16 m-1.5 bg-neutral-900 border-neutral-400 text-3xl items-center justify-center flex"
-                    >
-                      {icon}
-                      <ReactTooltip
-                        className="text-sm"
-                        style={{ fontSize: 14, height: "fit-content" }}
-                        id={name}
-                        variant="dark"
-                        content={name}
-                      />
-                    </div>
-                  );
-                })}
-              </Marquee>
+            <div className="max-xl:max-w-[600px] max-xl:mx-auto">
+              <div className="marquee">
+                <Marquee direction="left" speed={15} pauseOnHover>
+                  {skills1.map(({ name, icon }) => {
+                    return (
+                      <div
+                        key={name}
+                        data-tooltip-id={name}
+                        className="hover:bg-neutral-800 transition hover:text-neutral-100 w-28 text-neutral-400 h-16 m-1.5 bg-neutral-900 text-3xl items-center justify-center flex"
+                      >
+                        {icon}
+                        <ReactTooltip
+                          className="text-sm"
+                          style={{ fontSize: 14, height: "fit-content" }}
+                          id={name}
+                          variant="dark"
+                          content={name}
+                        />
+                      </div>
+                    );
+                  })}
+                </Marquee>
+              </div>
+              <div className="marquee">
+                <Marquee direction="right" speed={13} pauseOnHover>
+                  {skills2.map(({ name, icon }) => {
+                    return (
+                      <div
+                        key={name}
+                        data-tooltip-id={name}
+                        className="w-28 text-neutral-400 h-16 m-1.5 bg-neutral-900 border-neutral-400 text-3xl items-center justify-center flex"
+                      >
+                        {icon}
+                        <ReactTooltip
+                          className="text-sm"
+                          style={{ fontSize: 14, height: "fit-content" }}
+                          id={name}
+                          variant="dark"
+                          content={name}
+                        />
+                      </div>
+                    );
+                  })}
+                </Marquee>
+              </div>
             </div>
           </div>
           <div className="p-8 rounded-xl border border-neutral-600 flex flex-col justify-center w-full xl:col-start-3 row-start-2 row-end-3">
-            <Heading variant="h3" color="light" className="mb-4 text-center">
+            <Heading variant="h3" color="light" className="text-center">
               Let's get in touch:
             </Heading>
+            <p className="text-center mb-2 text-neutral-400">{envelopeIcon} <a className="ml-1 text-neutral-400" href="mailto:mateusz0brzezinski@gmail.com">mateusz0brzezinski@gmail.com</a></p>
             <HeaderButton
               href="mailto:mateusz0brzezinski@gmail.com"
               // ref={element => { buttonRef = element }}
             >
-              Email <ArrowIcon />
+              Contact me <ArrowIcon />
             </HeaderButton>
           </div>
         </div>
@@ -236,7 +243,7 @@ const HeaderButton = styled(motion.a)`
     box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
   }
   &:hover svg {
-    transform: rotate(90deg);
+    transform: translateX(5px);
   }
   &:link,
   &:visited,

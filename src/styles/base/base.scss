@@ -19,26 +19,50 @@ a {
   }
 }
 
-h1, h2, h3{
-  font-family: 'Rajdhani', 'Helvetica Neue',
-  sans-serif;
-  color: #F13F3F;
+h1,
+h2,
+h3 {
+  font-family: "Rajdhani", "Helvetica Neue", sans-serif;
+  color: #f13f3f;
   text-transform: uppercase;
   font-weight: 400;
 }
 
-h1{
+h1 {
   font-size: 3.5rem;
   line-height: 3.5rem;
   font-weight: 700;
 }
 
 h2 {
-    line-height:  2.4rem;
-    text-transform: uppercase;
-    color: #F13F3F;
-    font-size: 2.4rem;
-    font-weight: 400;
-    width: 100%;
-    margin: 4rem 5rem 2rem 5rem;
+  line-height: 2.4rem;
+  text-transform: uppercase;
+  color: #f13f3f;
+  font-size: 2.4rem;
+  font-weight: 400;
+  width: 100%;
+  margin: 4rem 5rem 2rem 5rem;
+}
+
+.container {
+  max-width: 1650px;
+  width: 86vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+$section-padding: 4rem;
+
+.py-section {
+  padding-top: $section-padding;
+  padding-bottom: $section-padding;
+}
+.pt-section {
+  padding-top: $section-padding;
+}
+.pb-section {
+  padding-bottom: $section-padding;
+}
+.mt-section {
+  margin-top: $section-padding;
 }

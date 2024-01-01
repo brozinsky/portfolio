@@ -13,7 +13,7 @@ const typographyVariants = {
 
 export default function Heading({
   variant,
-  size = "4xl",
+  size = "h2",
   children,
   className = "m-0 p-0",
   color = "primary",
@@ -27,19 +27,19 @@ export default function Heading({
   };
 
   const sizes = {
-    "6xl": "text-6xl font-medium",
-    "5xl": "text-5xl font-medium",
-    "4xl": "text-4xl font-medium",
-    "3xl": "text-3xl font-medium",
-    "2xl": "text-2xl font-medium",
-    xl: "text-xl font-medium",
+    "h1": "text-6xl font-normal",
+    "h2": "text-[2.5rem] font-normal",
+    "h3": "text-4xl font-normal",
+    "h4": "text-3xl font-normal",
+    "h5": "text-2xl font-normal",
+    h6: "text-xl font-normal",
     body: "text-base",
     sm: "text-sm",
     xs: "text-xs",
   };
 
   const componentProps = {
-    className: clsx("font-bold", colors[color], className, sizes[size]),
+    className: clsx(colors[color], className, sizes[size]),
     ...props,
   };
 
