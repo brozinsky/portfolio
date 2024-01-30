@@ -314,6 +314,18 @@ const TagWrapper = styled.div`
         box-shadow: 0px 0px 8px 2px var(--color-css);
         background: var(--color-css);
 }
+.nextjs-tag:hover {
+    box-shadow: 0px 0px 8px 2px var(--color-next);
+    background: var(--color-next);
+}
+.typescript-tag:hover {
+    box-shadow: 0px 0px 8px 2px var(--color-typescript);
+    background: var(--color-typescript);
+}
+.tailwind-tag:hover {
+    box-shadow: 0px 0px 8px 2px var(--color-tailwind);
+    background: var(--color-tailwind);
+}
 .react-tag:hover {
         box-shadow: 0px 0px 8px 2px var(--color-react);
         background: var(--color-react);
@@ -337,6 +349,18 @@ const TagWrapper = styled.div`
 .styled-components-tag:hover {
         box-shadow: 0px 0px 8px 2px var(--color-styled-components);
         background: var(--color-styled-components);
+}
+.reactquery-tag:hover {
+    box-shadow: 0px 0px 8px 2px var(--color-reactquery);
+    background: var(--color-reactquery);
+}
+.supabase-tag:hover {
+    box-shadow: 0px 0px 8px 2px var(--color-supabase);
+    background: var(--color-supabase);
+}
+.stripe-tag:hover {
+    box-shadow: 0px 0px 8px 2px var(--color-stripe);
+    background: var(--color-stripe);
 }
 .graphql-tag:hover {
         box-shadow: 0px 0px 8px 2px var(--color-graphql);

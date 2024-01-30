@@ -79,6 +79,13 @@ a:not(.default):visited {
 
   --color-react:       #61DAFB;
   --color-sass:        #CC6699;
+  --color-typescript:  #2F74C0;
+  --color-reactquery:  #FF4154;
+  --color-stripe:      #6860FF;
+  --color-supabase:    #3ECF8E;
+
+  --color-next:       #EDEDED;
+  --color-tailwind:    #36B6F2;
 
   --color-redux:       #764ABC;
   --color-styled-components:#DB7093;

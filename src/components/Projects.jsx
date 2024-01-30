@@ -11,6 +11,12 @@ import {
   Sass,
   Graphql,
   Heroku,
+  Nextdotjs,
+  Tailwindcss,
+  Typescript,
+  Reacttable,
+  Stripe,
+  Supabase
 } from "@styled-icons/simple-icons";
 
 import { Redux } from "@styled-icons/boxicons-logos";
@@ -26,6 +32,7 @@ import project4 from "../images/project-4.png";
 import project5 from "../images/project-5.png";
 import project6 from "../images/project-6.png";
 import project7 from "../images/project-7.png";
+import project8 from "../images/project-8.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Heading from "./ui/Heading";
@@ -39,6 +46,30 @@ const StyledCompIocn = styled(Styledcomponents)`
 const HerokuIcon = styled(Heroku)`
   margin-bottom: 5px;
   transform: scale(0.9);
+`;
+const NextIcon = styled(Nextdotjs)`
+  margin-bottom: 8px;
+  transform: scale(0.8);
+`;
+const TailwindIcon = styled(Tailwindcss)`
+  margin-bottom: 10px;
+  transform: scale(0.8);
+`;
+const TypescriptIcon = styled(Typescript)`
+  margin-bottom: 10px;
+  transform: scale(0.65);
+`;
+const ReacttableIcon = styled(Reacttable)`
+  margin-bottom: 8px;
+  transform: scale(0.7);
+`;
+const StripeIcon = styled(Stripe)`
+  margin-bottom: 8px;
+  transform: scale(0.6);
+`;
+const SupabaseIcon = styled(Supabase)`
+  margin-bottom: 8px;
+  transform: scale(0.7);
 `;
 const ReduxIcon = styled(Redux)`
   margin-bottom: 5px;
@@ -61,8 +92,8 @@ const CssIcon = styled(Css3)`
   transform: scale(0.6);
 `;
 const SassIcon = styled(Sass)`
-  margin-bottom: 5px;
-  transform: scale(0.6);
+  margin-bottom: 10px;
+  transform: scale(0.7);
 `;
 const JavascriptIcon = styled(Javascript)`
   margin-bottom: 5px;
@@ -78,6 +109,12 @@ const htmlIcon = <HtmlIcon className="html-icon" />;
 const cssIcon = <CssIcon className="css-icon" />;
 const graphqlIcon = <GraphqlIcon className="graphql-icon" />;
 const herokuIcon = <HerokuIcon className="heroku-icon" />;
+const nextIcon = <NextIcon className="heroku-icon" />;
+const tailwindIcon = <TailwindIcon className="heroku-icon" />;
+const typescriptIcon = <TypescriptIcon className="heroku-icon" />;
+const reacttableIcon = <ReacttableIcon className="heroku-icon" />;
+const stripeIcon = <StripeIcon className="heroku-icon" />;
+const supabaseIcon = <SupabaseIcon className="heroku-icon" />;
 
 const jsIcon = <JavascriptIcon className="javascript-icon" />;
 const firebaseIcon = <FirebaseIcon className="firebase-icon" />;
@@ -89,9 +126,29 @@ const projects = [
     title: "Handmade Store",
     tag: [
       {
-        name: "react",
-        icon: reactIcon,
-        tooltip: "React",
+        name: "nextjs",
+        icon: nextIcon,
+        tooltip: "Next js",
+      },
+      {
+        name: "typescript",
+        icon: typescriptIcon,
+        tooltip: "Typescript",
+      },
+      {
+        name: "stripe",
+        icon: stripeIcon,
+        tooltip: "Stripe",
+      },
+      {
+        name: "supabase",
+        icon: supabaseIcon,
+        tooltip: "Supabase",
+      },
+      {
+        name: "tailwind",
+        icon: tailwindIcon,
+        tooltip: "Tailwind",
       },
       {
         name: "sass",
@@ -99,62 +156,80 @@ const projects = [
         tooltip: "Sass",
       },
       {
-        name: "graphql",
-        icon: graphqlIcon,
-        tooltip: "GraphQL",
-      },
-      {
-        name: "heroku",
-        icon: herokuIcon,
-        tooltip: "Heroku and Hasura",
-      },
+        name: "reactquery",
+        icon: reacttableIcon,
+        tooltip: "React Query",
+      }
+      // {
+      //   name: "graphql",
+      //   icon: graphqlIcon,
+      //   tooltip: "GraphQL",
+      // },
+      // {
+      //   name: "heroku",
+      //   icon: herokuIcon,
+      //   tooltip: "Heroku and Hasura",
+      // },
     ],
     technologies: [
-      "Main technology - React",
-      "Styled in SASS with BEM",
-      "API made in Hasura and deployed on Heroku",
-      "Designed using Figma",
+      "Next JS + Typescript",
+      "Styled with Tailwind and SASS",
+      "Backend: Stripe + Supabase",
+      "State management - react query and zustand",
       "Fully responsive mobile first design",
-      "Designed using Figma",
     ],
     info: "An e-commerce static web application. Store has a cart to add/remove items, it shows the total price and sends user to checkout. Routes implemented with React router, including seamlessly moving between pages. Styling made with Sass. Database on GraphQL server, API consumed with Apollo Client.",
     type: "e-commerce",
     img: project7,
-    githubUrl: "https://github.com/brozinsky/handmade-store",
-    webUrl: "https://brozinsky.github.io/handmade-store/",
+    githubUrl: "https://github.com/brozinsky/next-handmade-ecommerce",
+    webUrl: "https://next-handmade-ecommerce.vercel.app/",
   },
   {
-    title: "Clothing Store",
+    title: "Restaurant template",
     tag: [
       {
-        name: "react",
-        icon: reactIcon,
-        tooltip: "React",
+        name: "nextjs",
+        icon: nextIcon,
+        tooltip: "Next js",
       },
       {
-        name: "styled-components",
-        icon: styledIcon,
-        tooltip: "Styled Components",
+        name: "typescript",
+        icon: typescriptIcon,
+        tooltip: "Typescript",
       },
       {
-        name: "firebase",
-        icon: firebaseIcon,
-        tooltip: "Firebase",
+        name: "tailwind",
+        icon: tailwindIcon,
+        tooltip: "Tailwind",
       },
+      {
+        name: "sass",
+        icon: sassIcon,
+        tooltip: "Sass",
+      },
+      // {
+      //   name: "graphql",
+      //   icon: graphqlIcon,
+      //   tooltip: "GraphQL",
+      // },
+      // {
+      //   name: "heroku",
+      //   icon: herokuIcon,
+      //   tooltip: "Heroku and Hasura",
+      // },
     ],
     technologies: [
-      "Main technology - React",
-      "Styling using Styled-Components",
-      "Products data stored in Firebase",
-      "Animations in Framer Motion",
-      "UI components from Material UI library",
+      "Next JS + Typescript",
+      "Styled with Tailwind and SASS",
+      "State management - zustand",
+      "Fully responsive mobile first design",
       "Designed using Figma",
     ],
-    info: "An e-commerce static web application. Loading of products and data storage from Firebase. App has a cart to add/remove items, it shows the total price and sends user to checkout. Routes implemented with React router, including seamlessly moving between pages. Styling made with Styled Components with the use of Material UI elements. ",
-    type: "e-commerce",
-    img: project1,
-    githubUrl: "https://github.com/brozinsky/clothing-store",
-    webUrl: "https://brozinsky.github.io/clothing-store/",
+    info: "",
+    type: "Website",
+    img: project8,
+    githubUrl: "https://github.com/brozinsky/next-restaurant-template",
+    webUrl: "https://next-restaurant-template.vercel.app/",
   },
   {
     title: "Movies App",
@@ -248,31 +323,64 @@ const projects = [
   //   webUrl: "https://brozinsky.github.io/piano-chords-and-scales/",
   // },
   {
-    title: "Architecture studio website",
+    title: "Clothing Store",
     tag: [
       {
-        name: "html",
-        icon: htmlIcon,
-        tooltip: "HTML",
+        name: "react",
+        icon: reactIcon,
+        tooltip: "React",
       },
       {
-        name: "sass",
-        icon: sassIcon,
-        tooltip: "Sass",
+        name: "styled-components",
+        icon: styledIcon,
+        tooltip: "Styled Components",
+      },
+      {
+        name: "firebase",
+        icon: firebaseIcon,
+        tooltip: "Firebase",
       },
     ],
     technologies: [
-      "HTML",
-      "styled in SASS with BEM",
-      "Fully responsive mobile first design",
+      "Main technology - React",
+      "Styling using Styled-Components",
+      "Products data stored in Firebase",
+      "Animations in Framer Motion",
+      "UI components from Material UI library",
       "Designed using Figma",
     ],
-    info: "An architecture studio single page website template with photo gallery, dynamic animations and contact form. Fully responsive mobile first design, made with HTML, styling and animations made with SASS. ",
-    type: "Website",
-    img: project5,
-    githubUrl: "https://github.com/brozinsky/architecture-studio-website",
-    webUrl: "https://brozinsky.github.io/architecture-studio-website/",
+    info: "An e-commerce static web application. Loading of products and data storage from Firebase. App has a cart to add/remove items, it shows the total price and sends user to checkout. Routes implemented with React router, including seamlessly moving between pages. Styling made with Styled Components with the use of Material UI elements. ",
+    type: "e-commerce",
+    img: project1,
+    githubUrl: "https://github.com/brozinsky/clothing-store",
+    webUrl: "https://brozinsky.github.io/clothing-store/",
   },
+  // {
+  //   title: "Architecture studio website",
+  //   tag: [
+  //     {
+  //       name: "html",
+  //       icon: htmlIcon,
+  //       tooltip: "HTML",
+  //     },
+  //     {
+  //       name: "sass",
+  //       icon: sassIcon,
+  //       tooltip: "Sass",
+  //     },
+  //   ],
+  //   technologies: [
+  //     "HTML",
+  //     "styled in SASS with BEM",
+  //     "Fully responsive mobile first design",
+  //     "Designed using Figma",
+  //   ],
+  //   info: "An architecture studio single page website template with photo gallery, dynamic animations and contact form. Fully responsive mobile first design, made with HTML, styling and animations made with SASS. ",
+  //   type: "Website",
+  //   img: project5,
+  //   githubUrl: "https://github.com/brozinsky/architecture-studio-website",
+  //   webUrl: "https://brozinsky.github.io/architecture-studio-website/",
+  // },
   {
     title: "Delivery company website",
     tag: [

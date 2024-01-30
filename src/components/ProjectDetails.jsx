@@ -274,6 +274,30 @@ const Card = styled(motion.div)`
        box-shadow: 0px 0px 5px 1.5px var(--color-react);
         background: var(--color-react);
 }
+.typescript-dtag {
+    box-shadow: 0px 0px 5px 1.5px var(--color-typescript);
+    background: var(--color-typescript);
+}
+.nextjs-dtag {
+    box-shadow: 0px 0px 5px 1.5px var(--color-next);
+    background: var(--color-next);
+}
+.stripe-dtag {
+    box-shadow: 0px 0px 5px 1.5px var(--color-stripe);
+    background: var(--color-stripe);
+}
+.tailwind-dtag {
+    box-shadow: 0px 0px 5px 1.5px var(--color-tailwind);
+    background: var(--color-tailwind);
+}
+.supabase-dtag {
+    box-shadow: 0px 0px 5px 1.5px var(--color-supabase);
+    background: var(--color-supabase);
+}
+.reactquery-dtag {
+    box-shadow: 0px 0px 5px 1.5px var(--color-reactquery);
+    background: var(--color-reactquery);
+}
 .js-dtag {
         box-shadow: 0px 0px 5px 1.5px var(--color-javascript);
         background: var(--color-javascript);
@@ -310,7 +334,7 @@ const Card = styled(motion.div)`
 
 const Title = styled(motion.h2)`
 font-size: 2.5rem;
-text-align: center;
+text-align: left;
 margin: 2rem auto 1rem auto;
 font-weight: 600;
 letter-spacing: 1px;
