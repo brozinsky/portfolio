@@ -14,7 +14,7 @@ const Menu = () => {
     <div className="navbar">
       <div className="container">
         <nav className="flex justify-between w-full items-center max-h-[56px]">
-          <a href="/">
+          <a href="/" aria-label="Homepage">
             <div className="flex items-center">
               <Logo />
             </div>

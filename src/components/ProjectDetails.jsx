@@ -63,6 +63,7 @@ const ProjectDetails = ({ title, img, technologies, info, tag, githubUrl, webUrl
                         }}
                         src={img}
                         width="456" height="334"
+                        alt={title}
                     />
                     <div className="info-wrap">
                         <Title
