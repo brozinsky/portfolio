@@ -16,7 +16,7 @@ import {
   Typescript,
   Reacttable,
   Stripe,
-  Supabase
+  Supabase,
 } from "@styled-icons/simple-icons";
 
 import { Redux } from "@styled-icons/boxicons-logos";
@@ -159,7 +159,7 @@ const projects = [
         name: "reactquery",
         icon: reacttableIcon,
         tooltip: "React Query",
-      }
+      },
       // {
       //   name: "graphql",
       //   icon: graphqlIcon,
@@ -420,26 +420,30 @@ const Projects = () => {
   }, []);
 
   useEffect(() => {
-    // const title = document.querySelector(".projects-title");
-    const projects = document.querySelectorAll(".project");
+    if (window.innerWidth > 760) {
+      const projects = document.querySelectorAll(".project");
 
-    projects.forEach((project) => {
-      gsap.fromTo(
-        project,
-        { y: "+=100", opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.2,
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: project,
-            start: "top 85%",
-            ease: "power3. out",
-          },
-        }
-      );
-    });
+      projects.forEach((project) => {
+        gsap.fromTo(
+          project,
+          { y: "+=100", opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.2,
+            duration: 0.8,
+            scrollTrigger: {
+              trigger: project,
+              start: "top 85%",
+              end: "bottom 15%",
+              toggleActions: "play none none none",
+              // markers: true,
+              ease: "power3.out",
+            },
+          }
+        );
+      });
+    }
   }, []);
 
   return (
@@ -466,11 +470,9 @@ const Projects = () => {
         </div>
       </div>
       <BgPosition1 style={{ transform: `translateY(${offsetY * 0.15}px)` }}>
-        {" "}
         <BgShape1 />
       </BgPosition1>
       <BgPosition2 style={{ transform: `translateY(${offsetY * 0.1}px)` }}>
-        {" "}
         <BgShape2 />
       </BgPosition2>
     </ProjectsSection>

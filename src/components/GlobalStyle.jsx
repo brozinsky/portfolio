@@ -49,6 +49,9 @@ h2{
 
 header{
   min-height: 100vh;
+  @media (max-width: 768px) {
+    min-height: calc(100svh - 56px);
+  }
 }
 
 a:link {

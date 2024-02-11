@@ -60,13 +60,13 @@ export default function Featured() {
           </div>
           <div className="flex flex-col gap-4">
             <div className="flex flex-col items-start">
-              <h2 className="text-[2.5rem] tracking-[1px] m-0 mb-4 text-white">
+              <h2 className="text-3xl text-center md:text-left md:text-[2.5rem] tracking-[1px] m-0 mb-4 text-white">
                 Chords lab
               </h2>
               {/* <div className="h-[2px] w-24 bg-white mb-4"></div> */}
               <div>
                 <p
-                  className="text-2xl uppercase font-light"
+                  className="text-xl md:text-2xl uppercase font-light text-center md:text-left"
                   style={{ fontFamily: "Rajdhani" }}
                 >
                   Features/used technologies:

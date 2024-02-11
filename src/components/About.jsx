@@ -84,11 +84,14 @@ export default function About() {
         <div className="xl:grid flex flex-col xl:grid-cols-3 xl:grid-rows-2 gap-4">
           <div className="flex flex-col gap-4 col-start-1 xl:col-end-3 row-span-2">
             <div className="flex flex-col lg:grid grid-cols-2 gap-4">
-              <div className="p-8 rounded-xl border border-neutral-600">
-                <h2 className={"mx-auto text-center projects-title m-0"}>
+              <div className="p-4 md:p-8 rounded-xl border border-neutral-600">
+                <h2
+                  className={
+                    "mx-auto text-center text-[1.75rem] md:text-[2.5rem] font-normal m-0"
+                  }
+                >
                   _About
                 </h2>
-                <Heading ></Heading>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <a
@@ -96,9 +99,9 @@ export default function About() {
                   className="h-full w-full"
                   target="_blank"
                 >
-                  <div className="h-full p-8 rounded-xl border border-neutral-600 transition text-3xl gap-4 text-neutral-400 hover:text-white flex items-center justify-center">
+                  <div className="h-[50px] lg:h-full p-8 rounded-xl border border-neutral-600 transition text-3xl gap-2.5 lg:gap-4 text-neutral-400 hover:text-white flex items-center justify-center">
                     {githubIcon}
-                    <span className="text-xl">Github</span>
+                    <span className="text-base text-xl">Github</span>
                   </div>
                 </a>
                 <a
@@ -106,14 +109,14 @@ export default function About() {
                   className="h-full w-full"
                   target="_blank"
                 >
-                  <div className="h-full p-8 rounded-xl border border-neutral-600 transition gap-4 text-3xl text-neutral-400 hover:text-white flex items-center justify-center">
+                  <div className="h-[50px] lg:h-full p-8 rounded-xl border border-neutral-600 transition gap-2.5 lg:gap-4 text-3xl text-neutral-400 hover:text-white flex items-center justify-center">
                     {linkedinIcon}
-                    <span className="text-xl">Linkedin</span>
+                    <span className="text-base lg:text-xl">Linkedin</span>
                   </div>
                 </a>
               </div>
             </div>
-            <div className="p-8 rounded-xl flex-grow border border-neutral-600 col-start-1">
+            <div className="p-4 lg:p-8 rounded-xl flex-grow border border-neutral-600 col-start-1">
               <div className="space-y-4">
                 <Text>
                   I'm a self taught Front-end Developer from Szczecin.
@@ -152,8 +155,13 @@ export default function About() {
                     </PhotoContainer> */}
             </div>
           </div>
-          <div className="p-8 rounded-xl border border-neutral-600 flex flex-col justify-center w-full xl:col-start-3 row-start-1 row-end-2">
-            <Heading variant="h3" size="h2" color="light" className="mb-4 text-center">
+          <div className="overflow-hidden px-4 py-6 md:p-8 rounded-xl border border-neutral-600 flex flex-col justify-center w-full xl:col-start-3 row-start-1 row-end-2">
+            <Heading
+              variant="h3"
+              size="h2"
+              color="light"
+              className="mb-4 text-center"
+            >
               Technologies I use:
             </Heading>
             <div className="max-xl:max-w-[600px] max-xl:mx-auto">
@@ -203,11 +211,19 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="p-8 rounded-xl border border-neutral-600 flex flex-col justify-center w-full xl:col-start-3 row-start-2 row-end-3">
+          <div className="px-4 py-6 md:p-8 rounded-xl border border-neutral-600 flex flex-col justify-center w-full xl:col-start-3 row-start-2 row-end-3">
             <Heading variant="h3" color="light" className="text-center">
               Let's get in touch:
             </Heading>
-            <p className="text-center mb-2 text-neutral-400">{envelopeIcon} <a className="ml-1 text-neutral-400" href="mailto:mateusz0brzezinski@gmail.com">mateusz0brzezinski@gmail.com</a></p>
+            <p className="text-center mb-2 text-neutral-400">
+              {envelopeIcon}{" "}
+              <a
+                className="ml-1 text-neutral-400 text-sm md:text-base"
+                href="mailto:mateusz0brzezinski@gmail.com"
+              >
+                mateusz0brzezinski@gmail.com
+              </a>
+            </p>
             <HeaderButton
               href="mailto:mateusz0brzezinski@gmail.com"
               // ref={element => { buttonRef = element }}

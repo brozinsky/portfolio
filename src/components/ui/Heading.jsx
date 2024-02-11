@@ -28,7 +28,7 @@ export default function Heading({
 
   const sizes = {
     "h1": "text-6xl font-normal",
-    "h2": "text-[2.5rem] font-normal",
+    "h2": "text-[1.75rem] md:text-[2.5rem] font-normal",
     "h3": "text-4xl font-normal",
     "h4": "text-3xl font-normal",
     "h5": "text-2xl font-normal",
@@ -39,7 +39,7 @@ export default function Heading({
   };
 
   const componentProps = {
-    className: clsx(colors[color], className, sizes[size]),
+    className: clsx("text-center md:text-left",colors[color], className, sizes[size]),
     ...props,
   };
 

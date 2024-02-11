@@ -110,8 +110,7 @@ const Hero = () => {
           buttonRef = element;
         }}
       >
-        {" "}
-        {buttonText} <ArrowIcon />{" "}
+        See my work <ArrowIcon />
       </HeaderButton>
       <HeaderFrame>
         <IconContainer>
@@ -274,6 +273,7 @@ const HeaderStyle = styled(motion.header)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 
   .header-title {
     text-align: center;
@@ -337,6 +337,9 @@ const HeaderButton = styled(motion.a)`
       color: #111;
     }
   }
+  @media (max-width: 768px) {
+      margin: 0 auto;
+  }
 `;
 
 const TopSubtitle = styled(motion.h2)`
@@ -350,21 +353,22 @@ const TopSubtitle = styled(motion.h2)`
   font-weight: bold;
   letter-spacing: 0.2rem;
   @media (max-width: 768px) {
-    font-size: 2rem;
-    width: 90vw;
+    margin: -2rem auto 1.6rem auto;
+    font-size: 1.25rem;
+    width: 100%;
   }
 `;
 
 const SubtitleWrapper = styled.div`
   height: 3.5rem;
   width: 950px;
-  margin: 0 auto;
   overflow: hidden;
   position: relative;
   margin: 1.6rem auto 2rem auto;
-
   @media (max-width: 1200px) {
     width: 90vw;
+    margin: 1.5rem auto 1.5rem auto;
+    height: 2.25rem;
   }
 `;
 
@@ -380,10 +384,11 @@ const BotSubtitle = styled(motion.h2)`
   font-weight: 400;
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    margin: 0 auto;
   }
   @media (max-width: 930px) {
-    width: 100vw;
+    width: 100%;
   }
 `;
 

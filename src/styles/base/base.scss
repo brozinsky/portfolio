@@ -52,17 +52,31 @@ h2 {
 }
 
 $section-padding: 4rem;
+$section-padding-sm: 2rem;
 
 .py-section {
   padding-top: $section-padding;
   padding-bottom: $section-padding;
+  @media (max-width: 768px) {
+    padding-top: $section-padding-sm;
+    padding-bottom: $section-padding-sm;
+  }
 }
 .pt-section {
   padding-top: $section-padding;
+  @media (max-width: 768px) {
+    padding-top: $section-padding-sm;
+  }
 }
 .pb-section {
   padding-bottom: $section-padding;
+  @media (max-width: 768px) {
+    padding-bottom: $section-padding-sm;
+  }
 }
 .mt-section {
   margin-top: $section-padding;
+  @media (max-width: 768px) {
+    margin-top: $section-padding-sm;
+  }
 }

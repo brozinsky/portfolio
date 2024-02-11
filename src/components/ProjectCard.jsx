@@ -110,7 +110,7 @@ const ProjectCard = ({
           <Close onClick={handleCloseClick}></Close>
         </>
       ) : null}
-      <div className="project w-full">
+      <div className="project w-full relative">
         <TagWrapper>
           {tag.map((tag, i) => (
             <ProjectCardTag key={i} tag={tag} />
@@ -298,6 +298,7 @@ const TagWrapper = styled.div`
     flex-direction: row;
     /* width: 90vw; */
     right: 50%;
+    padding: 0;
     top: 5px;
     width: 100%;
     transform: translate(50%, 0);

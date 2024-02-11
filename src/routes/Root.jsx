@@ -10,7 +10,7 @@ import Featured from "@/components/Featured";
 function App() {
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <GlobalStyle />
       <Menu />
       <Hero />

@@ -8,7 +8,7 @@
 @import "pages/index.scss";
 
 .navbar {
-  @apply flex items-center sticky top-0 z-50 h-14 text-2xl;
+  @apply w-full flex items-center fixed top-0 z-50 h-14 text-2xl;
   font-family: "Rajdhani", "Helvetica Neue", sans-serif;
   text-transform: uppercase;
   background: rgba(17, 17, 17, 0.8);
@@ -20,20 +20,22 @@
 .tabs {
   @apply p-8 space-x-8 p-0;
   @media (max-width: 530px) {
-    @apply flex flex-col justify-between items-start gap-8 p-8 space-x-0;
-    background: #000;
+    @apply w-full flex flex-col items-center justify-between items-start gap-8 p-8 space-x-0;
     position: absolute;
     top: 55px;
     right: 0;
-    transform: translateX(100%);
     transition: 0.2s;
     z-index: 0;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(17, 17, 17, 1);
   }
 }
 
 .tabs-open {
   @media (max-width: 768px) {
-    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -48,9 +50,11 @@
 }
 
 .nav-link:hover {
-  color: #f13f3f;
-  cursor: pointer;
-  border-bottom: 4px solid #f13f3f;
+  @media (min-width: 530px) {
+    color: #f13f3f;
+    cursor: pointer;
+    border-bottom: 4px solid #f13f3f;
+  }
 }
 
 .burger {
