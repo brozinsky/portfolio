@@ -1,0 +1,14 @@
+.menu-mobile {
+  @apply transition fixed inset-x-0 z-20 w-full px-6 py-4 duration-300 ease-in-out bg-neutral-900;
+  top: 80px;
+  &__backdrop {
+    @apply transition fixed w-full h-full bg-black/50 z-20;
+    backdrop-filter: blur(6px);
+    background: var(--bg-opaque);
+  }
+  &__item {
+    @apply py-4 w-full text-center;
+    font-size: var(--text-sm);
+    font-weight: 200;
+  }
+}
