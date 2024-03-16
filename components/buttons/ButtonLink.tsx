@@ -1,7 +1,14 @@
 import React from "react";
 import ButtonOrLink from "./ButtonOrLink";
 
-export default function ButtonLink(props) {
+type TButtonLinkProps = {
+  onClick?: () => void;
+  children: React.ReactNode;
+  href?: string;
+  [x: string]: any;
+}
+
+export default function ButtonLink(props: TButtonLinkProps) {
   return (
     <ButtonOrLink
       onClick={props.onClick}

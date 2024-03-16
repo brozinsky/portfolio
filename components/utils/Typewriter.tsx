@@ -30,10 +30,10 @@ const cursor = {
 };
 
 type TProps = {
-  color: string;
-  className: string;
+  color?: string;
+  className?: string;
   text: string;
-  variant: "primary" | "secondary";
+  variant?: "primary" | "secondary";
 };
 
 export const Typewriter = ({

@@ -18,7 +18,7 @@ export const About = () => {
       <div className={"grid grid-cols-1 lg:grid-cols-about gap-4"}>
         <div className="p-6 space-y-3 font-light border border-neutral-600 rounded-xl">
           <Reveal>
-            <p>Hello, I'm a Front-end Developer from Szczecin.</p>
+            <p>Hello, I&apos;m a Front-end Developer from Szczecin.</p>
           </Reveal>
           <Reveal>
             <p>
@@ -42,14 +42,14 @@ export const About = () => {
           </Reveal>
           <Reveal>
             <p>
-              I'm using React as my main framework. My preferred tool for state
+              I&apos;m using React as my main framework. My preferred tool for state
               management is <b className="font-semibold">React Query</b>{" "}
               alongside <b className="font-semibold">Zustand</b>.
             </p>
           </Reveal>
           <Reveal>
             <p>
-              I'm designing website layouts using{" "}
+              I&apos;m designing website layouts using{" "}
               <b className="font-semibold">Figma</b>.
             </p>
           </Reveal>
@@ -68,7 +68,7 @@ export const About = () => {
           </Reveal>
           <Reveal>
             <p>
-              Besides the work, I'm interested in music production, playing
+              Besides the work, I&apos;m interested in music production, playing
               guitar and listening to basicially all genres of music.
             </p>
           </Reveal>

@@ -114,7 +114,7 @@ export const projects = [
           Jacks or Better is the most common casino game variation of video
           poker based on five-card draw poker.
           <br />
-          It's a mix of a slots machine and poker.
+          It&apos;s a mix of a slots machine and poker.
           <br />
           I embarked on creating this game as my first project utilizing React
           JS, leveraging Object-Oriented Programming principles for a structured
@@ -146,7 +146,7 @@ export const projects = [
           <br />
           It uses The Movie Database (TMDb) API to display data.
           <br />
-          App's features include search movies by title, list popular movies,
+          App&apos;s features include search movies by title, list popular movies,
           view details of a selected movie (cast, genres, user scores).
           <br />
           Styling made with CSS.

@@ -19,8 +19,8 @@ const LogoSVG = () => {
         x2="26"
         y2="36"
         stroke="inherit"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <line
         x1="32"
@@ -28,8 +28,8 @@ const LogoSVG = () => {
         x2="32"
         y2="67"
         stroke="inherit"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <line
         x1="36"
@@ -37,8 +37,8 @@ const LogoSVG = () => {
         x2="36"
         y2="46"
         stroke="inherit"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <line
         x1="36.2774"
@@ -46,8 +46,8 @@ const LogoSVG = () => {
         x2="49.6133"
         y2="36.7226"
         stroke="inherit"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <line
         x1="13.4"
@@ -55,8 +55,8 @@ const LogoSVG = () => {
         x2="27.8"
         y2="47.6"
         stroke="inherit"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <line
         x1="26.395"
@@ -64,8 +64,8 @@ const LogoSVG = () => {
         x2="31.7675"
         y2="40.605"
         stroke="inherit"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <line
         x1="28"
@@ -73,8 +73,8 @@ const LogoSVG = () => {
         x2="28"
         y2="67"
         stroke="inherit"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
     </svg>
   );
