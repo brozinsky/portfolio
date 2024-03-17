@@ -53,9 +53,9 @@ export const ProjectModal = ({
             priority
             src={imgSrc}
             alt={title}
-            width={500}
-            height={400}
-            className={"w-fit mx-auto"}
+            width={768}
+            height={410}
+            className={"w-full mx-auto"}
           />
         </div>
         <div className={"p-8"}>

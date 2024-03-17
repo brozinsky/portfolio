@@ -15,6 +15,7 @@ interface Props {
   description: string;
   projectLink: string;
   imgSrc: string;
+  imgModalsrc: string;
   tech: string[];
   title: string;
   code: string;
@@ -25,6 +26,7 @@ export const Project = ({
   projectLink,
   description,
   imgSrc,
+  imgModalsrc,
   title,
   code,
   tech,
@@ -166,7 +168,7 @@ export const Project = ({
         projectLink={projectLink}
         setIsOpen={setIsOpen}
         isOpen={isOpen}
-        imgSrc={imgSrc}
+        imgSrc={imgModalsrc}
         title={title}
         code={code}
         tech={tech}
