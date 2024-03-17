@@ -9,6 +9,7 @@ import {
   AiOutlineExport,
 } from "react-icons/ai";
 import { ProjectModal } from "./ProjectModal";
+import useLockScroll from "@/hooks/useLockScroll";
 interface Props {
   modalContent: JSX.Element;
   description: string;
@@ -36,6 +37,8 @@ export const Project = ({
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+
+  useLockScroll(isOpen);
 
   useEffect(() => {
     if (isInView) {
@@ -77,18 +80,19 @@ export const Project = ({
           <div className={"mt-6"}>
             <Reveal width="100%">
               <div className={"flex items-center gap-4 mb-4"}>
-                <h4
+                <h3
                   className="cursor-pointer project__title"
                   onClick={() => setIsOpen(true)}
                 >
                   {title}
-                </h4>
+                </h3>
                 <div className={"project__line"} />
                 <Link
                   href={code}
                   target="_blank"
                   rel="nofollow"
                   className="transition text-neutral-400 hover:text-white"
+                  aria-label="Source code on github"
                 >
                   <AiFillGithub size="2.25rem" />
                 </Link>
@@ -97,6 +101,7 @@ export const Project = ({
                   target="_blank"
                   rel="nofollow"
                   className="transition text-neutral-400 hover:text-white"
+                  aria-label="Live project"
                 >
                   <AiOutlineExport size="2.25rem" />
                 </Link>

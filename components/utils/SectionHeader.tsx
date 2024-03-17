@@ -15,7 +15,6 @@ export const SectionHeader = ({ title, dir = "r" }: Props) => {
       <h2>
         <Typewriter
           text={title}
-          className="text-[2.5rem] uppercase"
           color="text-neutral-200"
         />
       </h2>

@@ -5,6 +5,7 @@ import clsx from "clsx";
 import LogoSVG from "../svg/LogoSVG";
 import Link from "next/link";
 import Hamburger from "../buttons/Hamburger";
+import useLockScroll from "@/hooks/useLockScroll";
 
 const links = [
   { id: 1, title: "Projects", value: "projects" },
@@ -16,17 +17,7 @@ export const Menu = () => {
   const [selected, setSelected] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const toggleOverflowHidden = (shouldHide: boolean) => {
-      const action = shouldHide ? "add" : "remove";
-      document.body.classList[action]("overflow-hidden");
-      document.documentElement.classList[action]("overflow-hidden");
-    };
-
-    toggleOverflowHidden(isMenuOpen);
-
-    return () => toggleOverflowHidden(false);
-  }, [isMenuOpen]);
+  useLockScroll(isMenuOpen);
 
   return (
     <>
@@ -46,7 +37,7 @@ export const Menu = () => {
             setSelected("/");
           }}
         >
-          <Link href="/">
+          <Link href="/" aria-label="Homepage">
             <LogoSVG />
           </Link>
         </motion.div>

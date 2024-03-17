@@ -8,19 +8,18 @@ export const Contact = () => {
   return (
     <section className="section-wrapper" id="contact">
       <div className={"contact__wrapper"}>
-        <h4
+        <h2
           className={
-            "text-center font-medium text-xl mx-auto font-rajdhani text-neutral-100 mb-2"
+            "text-center leading-none font-medium text-xl mx-auto font-rajdhani text-neutral-100 mb-6"
           }
         >
           <Typewriter
             text={"Let's get in touch"}
-            className="text-[2.5rem]"
             color="text-neutral-200"
           />
-        </h4>
+        </h2>
         <Reveal className="mx-auto text-center">
-          <p className={"text-center mb-6 font-light"}>
+          <p className={"text-center mb-10 font-light"}>
             If you&apos;re looking to connect, feel free to drop me an email!
             <br />
             Alternatively, you can also reach out to me on{" "}

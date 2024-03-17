@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
-import { Typewriter } from "./Typewriter";
 
 interface Props {
   children: JSX.Element;

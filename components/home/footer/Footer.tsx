@@ -20,6 +20,7 @@ const Footer = () => {
       <div className="footer__triangle-background" />
       <div className="footer__button-center">
         <button
+          aria-label="Scroll to top"
           onClick={handleScrollButton}
           className="relative inline-flex items-center justify-center w-12 h-12 overflow-hidden font-medium group footer__button-to-top"
         >
@@ -37,6 +38,7 @@ const Footer = () => {
           target="_blank"
           rel="nofollow"
           className="flex items-center justify-center gap-3 mx-auto transition text-neutral-400 hover:text-white"
+          aria-label="Github"
         >
           <AiFillGithub size="2rem" />
         </Link>
@@ -44,8 +46,8 @@ const Footer = () => {
           href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/"
           target="_blank"
           rel="nofollow"
-          aria-label="Linkedin"
           className="flex items-center justify-center mx-auto transition text-neutral-400 hover:text-white"
+          aria-label="Linkedin"
         >
           <AiFillLinkedin size="2rem" />
         </Link>

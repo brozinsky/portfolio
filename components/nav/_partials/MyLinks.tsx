@@ -20,6 +20,7 @@ export const MyLinks = ({ direction = "horizontal" }: TProps) => {
           target="_blank"
           rel="nofollow"
           className="transition text-neutral-400 hover:text-white"
+          aria-label="Linkedin"
         >
           <AiFillLinkedin size="2rem" />
         </Link>
@@ -35,6 +36,7 @@ export const MyLinks = ({ direction = "horizontal" }: TProps) => {
           target="_blank"
           rel="nofollow"
           className="transition text-neutral-400 hover:text-white"
+          aria-label="Github"
         >
           <AiFillGithub size="2rem" />
         </Link>

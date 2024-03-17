@@ -39,7 +39,6 @@ type TProps = {
 export const Typewriter = ({
   text,
   variant = "secondary",
-  className = "text-[5rem]",
 }: TProps) => {
   const controls = useAnimation();
 
@@ -58,7 +57,6 @@ export const Typewriter = ({
         return (
           <motion.span
             className={cn(
-              className,
               "font-medium",
               variant === "secondary" && "heading-secondary",
               variant === "primary" && "heading-primary"
@@ -72,7 +70,6 @@ export const Typewriter = ({
       })}
       <motion.span
         className={cn(
-          className,
           variant === "primary" && "heading-primary__indicator",
           variant === "secondary" && "heading-secondary__indicator",
           "text-primary-500",
