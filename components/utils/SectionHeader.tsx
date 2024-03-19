@@ -8,7 +8,7 @@ interface Props {
 export const SectionHeader = ({ title, dir = "r" }: Props) => {
   return (
     <div
-      className={"flex items-center mb-10 gap-8"}
+      className={"flex items-center mb-10 gap-8 text-[2rem] uppercase md:text-[2.5rem]"}
       style={{ flexDirection: dir === "r" ? "row" : "row-reverse" }}
     >
       <div className={"heading__line"} />
