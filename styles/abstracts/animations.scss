@@ -1,8 +1,22 @@
+.button-shine {
+  @apply absolute inset-0 flex h-full w-full justify-center;
+  animation: slideAndSkew 6s infinite;
+}
+
 @keyframes translate-to-right {
   from {
     transform: translateX(-100%);
   }
   to {
     transform: translateX(0);
+  }
+}
+
+@keyframes slideAndSkew {
+  0%, 20% {
+    transform: skew(-12deg) translateX(-100%);
+  }
+  33.33%, 100% {
+    transform: skew(-12deg) translateX(100%);
   }
 }

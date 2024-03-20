@@ -1,4 +1,5 @@
 import { MyLinks } from "@/components/nav/_partials/MyLinks";
+import HeroLines from "@/components/utils/HeroLines";
 import { Reveal } from "@/components/utils/Reveal";
 import { Typewriter } from "@/components/utils/Typewriter";
 
@@ -8,6 +9,7 @@ export const Hero = () => {
   return (
     <>
       <section className={`hero`}>
+        <HeroLines />
         <div className="section-wrapper bg-grid-neutral-500/[0.3]">
           <div className={"gap-6 flex nowrap items-center justify-center"}>
             <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-[#111] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
@@ -35,11 +37,14 @@ export const Hero = () => {
                 <Reveal isSlideCover>
                   <a
                     href="#projects"
-                    className="relative inline-flex items-center justify-center h-12 px-10 overflow-hidden font-medium duration-500 bg-transparent border rounded-md border-primary-500 group text-primary-500 border-1"
+                    className="relative inline-flex items-center justify-center h-12 px-10 overflow-hidden font-medium duration-500 bg-transparent border rounded-md bg-neutral-900 border-primary-500 group text-primary-500 border-1"
                   >
                     <span className="translate-y-0 opacity-100 transition group-hover:-translate-y-[150%] group-hover:opacity-0">
                       See my projects
                     </span>
+                    <div className="button-shine">
+                      <div className="relative w-20 h-full bg-primary-500/30"></div>
+                    </div>
                     <span className="absolute translate-y-[150%] opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100">
                       <svg
                         width="15"
