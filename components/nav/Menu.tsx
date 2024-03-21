@@ -70,7 +70,7 @@ export const Menu = () => {
         </div>
         <Hamburger isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
         <div className="hidden md:block">
-          <MyLinks />
+          <MyLinks isEmail/>
         </div>
         <div
           className={clsx(
@@ -98,7 +98,7 @@ export const Menu = () => {
               );
             })}
             <div className="mt-4 md:hidden">
-              <MyLinks />
+              <MyLinks isEmail/>
             </div>
           </div>
         </div>
