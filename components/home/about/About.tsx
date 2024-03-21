@@ -1,5 +1,5 @@
 import { SectionHeader } from "@/components/utils/SectionHeader";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
 import { Technologies } from "./Technologies";
 import Link from "next/link";
 import ButtonLink from "@/components/buttons/ButtonLink";
@@ -16,7 +16,7 @@ export const About = () => {
   return (
     <section id="about" className="section-wrapper">
       <SectionHeader title="About" dir="l" />
-      <div className={"grid grid-cols-1 lg:grid-cols-about gap-4"}>
+      <div className={"grid grid-cols-1 xl:grid-cols-about gap-4"}>
         <div className="p-6 space-y-3 font-light border border-neutral-600 rounded-xl">
           <Reveal>
             <p>Hello, I&apos;m a Front-end Developer from Szczecin.</p>
@@ -43,8 +43,8 @@ export const About = () => {
           </Reveal>
           <Reveal>
             <p>
-              I&apos;m using React as my main framework. My preferred tool for state
-              management is <b className="font-semibold">React Query</b>{" "}
+              I&apos;m using React as my main framework. My preferred tool for
+              state management is <b className="font-semibold">React Query</b>{" "}
               alongside <b className="font-semibold">Zustand</b>.
             </p>
           </Reveal>
@@ -57,7 +57,10 @@ export const About = () => {
           <Reveal>
             <p>
               I use Git to track all changes in my code that I store on my{" "}
-              <ButtonLink href={"https://github.com/brozinsky"}>GitHub</ButtonLink> page.
+              <ButtonLink href={"https://github.com/brozinsky"}>
+                GitHub
+              </ButtonLink>{" "}
+              page.
             </p>
           </Reveal>
           <Reveal>
@@ -112,6 +115,23 @@ export const About = () => {
                 </Reveal>
                 <Reveal>
                   <span>Linkedin</span>
+                </Reveal>
+              </Link>
+            </div>
+          </div>
+          <div className="grid h-full gap-4">
+            <div className="flex items-center w-full gap-3 p-4 border border-neutral-600 rounded-xl">
+              <Link
+                href={links.email}
+                target="_blank"
+                rel="nofollow"
+                className="flex items-center justify-center gap-3 mx-auto transition text-neutral-400 hover:text-white"
+              >
+                <Reveal>
+                  <AiOutlineMail size="1.5rem" />
+                </Reveal>
+                <Reveal>
+                  <span>mateusz0brzezinski@gmail.com</span>
                 </Reveal>
               </Link>
             </div>

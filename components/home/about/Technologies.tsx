@@ -45,7 +45,7 @@ export const Technologies = () => {
           </p>
         </Reveal>
         <Reveal>
-          <div className={"flex flex-wrap gap-3 mb-8"}>
+          <div className={"flex flex-wrap gap-3 mb-6"}>
             <span className="chip">JavaScript</span>
             <span className="chip">HTML</span>
             <span className="chip">CSS</span>
@@ -53,14 +53,14 @@ export const Technologies = () => {
             <span className="chip">Tailwind</span>
             <span className="chip">React</span>
             <span className="chip">Nextjs</span>
-            <span className="chip">React Query</span>
             <span className="chip">Zustand</span>
+            <span className="chip">React Query</span>
             <span className="chip">React Native</span>
             <span className="chip">Sass</span>
-            <span className="chip">Firebase</span>
+            {/* <span className="chip">Firebase</span> */}
             <span className="chip">Strapi</span>
-            <span className="chip">Sanity</span>
             <span className="chip">Styled Components</span>
+            <span className="chip">Sanity</span>
           </div>
         </Reveal>
         <Marquee direction="left" speed={15} pauseOnHover>
@@ -72,13 +72,13 @@ export const Technologies = () => {
                 className="hover:bg-neutral-800 transition hover:text-neutral-100 w-28 text-neutral-400 h-16 m-1.5 bg-neutral-900 text-3xl items-center justify-center flex"
               >
                 {icon}
-                <ReactTooltip
+                {/* <ReactTooltip
                   className="text-sm"
                   style={{ fontSize: 14, height: "fit-content" }}
                   id={name}
                   variant="dark"
                   content={name}
-                />
+                /> */}
               </div>
             );
           })}
