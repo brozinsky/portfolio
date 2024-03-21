@@ -2,6 +2,7 @@ import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import clsx from "clsx";
+import { links } from "@/components/utils/contstants/links";
 
 type TProps = {
   direction?: "horizontal" | "vertical";
@@ -16,7 +17,7 @@ export const MyLinks = ({ direction = "horizontal" }: TProps) => {
         transition={{ duration: 0.5, delay: 0.0 }}
       >
         <Link
-          href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/"
+          href={links.linkedin}
           target="_blank"
           rel="nofollow"
           className="transition text-neutral-400 hover:text-white"
@@ -32,7 +33,7 @@ export const MyLinks = ({ direction = "horizontal" }: TProps) => {
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         <Link
-          href="https://github.com/brozinsky"
+          href={links.github}
           target="_blank"
           rel="nofollow"
           className="transition text-neutral-400 hover:text-white"

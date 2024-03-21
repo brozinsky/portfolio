@@ -4,6 +4,7 @@ import { Technologies } from "./Technologies";
 import Link from "next/link";
 import ButtonLink from "@/components/buttons/ButtonLink";
 import { Reveal } from "@/components/utils/Reveal";
+import { links } from "@/components/utils/contstants/links";
 
 export const About = () => {
   const handleScrollToBottom = () => {
@@ -86,7 +87,7 @@ export const About = () => {
           <div className="grid h-full grid-cols-2 gap-4">
             <div className="flex items-center gap-3 p-4 border border-neutral-600 rounded-xl">
               <Link
-                href="https://github.com/brozinsky"
+                href={links.github}
                 target="_blank"
                 rel="nofollow"
                 className="flex items-center justify-center gap-3 mx-auto transition text-neutral-400 hover:text-white"
@@ -101,7 +102,7 @@ export const About = () => {
             </div>
             <div className="flex items-center gap-3 p-4 border border-neutral-600 rounded-xl">
               <Link
-                href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/"
+                href={links.linkedin}
                 target="_blank"
                 rel="nofollow"
                 className="flex items-center justify-center gap-3 mx-auto transition text-neutral-400 hover:text-white"

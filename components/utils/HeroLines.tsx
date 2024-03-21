@@ -4,6 +4,7 @@ import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { Reveal } from "./Reveal";
+import { links } from "./contstants/links";
 
 const HeroLines = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,7 +26,7 @@ const HeroLines = () => {
         )}
       >
         <Link
-          href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/"
+          href={links.linkedin}
           target="_blank"
           rel="nofollow"
           className="w-[112px] group"
@@ -63,7 +64,7 @@ const HeroLines = () => {
         ></motion.div>
         <div className="w-[100px]">
           <Link
-            href="https://github.com/brozinsky"
+            href={links.github}
             target="_blank"
             rel="nofollow"
             className="w-[100px] group"

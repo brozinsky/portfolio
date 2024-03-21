@@ -1,3 +1,4 @@
+import { links } from "@/components/utils/contstants/links";
 import Link from "next/link";
 import React from "react";
 import {
@@ -34,7 +35,7 @@ const Footer = () => {
       </div>
       <div className="footer__wrap-links">
         <Link
-          href="https://github.com/brozinsky"
+          href={links.github}
           target="_blank"
           rel="nofollow"
           className="flex items-center justify-center gap-3 mx-auto transition text-neutral-400 hover:text-white"
@@ -43,7 +44,7 @@ const Footer = () => {
           <AiFillGithub size="2rem" />
         </Link>
         <Link
-          href="https://www.linkedin.com/in/mateusz-brzeziński-b31494210/"
+          href={links.linkedin}
           target="_blank"
           rel="nofollow"
           className="flex items-center justify-center mx-auto transition text-neutral-400 hover:text-white"

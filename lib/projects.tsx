@@ -3,7 +3,7 @@ export const projects = [
     title: "Chords Lab",
     imgSrc: "/project-imgs/chords-lab.jpg",
     imgModalsrc: "/project-imgs/chords-lab-modal.jpg",
-    code: "https://github.com/brozinsky/chords-lab.jpg",
+    code: "https://github.com/brozinsky/chords-lab",
     projectLink: "https://chords-lab.vercel.app/",
     tech: [
       "Typescript",
