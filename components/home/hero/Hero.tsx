@@ -2,9 +2,12 @@ import { MyLinks } from "@/components/nav/_partials/MyLinks";
 import HeroLines from "@/components/utils/HeroLines";
 import { Reveal } from "@/components/utils/Reveal";
 import { Typewriter } from "@/components/utils/Typewriter";
+import useScrollDown from "@/hooks/useScrollDown";
+import clsx from "clsx";
 
 export const Hero = () => {
   const titleText = "I can develop";
+  const { isScrolled } = useScrollDown();
 
   return (
     <>
@@ -69,7 +72,14 @@ export const Hero = () => {
           </div>
         </div>
       </section>
-      <a href="#projects" aria-label="Scroll down" className="arrow-guide">
+      <a
+        href="#projects"
+        aria-label="Scroll down"
+        className={clsx(
+          "transition duration-500 arrow-guide",
+          isScrolled && "opacity-0"
+        )}
+      >
         <span></span>
         <span></span>
         <span></span>

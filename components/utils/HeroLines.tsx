@@ -5,17 +5,10 @@ import { motion } from "framer-motion";
 import clsx from "clsx";
 import { Reveal } from "./Reveal";
 import { links } from "./contstants/links";
+import useScrollDown from "@/hooks/useScrollDown";
 
 const HeroLines = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { isScrolled } = useScrollDown();
 
   return (
     <div className="hidden md:block">
