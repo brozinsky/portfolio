@@ -5,11 +5,13 @@ import Link from "next/link";
 import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
 import Image from "next/image";
+import { useMediaQuery } from "@mantine/hooks";
 interface Props {
   isOpen: boolean;
   setIsOpen: Function;
   title: string;
   imgSrc: string;
+  imgThumb: string;
   code: string;
   projectLink: string;
   tech: string[];
@@ -21,11 +23,14 @@ export const ProjectModal = ({
   projectLink,
   setIsOpen,
   imgSrc,
+  imgThumb,
   isOpen,
   title,
   code,
   tech,
 }: Props) => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   useEffect(() => {
     const body = document.querySelector("body");
 
@@ -51,7 +56,7 @@ export const ProjectModal = ({
         <div style={{ background: "var(--background)" }}>
           <Image
             priority
-            src={imgSrc}
+            src={!isMobile ? imgSrc : imgThumb}
             alt={title}
             width={768}
             height={410}
@@ -72,7 +77,7 @@ export const ProjectModal = ({
                 href={code}
                 className="flex items-center gap-4 transition text-neutral-400 hover:text-white"
               >
-                <AiFillGithub size="2.25rem" /> Source code
+                <AiFillGithub size="2.25rem" />{isMobile ? "Code" : "Source code"}
               </Link>
               <Link
                 target="_blank"
@@ -80,7 +85,7 @@ export const ProjectModal = ({
                 href={projectLink}
                 className="flex items-center gap-4 transition text-neutral-400 hover:text-white"
               >
-                <AiOutlineExport size="2.25rem" /> Live project
+                <AiOutlineExport size="2.25rem" />{isMobile ? "Live" : "Live project"}
               </Link>
             </div>
           </div>

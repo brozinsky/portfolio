@@ -31,12 +31,8 @@ export const Project = ({
   code,
   tech,
 }: Props) => {
-  const [hovered, setHovered] = useState(false);
-
   const [isOpen, setIsOpen] = useState(false);
-
   const controls = useAnimation();
-
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -65,8 +61,6 @@ export const Project = ({
       >
         <div>
           <div
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
             onClick={() => setIsOpen(true)}
             className={"project__image-wrap"}
           >
@@ -169,6 +163,7 @@ export const Project = ({
         setIsOpen={setIsOpen}
         isOpen={isOpen}
         imgSrc={imgModalsrc}
+        imgThumb={imgSrc}
         title={title}
         code={code}
         tech={tech}

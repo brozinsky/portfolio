@@ -76,3 +76,7 @@ a {
   font-size: var(--text-xs);
   background: var(--background-light);
 }
+
+.text-email {
+  font-size: min(4vw, 1.125rem);
+}

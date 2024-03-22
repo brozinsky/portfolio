@@ -131,7 +131,7 @@ export const About = () => {
                   <AiOutlineMail size="1.5rem" />
                 </Reveal>
                 <Reveal>
-                  <span>mateusz0brzezinski@gmail.com</span>
+                  <span className="text-email">mateusz0brzezinski@gmail.com</span>
                 </Reveal>
               </Link>
             </div>

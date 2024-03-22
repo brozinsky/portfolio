@@ -84,7 +84,11 @@ export const Hero = () => {
         <span></span>
         <span></span>
       </a>
-      <div className="absolute z-10 left-6 bottom-6 md:hidden">
+      <div 
+       className={clsx(
+        "transition duration-500 absolute z-10 left-6 bottom-6 md:hidden",
+        isScrolled && "opacity-0"
+      )}>
         <MyLinks />
       </div>
     </>
