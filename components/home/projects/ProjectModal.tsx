@@ -58,8 +58,8 @@ export const ProjectModal = ({
             priority
             src={!isMobile ? imgSrc : imgThumb}
             alt={title}
-            width={768}
-            height={410}
+            width={!isMobile ? 482 : 768}
+            height={!isMobile ? 352 : 410}
             className={"w-full mx-auto"}
           />
         </div>

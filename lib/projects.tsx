@@ -38,7 +38,7 @@ export const projects = [
     ),
   },
   {
-    title: "Handmade Store",
+    title: "Sznurkowe Królowe",
     imgSrc: "/project-imgs/sznurkowe-krolowe.png",
     imgModalsrc: "/project-imgs/sznurkowe-krolowe-modal.jpg",
     code: "https://github.com/brozinsky/next-handmade-ecommerce",
@@ -50,8 +50,8 @@ export const projects = [
       "SASS",
       "Tailwind",
       "Sanity",
-      "React Query",
       "Zustand",
+      "HeadlessUI",
     ],
     description: " An ecommerce website for handmade store.",
     modalContent: (
@@ -71,7 +71,7 @@ export const projects = [
             <li>Next JS + Typescript</li>
             <li>Styled with Tailwind and SASS</li>
             <li>Backend: Sanity</li>
-            <li>State management - React Query and Zustand</li>
+            <li>State management - Zustand</li>
             <li>Fully responsive mobile first design</li>
           </ul>
         </div>
