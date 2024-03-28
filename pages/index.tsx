@@ -24,6 +24,7 @@ export default function home() {
         <meta name="twitter:description" content="Hey! I'm Mateusz Brzeziński, a Frontend Developer based in Szczecin, Poland."/>
         <meta name="twitter:creator" content="@jc_devz"/>
         <meta name="twitter:image" content="https://deverajc.com/screenshot.png"/>
+        <meta name="google-site-verification" content="UQ5sUXYifK60YioNVOq0GqH13Gl3JvOZBZ_9YkvAp4A" />
       </Head>
       <Home />
     </>
