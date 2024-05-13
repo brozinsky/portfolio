@@ -41,6 +41,8 @@ export const Project = ({
   useEffect(() => {
     if (isInView) {
       controls.start("visible");
+      const img: HTMLImageElement = new window.Image();
+      img.src = imgSrc;
     } else {
       controls.start("hidden");
     }
@@ -69,8 +71,8 @@ export const Project = ({
               priority
               src={imgSrc}
               alt={title}
-              width={482}
-              height={352}
+              width={640}
+              height={342}
             />
           </div>
           <div className={"mt-6"}>
