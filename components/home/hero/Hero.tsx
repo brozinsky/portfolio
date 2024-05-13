@@ -30,14 +30,14 @@ export const Hero = () => {
                   </span>
                 </Reveal>
                 <Typewriter variant="primary" text={titleText} />
-                <Reveal isInline>
+                <Reveal isInline delay={0.75}>
                   <span className={"heading-hero-secondary"}>
                     Your own website
                   </span>
                 </Reveal>
               </h1>
               <div className="flex items-center justify-center mx-auto mt-14">
-                <Reveal isSlideCover>
+                <Reveal isSlideCover delay={0.85}>
                   <a
                     href="#projects"
                     className="relative inline-flex items-center justify-center h-12 px-10 overflow-hidden font-medium duration-500 bg-transparent border rounded-md bg-neutral-900 border-primary-500 group text-primary-500 border-1"

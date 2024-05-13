@@ -7,6 +7,7 @@ interface Props {
   width?: "fit-content" | "100%";
   isInline?: boolean;
   className?: string;
+  delay?: number;
 }
 
 export const Reveal = ({
@@ -14,7 +15,8 @@ export const Reveal = ({
   width = "fit-content",
   isSlideCover = false,
   isInline,
-  className
+  className,
+  delay = 0.25
 }: Props) => {
   const Component = isInline ? "span" : "div";
 
@@ -47,7 +49,7 @@ export const Reveal = ({
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.5, delay: 0.25 }}
+        transition={{ duration: 0.5, delay: delay }}
       >
         {children}
       </motion.div>

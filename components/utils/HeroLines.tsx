@@ -24,7 +24,7 @@ const HeroLines = () => {
           rel="nofollow"
           className="w-[112px] group"
         >
-          <Reveal>
+          <Reveal delay={1.3}>
             <div className="flex flex-row items-center gap-2">
               <span className="transition text-neutral-400 group-hover:text-white">
                 <AiFillLinkedin size="2rem" />
@@ -38,7 +38,7 @@ const HeroLines = () => {
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.0 }}
+          transition={{ duration: 0.5, delay: 1.0 }}
           className="w-full h-[1px] bg-neutral-500"
         ></motion.div>
       </div>
@@ -52,7 +52,7 @@ const HeroLines = () => {
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.0 }}
+          transition={{ duration: 0.5, delay: 1.0 }}
           className="w-full h-[1px] bg-neutral-500"
         ></motion.div>
         <div className="w-[100px]">
@@ -62,7 +62,7 @@ const HeroLines = () => {
             rel="nofollow"
             className="w-[100px] group"
           >
-            <Reveal>
+            <Reveal delay={1.3}>
               <div className="flex flex-row items-center gap-2">
                 <div className="transition text-neutral-400 group-hover:text-white">
                   <AiFillGithub size="2rem" />
@@ -75,24 +75,6 @@ const HeroLines = () => {
           </Link>
         </div>
       </div>
-      {/* <div className="absolute z-20 flex flex-col items-center w-8 gap-4 h-[33%] bottom-20 left-8">
-        <div className="h-full w-[1px] bg-neutral-500"></div>
-      </div>
-
-      <div className="absolute z-20 flex flex-col items-center w-8 gap-4 h-[33%] bottom-20 right-8">
-        <div className="h-full w-[1px] bg-neutral-500"></div>
-      </div> */}
-
-      {/* top left */}
-      {/* <div className="absolute z-20 flex flex-row items-center w-6/12 h-8 gap-4 top-28 left-8 ">
-        <div className="w-full h-[1px] bg-neutral-500"></div>
-      </div> */}
-      {/* top */}
-      {/* <div className="absolute z-20 flex flex-row items-center w-6/12 h-8 gap-4 top-28 right-8 ">
-        <div className="w-full h-[1px] bg-neutral-500"></div>
-        <div>Github</div>
-      </div> */}
-      {/* bottom left */}
     </div>
   );
 };
