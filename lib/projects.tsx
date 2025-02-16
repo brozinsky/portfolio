@@ -1,5 +1,63 @@
 export const projects = [
   {
+    title: "Focus Board",
+    imgSrc: "/project-imgs/focus-board.webp",
+    imgModalsrc: "/project-imgs/focus-board-modal.webp",
+    code: "https://github.com/brozinsky/focus-board",
+    projectLink: "https://focus-board-cyan.vercel.app/",
+    tech: [
+      "Typescript",
+      "React",
+      "Tailwind",
+      "Vite",
+      "SASS",
+      "Supabase",
+      "Tanstack Query",
+      "Zustand",
+      "shadcn/ui",
+      "NodeJS",
+      "Radix",
+    ],
+    description:
+      " Browser-based dashboard that enhances productivity.",
+    modalContent: (
+      <>
+        <p>
+          Focus Board is a web application that allows users to customize their
+          dashboard.
+        </p>
+        <div>
+          <p className="modal__subtitle">Features:</p>
+          <ul className="modal__list">
+            <li>
+              <b>Customizable backgrounds:</b> Choose your own backgrounds and
+              themes using static or animated wallpapers, or even YouTube
+              videos.
+            </li>
+            <li>
+              <b>Personalized Soundscapes:</b> Enhance your experience with
+              ambient sounds tailored to your mood.
+            </li>
+            <li>
+              <b>Productivity Tools:</b> Includes sticky notes, to-do lists, a
+              Pomodoro timer, a habit tracker, and many more.
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p className="modal__subtitle">Technologies Used:</p>
+          <ul className="modal__list">
+            <li>Main technology - React with TypeScript</li>
+            <li>Supabase for the database</li>
+            <li>Styled with Tailwind CSS and Sass</li>
+            <li>State management using Tanstack Query and Zustand</li>
+            <li>UI components built with shadcn/ui and Radix</li>
+          </ul>
+        </div>
+      </>
+    ),
+  },
+  {
     title: "Chords Lab",
     imgSrc: "/project-imgs/chords-lab.jpg",
     imgModalsrc: "/project-imgs/chords-lab-modal.jpg",
@@ -11,7 +69,7 @@ export const projects = [
       "Vite",
       "SASS",
       "Tailwind",
-      "React Query",
+      "Tanstack Query",
       "Zustand",
       "Radix",
     ],
@@ -29,7 +87,7 @@ export const projects = [
           <ul className="modal__list">
             <li>Main technology - React with Typescript</li>
             <li>Styled with Tailwindcss and Sass</li>
-            <li>State management with React Query and Zustand</li>
+            <li>State management with Tanstack Query and Zustand</li>
             <li>UI primitives by HeadlessUI and Radix</li>
             <li>Designed using Figma</li>
           </ul>
@@ -151,8 +209,8 @@ export const projects = [
           <br />
           It uses The Movie Database (TMDb) API to display data.
           <br />
-          App&apos;s features include search movies by title, list popular movies,
-          view details of a selected movie (cast, genres, user scores).
+          App&apos;s features include search movies by title, list popular
+          movies, view details of a selected movie (cast, genres, user scores).
           <br />
           Styling made with CSS.
         </p>
