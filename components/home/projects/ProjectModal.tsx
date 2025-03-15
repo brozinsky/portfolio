@@ -37,7 +37,7 @@ export const ProjectModal = ({
     if (isOpen) {
       body!.style.overflowY = "hidden";
     } else {
-      body!.style.overflowY = "scroll";
+      body!.style.overflowY = "auto";
     }
   }, [isOpen]);
 
