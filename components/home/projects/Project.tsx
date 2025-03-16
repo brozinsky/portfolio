@@ -68,7 +68,7 @@ export const Project = ({
           >
             <Image
               className={"project__image"}
-              priority
+              loading="lazy"
               src={imgSrc}
               alt={title}
               width={640}
