@@ -46,4 +46,12 @@
       font-size: min(2rem, 7vw);
     }
   }
+  &--sm {
+    @apply py-2 px-4 leading-4 mt-0 text-lg w-full mb-2 text-center;
+    font-size: 2rem;
+    @media (max-width: 728px) {
+      @apply mb-6 mt-0;
+      font-size: min(1.5rem, 7vw);
+    }
+  }
 }

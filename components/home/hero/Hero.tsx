@@ -4,25 +4,83 @@ import { Reveal } from "@/components/utils/Reveal";
 import { Typewriter } from "@/components/utils/Typewriter";
 import useScrollDown from "@/hooks/useScrollDown";
 import clsx from "clsx";
+import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 export const Hero = () => {
   const titleText = "I can develop";
   const { isScrolled } = useScrollDown();
+  const [isVideoReady, setIsVideoReady] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end -100vh"],
+  });
+  const isMobile = useMediaQuery(1024);
+
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (video) {
+      const checkVideoReady = () => {
+        if (video.readyState >= 3) {
+          console.log("Video is ready to play!");
+          setIsVideoReady(true);
+        }
+      };
+
+      video.addEventListener("canplay", checkVideoReady);
+      video.addEventListener("loadeddata", checkVideoReady);
+
+      checkVideoReady();
+
+      return () => {
+        video.removeEventListener("canplay", checkVideoReady);
+        video.removeEventListener("loadeddata", checkVideoReady);
+      };
+    }
+  }, []);
 
   return (
     <>
-      <section className={`hero`}>
+      <motion.section ref={heroRef} className="hero" style={{ opacity }}>
         <HeroLines />
-        <div className="section-wrapper bg-grid-neutral-500/[0.3]">
+        {!isMobile && (
+          <div>
+            <video
+              ref={videoRef}
+              className={clsx(
+                "absolute inset-0 object-cover w-full h-full transition-opacity duration-1000",
+                isVideoReady ? "opacity-100" : "opacity-0"
+              )}
+              autoPlay
+              loop
+              muted
+              // src="/hero_globe_1920_1080_25fps.mp4"
+              src="/hero_globe_2560_1440_25fps_comp.mp4"
+            />
+            <div className="absolute inset-0 pointer-events-none bg-black/45"></div>
+          </div>
+        )}
+        <div
+          className={clsx(
+            "section-wrapper",
+            isMobile && "bg-grid-neutral-500/[0.3]"
+          )}
+        >
           <div className={"gap-6 flex nowrap items-center justify-center"}>
-            <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-[#111] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+            <div className="absolute pointer-events-none inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
             <div className={"relative z-10 w-full max-w-2xl my-16"}>
               <h1 className="text-center uppercase">
                 <Reveal isInline>
                   <span className="">
                     <span
                       className={
-                        "heading-hero-secondary heading-hero-secondary--with-background"
+                        "heading-hero-secondary heading-hero-secondary--sm"
                       }
                     >
                       Mateusz Brzeziński
@@ -71,7 +129,7 @@ export const Hero = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
       <a
         href="#projects"
         aria-label="Scroll down"
@@ -84,11 +142,12 @@ export const Hero = () => {
         <span></span>
         <span></span>
       </a>
-      <div 
-       className={clsx(
-        "transition duration-500 absolute z-10 left-6 bottom-6 md:hidden",
-        isScrolled && "opacity-0"
-      )}>
+      <div
+        className={clsx(
+          "transition duration-500 absolute z-10 left-6 bottom-6 md:hidden",
+          isScrolled && "opacity-0"
+        )}
+      >
         <MyLinks />
       </div>
     </>
