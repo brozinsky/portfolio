@@ -4,8 +4,12 @@ import Link from "next/link";
 import ButtonLink from "@/components/buttons/ButtonLink";
 import { Typewriter } from "@/components/utils/Typewriter";
 import { links } from "@/components/utils/contstants/links";
+import { trackContactClick, trackSocialClick } from "@/components/utils/analytics";
+import { useTrackSection } from "@/hooks/useTrackSection";
 
 export const Contact = () => {
+  useTrackSection("contact");
+
   return (
     <section className="section-wrapper" id="contact">
       <div className={"contact__wrapper"}>
@@ -24,7 +28,10 @@ export const Contact = () => {
             If you&apos;re looking to connect, feel free to drop me an email!
             <br />
             Alternatively, you can also reach out to me on{" "}
-            <ButtonLink href={links.linkedin}>
+            <ButtonLink
+              href={links.linkedin}
+              onClick={() => trackSocialClick("linkedin")}
+            >
               LinkedIn
             </ButtonLink>
             .
@@ -32,7 +39,7 @@ export const Contact = () => {
         </Reveal>
         <div className="mx-auto w-fit">
           <Reveal>
-            <Link href={links.email}>
+            <Link href={links.email} onClick={trackContactClick}>
               <button className="relative inline-flex items-center justify-center h-12 px-10 overflow-hidden font-medium duration-500 rounded-lg group bg-neutral-800 text-neutral-200">
                 <div className="relative inline-flex items-center transition -translate-x-0 group-hover:-translate-x-6">
                   <div className="transition translate-x-0 opacity-100 group-hover:-translate-x-6 group-hover:opacity-0">

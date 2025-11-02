@@ -3,6 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { links } from "@/components/utils/contstants/links";
+import { trackSocialClick } from "@/components/utils/analytics";
 
 type TProps = {
   direction?: "horizontal" | "vertical";
@@ -23,6 +24,7 @@ export const MyLinks = ({ direction = "horizontal", isEmail }: TProps) => {
           rel="nofollow"
           className="transition text-neutral-400 hover:text-white"
           aria-label="Linkedin"
+          onClick={() => trackSocialClick("linkedin")}
         >
           <AiFillLinkedin size="2rem" />
         </Link>
@@ -39,6 +41,7 @@ export const MyLinks = ({ direction = "horizontal", isEmail }: TProps) => {
           rel="nofollow"
           className="transition text-neutral-400 hover:text-white"
           aria-label="Github"
+          onClick={() => trackSocialClick("github")}
         >
           <AiFillGithub size="2rem" />
         </Link>
@@ -55,7 +58,8 @@ export const MyLinks = ({ direction = "horizontal", isEmail }: TProps) => {
             target="_blank"
             rel="nofollow"
             className="transition text-neutral-400 hover:text-white"
-            aria-label="Github"
+            aria-label="Email"
+            onClick={() => trackSocialClick("email")}
           >
             <AiOutlineMail size="2rem" />
           </Link>

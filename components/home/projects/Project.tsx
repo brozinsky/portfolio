@@ -10,6 +10,7 @@ import {
 } from "react-icons/ai";
 import { ProjectModal } from "./ProjectModal";
 import useLockScroll from "@/hooks/useLockScroll";
+import { trackProjectClick } from "@/components/utils/analytics";
 interface Props {
   modalContent: JSX.Element;
   description: string;
@@ -91,6 +92,7 @@ export const Project = ({
                   rel="nofollow"
                   className="transition text-neutral-400 hover:text-white"
                   aria-label="Source code on github"
+                  onClick={() => trackProjectClick(title, "source_code")}
                 >
                   <AiFillGithub size="2.25rem" />
                 </Link>
@@ -100,6 +102,7 @@ export const Project = ({
                   rel="nofollow"
                   className="transition text-neutral-400 hover:text-white"
                   aria-label="Live project"
+                  onClick={() => trackProjectClick(title, "live_project")}
                 >
                   <AiOutlineExport size="2.25rem" />
                 </Link>

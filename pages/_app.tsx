@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
+import { useOutboundTracking } from "@/hooks/useOutboundTracking";
 
 const poppins = Poppins({
   weight: ["100", "200", "400", "700", "900"],
@@ -11,6 +12,8 @@ const poppins = Poppins({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  useOutboundTracking();
+
   return (
     <>
       <Script

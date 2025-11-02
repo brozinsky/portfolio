@@ -5,8 +5,11 @@ import Link from "next/link";
 import ButtonLink from "@/components/buttons/ButtonLink";
 import { Reveal } from "@/components/utils/Reveal";
 import { links } from "@/components/utils/contstants/links";
+import { useTrackSection } from "@/hooks/useTrackSection";
+import { trackSocialClick } from "@/components/utils/analytics";
 
 export const About = () => {
+  useTrackSection("about");
   const handleScrollToBottom = () => {
     window.scrollTo({
       top: document.body.scrollHeight,
@@ -57,7 +60,10 @@ export const About = () => {
           <Reveal>
             <p>
               I use Git to track all changes in my code that I store on my{" "}
-              <ButtonLink href={"https://github.com/brozinsky"}>
+              <ButtonLink
+                href={"https://github.com/brozinsky"}
+                onClick={() => trackSocialClick("github")}
+              >
                 GitHub
               </ButtonLink>{" "}
               page.
@@ -94,6 +100,7 @@ export const About = () => {
                 target="_blank"
                 rel="nofollow"
                 className="flex items-center justify-center gap-3 mx-auto transition text-neutral-400 hover:text-white"
+                onClick={() => trackSocialClick("github")}
               >
                 <Reveal>
                   <AiFillGithub size="1.5rem" />
@@ -109,6 +116,7 @@ export const About = () => {
                 target="_blank"
                 rel="nofollow"
                 className="flex items-center justify-center gap-3 mx-auto transition text-neutral-400 hover:text-white"
+                onClick={() => trackSocialClick("linkedin")}
               >
                 <Reveal>
                   <AiFillLinkedin size="1.5rem" />
@@ -126,6 +134,7 @@ export const About = () => {
                 target="_blank"
                 rel="nofollow"
                 className="flex items-center justify-center gap-3 mx-auto transition text-neutral-400 hover:text-white"
+                onClick={() => trackSocialClick("email")}
               >
                 <Reveal>
                   <AiOutlineMail size="1.5rem" />

@@ -6,6 +6,7 @@ import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
 import Image from "next/image";
 import { useMediaQuery } from "@mantine/hooks";
+import { trackProjectClick } from "@/components/utils/analytics";
 interface Props {
   isOpen: boolean;
   setIsOpen: Function;
@@ -76,6 +77,7 @@ export const ProjectModal = ({
                 rel="nofollow"
                 href={code}
                 className="flex items-center gap-4 transition text-neutral-400 hover:text-white"
+                onClick={() => trackProjectClick(title, "source_code")}
               >
                 <AiFillGithub size="2.25rem" />{isMobile ? "Code" : "Source code"}
               </Link>
@@ -84,6 +86,7 @@ export const ProjectModal = ({
                 rel="nofollow"
                 href={projectLink}
                 className="flex items-center gap-4 transition text-neutral-400 hover:text-white"
+                onClick={() => trackProjectClick(title, "live_project")}
               >
                 <AiOutlineExport size="2.25rem" />{isMobile ? "Live" : "Live project"}
               </Link>
