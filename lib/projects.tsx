@@ -1,9 +1,78 @@
 export const projects = [
   {
+    title: "Decidecks",
+    imgSrc: "/project-imgs/decidecks.webp",
+    imgModalsrc: "/project-imgs/decidecks-modal.webp",
+    code: "",
+    projectLink: "https://holo-board-two.vercel.app/",
+    tech: [
+      "Typescript",
+      "React",
+      "Vite",
+      "Tailwind",
+      "SASS",
+      "Supabase",
+      "Tanstack Query",
+      "Tanstack Form",
+      "Zustand",
+      "Radix",
+      "Three.js",
+      "GSAP",
+      "Tiptap",
+    ],
+    description:
+      " Productivity app that turns your day into a small hand of playable task cards.",
+    modalContent: (
+      <>
+        <p>
+          Decidecks reimagines productivity as a focused card game. Instead of
+          a long todo list, the user draws a small hand of task and chore
+          cards, plays one at a time on the table, and parks it on a Waiting
+          or Done pile when it&apos;s set aside or finished.
+        </p>
+        <div>
+          <p className="modal__subtitle">Features:</p>
+          <ul className="modal__list">
+            <li>
+              <b>Card-based tasks and chores:</b> A deck to draw from, a
+              hand with a card limit, and a table where one card is played at
+              a time.
+            </li>
+            <li>
+              <b>Mood check-ins and focus timer:</b> A daily mood card and a
+              built-in pomodoro timer, played from the hand like any other
+              card.
+            </li>
+            <li>
+              <b>Stats:</b> A monthly calendar view with
+              completion heatmaps and streak tracking for finished cards.
+            </li>
+            <li>
+              <b>Local-first with cloud sync:</b> Fully usable without an
+              account; signing in syncs tasks through Supabase.
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p className="modal__subtitle">Technologies Used:</p>
+          <ul className="modal__list">
+            <li>Main technology - React with TypeScript and Vite</li>
+            <li>Supabase for the database</li>
+            <li>Styled with Tailwind CSS and Sass</li>
+            <li>State management using Tanstack Query and Zustand</li>
+            <li>UI components built with Radix</li>
+            <li>Visual effects with Three.js and GSAP</li>
+            <li>Rich text editing with Tiptap</li>
+          </ul>
+        </div>
+      </>
+    ),
+  },
+  {
     title: "Focus Board",
     imgSrc: "/project-imgs/focus-board.webp",
     imgModalsrc: "/project-imgs/focus-board-modal.webp",
-    code: "https://github.com/brozinsky/focus-board",
+    code: "",
     projectLink: "https://focus-board-cyan.vercel.app/",
     tech: [
       "Typescript",
@@ -189,37 +258,6 @@ export const projects = [
           <li>Main technology - React</li>
           <li>Styling made in CSS</li>
           <li>Designed using Figma</li>
-        </ul>
-      </>
-    ),
-  },
-  {
-    title: "Movies App",
-    imgSrc: "/project-imgs/moovies.png",
-    imgModalsrc: "/project-imgs/movies-app-modal.jpg",
-    code: "https://github.com/brozinsky/movies-app",
-    projectLink: "https://brozinsky.github.io/movies-app/",
-    tech: ["React", "Redux", "CSS", "TMDB Api"],
-    description:
-      "A movie search website built with React. It uses the TMDb API showing the info about movies.",
-    modalContent: (
-      <>
-        <p>
-          A movie search app built with ReactJS.
-          <br />
-          It uses The Movie Database (TMDb) API to display data.
-          <br />
-          App&apos;s features include search movies by title, list popular
-          movies, view details of a selected movie (cast, genres, user scores).
-          <br />
-          Styling made with CSS.
-        </p>
-        <p className="modal__subtitle">Features/used technologies:</p>
-        <ul className="modal__list">
-          <li>Main technology - React</li>
-          <li>State management using Redux</li>
-          <li>The Movie Database (TMDb) API</li>
-          <li>Styling in CSS</li>
         </ul>
       </>
     ),

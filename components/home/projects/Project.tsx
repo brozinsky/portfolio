@@ -86,16 +86,18 @@ export const Project = ({
                   {title}
                 </h3>
                 <div className={"project__line"} />
-                <Link
-                  href={code}
-                  target="_blank"
-                  rel="nofollow"
-                  className="transition text-neutral-400 hover:text-white"
-                  aria-label="Source code on github"
-                  onClick={() => trackProjectClick(title, "source_code")}
-                >
-                  <AiFillGithub size="2.25rem" />
-                </Link>
+                {code && (
+                  <Link
+                    href={code}
+                    target="_blank"
+                    rel="nofollow"
+                    className="transition text-neutral-400 hover:text-white"
+                    aria-label="Source code on github"
+                    onClick={() => trackProjectClick(title, "source_code")}
+                  >
+                    <AiFillGithub size="2.25rem" />
+                  </Link>
+                )}
                 <Link
                   href={projectLink}
                   target="_blank"

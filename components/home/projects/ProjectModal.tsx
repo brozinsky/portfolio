@@ -72,15 +72,17 @@ export const ProjectModal = ({
 
           <div className={"mt-6"}>
             <div className={"flex justify-center gap-12"}>
-              <Link
-                target="_blank"
-                rel="nofollow"
-                href={code}
-                className="flex items-center gap-4 transition text-neutral-400 hover:text-white"
-                onClick={() => trackProjectClick(title, "source_code")}
-              >
-                <AiFillGithub size="2.25rem" />{isMobile ? "Code" : "Source code"}
-              </Link>
+              {code && (
+                <Link
+                  target="_blank"
+                  rel="nofollow"
+                  href={code}
+                  className="flex items-center gap-4 transition text-neutral-400 hover:text-white"
+                  onClick={() => trackProjectClick(title, "source_code")}
+                >
+                  <AiFillGithub size="2.25rem" />{isMobile ? "Code" : "Source code"}
+                </Link>
+              )}
               <Link
                 target="_blank"
                 rel="nofollow"
