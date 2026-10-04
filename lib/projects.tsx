@@ -128,8 +128,8 @@ export const projects = [
   },
   {
     title: "Chords Lab",
-    imgSrc: "/project-imgs/chords-lab.jpg",
-    imgModalsrc: "/project-imgs/chords-lab-modal.jpg",
+    imgSrc: "/project-imgs/chords-lab.webp",
+    imgModalsrc: "/project-imgs/chords-lab-modal.webp",
     code: "https://github.com/brozinsky/chords-lab",
     projectLink: "https://chords-lab.vercel.app/",
     tech: [
@@ -166,8 +166,8 @@ export const projects = [
   },
   {
     title: "Sznurkowe Królowe",
-    imgSrc: "/project-imgs/sznurkowe-krolowe.png",
-    imgModalsrc: "/project-imgs/sznurkowe-krolowe-modal.jpg",
+    imgSrc: "/project-imgs/sznurkowe-krolowe.webp",
+    imgModalsrc: "/project-imgs/sznurkowe-krolowe-modal.webp",
     code: "https://github.com/brozinsky/next-handmade-ecommerce",
     projectLink: "https://next-handmade-ecommerce.vercel.app/",
     tech: [
@@ -207,8 +207,8 @@ export const projects = [
   },
   {
     title: "Restaurant Template",
-    imgSrc: "/project-imgs/restaurant.png",
-    imgModalsrc: "/project-imgs/restaurant-modal.jpg",
+    imgSrc: "/project-imgs/restaurant.webp",
+    imgModalsrc: "/project-imgs/restaurant-modal.webp",
     code: "https://github.com/brozinsky/next-restaurant-template",
     projectLink: "https://next-restaurant-template.vercel.app/",
     tech: ["Typescript", "React", "Nextjs", "SASS", "Tailwind", "Zustand"],
@@ -233,8 +233,8 @@ export const projects = [
   },
   {
     title: "Jacks or Better",
-    imgSrc: "/project-imgs/jacks-or-better.png",
-    imgModalsrc: "/project-imgs/jacks-or-better-modal.jpg",
+    imgSrc: "/project-imgs/jacks-or-better.webp",
+    imgModalsrc: "/project-imgs/jacks-or-better-modal.webp",
     code: "https://github.com/brozinsky/videopoker-jacks-or-better",
     projectLink: "https://brozinsky.github.io/videopoker-jacks-or-better/",
     tech: ["React", "CSS", "OOP"],
